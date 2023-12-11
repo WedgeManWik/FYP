@@ -43,7 +43,9 @@
             "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponentasync.generated.h",
             "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponent.generated.h",
             "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\springarmcomponent.h",
-            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\springarmcomponent.generated.h"
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\springarmcomponent.generated.h",
+            "d:\\github\\fyp\\fyp\\source\\fyp\\navinterface.h",
+            "d:\\github\\fyp\\fyp\\intermediate\\build\\win64\\unrealeditor\\inc\\fyp\\uht\\navinterface.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

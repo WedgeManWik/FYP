@@ -22,6 +22,9 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
+	UFUNCTION(BlueprintCallable)
+		bool CharacterCollidedWithNavLink(UPARAM(ref) FVector& LowerLocation, UPARAM(ref) FVector& UpperLocation, UPARAM(ref) bool& IsLower);
+
 private:
 	/** Top down camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))

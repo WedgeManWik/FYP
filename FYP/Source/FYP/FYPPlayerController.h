@@ -6,13 +6,14 @@
 #include "Templates/SubclassOf.h"
 #include "GameFramework/PlayerController.h"
 #include "InputActionValue.h"
+#include "NavInterface.h"
 #include "FYPPlayerController.generated.h"
 
 /** Forward declaration to improve compiling times */
 class UNiagaraSystem;
 
 UCLASS()
-class AFYPPlayerController : public APlayerController
+class AFYPPlayerController : public APlayerController, public INavInterface
 {
 	GENERATED_BODY()
 
@@ -38,6 +39,8 @@ public:
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputAction* SetDestinationTouchAction;
+
+	virtual bool CollidedWithNavLink_Implementation(FVector& LowerLocation, FVector& UpperLocation, bool& IsLower) override;
 
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */

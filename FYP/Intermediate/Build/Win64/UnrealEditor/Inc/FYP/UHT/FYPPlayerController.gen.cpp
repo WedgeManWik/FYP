@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 	FYP_API UClass* Z_Construct_UClass_AFYPPlayerController();
 	FYP_API UClass* Z_Construct_UClass_AFYPPlayerController_NoRegister();
+	FYP_API UClass* Z_Construct_UClass_UNavInterface_NoRegister();
 	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_FYP();
 // End Cross Module References
@@ -52,6 +53,7 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_SetDestinationTouchAction;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -121,6 +123,9 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SetDestinationClickAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SetDestinationTouchAction,
 	};
+		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_AFYPPlayerController_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UNavInterface_NoRegister, (int32)VTABLE_OFFSET(AFYPPlayerController, INavInterface), false },  // 2841791141
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFYPPlayerController_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFYPPlayerController>::IsAbstract,
 	};
@@ -131,11 +136,11 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_AFYPPlayerController_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_AFYPPlayerController_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x008002A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AFYPPlayerController_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AFYPPlayerController_Statics::Class_MetaDataParams))
 	};
@@ -158,9 +163,9 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 3266849894U) },
+		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 4005497426U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_2644042109(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_1833485914(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

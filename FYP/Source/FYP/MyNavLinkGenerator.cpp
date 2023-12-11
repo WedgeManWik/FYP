@@ -39,8 +39,6 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("poly num: %d"), EachPolys.Num()));
-
 	TArray<FPotentialNavLinkSpawn> PotentialNavLinkSpawns;
 
 	for (int i = 0; i < EachPolys.Num(); i++)
