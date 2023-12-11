@@ -1,0 +1,37 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\github\\fyp\\fyp\\source\\fyp\\mynavlinkgenerator.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\github\\fyp\\fyp\\intermediate\\build\\win64\\x64\\fypeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "d:\\github\\fyp\\fyp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\fyp\\definitions.fyp.h",
+            "d:\\github\\fyp\\fyp\\source\\fyp\\mynavlinkgenerator.h",
+            "d:\\github\\fyp\\fyp\\intermediate\\build\\win64\\unrealeditor\\inc\\fyp\\uht\\mynavlinkgenerator.generated.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\navigationsystem\\public\\navmesh\\recastnavmesh.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\navigationsystem\\public\\navigationsystemtypes.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\navigationsystem\\public\\navfilters\\navigationqueryfilter.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\navigationsystem\\public\\navareas\\navarea.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\ai\\navigation\\navareabase.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\navareabase.generated.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\navigationsystem\\uht\\navarea.generated.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\navigationsystem\\uht\\navigationqueryfilter.generated.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\ai\\navigationsystemconfig.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\navigationsystemconfig.generated.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\navigationsystem\\public\\navigationdata.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\ai\\navigation\\navigationdatainterface.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\navigationdatainterface.generated.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\navigationsystem\\uht\\navigationdata.generated.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\navigationsystem\\public\\navmesh\\navmeshpath.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\navigationsystem\\public\\navigationpath.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\navigationsystem\\uht\\navigationpath.generated.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\navigationsystem\\uht\\recastnavmesh.generated.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetsystemlibrary.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
