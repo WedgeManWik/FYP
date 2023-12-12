@@ -10,7 +10,6 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
-#include "NavInterface.h"
 
 AFYPCharacter::AFYPCharacter()
 {
@@ -51,18 +50,3 @@ void AFYPCharacter::Tick(float DeltaSeconds)
     Super::Tick(DeltaSeconds);
 }
 
-bool AFYPCharacter::CharacterCollidedWithNavLink(UPARAM(ref) FVector& LowerLocation, UPARAM(ref) FVector& UpperLocation, UPARAM(ref) bool& IsLower)
-{
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("1")));
-	if (GetController())
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("got")));
-	}
-	bool ShouldLaunch = INavInterface::Execute_CollidedWithNavLink(GetController(), LowerLocation, UpperLocation, IsLower);
-	if (ShouldLaunch)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("should launch"), ShouldLaunch));
-	}
-	
-	return ShouldLaunch;
-}

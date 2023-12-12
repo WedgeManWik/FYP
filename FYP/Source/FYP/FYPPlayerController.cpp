@@ -9,8 +9,6 @@
 #include "Engine/World.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "NavigationSystem.h"
-#include "NavigationPath.h"
 
 AFYPPlayerController::AFYPPlayerController()
 {
@@ -30,31 +28,6 @@ void AFYPPlayerController::BeginPlay()
 	{
 		Subsystem->AddMappingContext(DefaultMappingContext, 0);
 	}
-}
-
-bool AFYPPlayerController::CollidedWithNavLink_Implementation(FVector& LowerLocation, FVector& UpperLocation, bool& IsLower)
-{
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("2")));
-	FVector CollidedLocation = IsLower ? LowerLocation : UpperLocation;
-	FVector Destination = IsLower ? UpperLocation : LowerLocation;
-
-	UNavigationSystemV1* navSys = UNavigationSystemV1::GetCurrent(GetWorld());
-	UNavigationPath* path = navSys->FindPathToLocationSynchronously(GetWorld(), GetPawn()->GetActorLocation(), CachedDestination, NULL);
-	TArray<FNavPathPoint> PathPoints = path->GetPath()->GetPathPoints();
-
-	for (int i = 0; i < PathPoints.Num(); i++)
-	{
-		if (FVector::Dist(PathPoints[i], CollidedLocation) < 50.0f)
-		{
-			return true;
-		}
-		else
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("dist %f"), FVector::Dist(PathPoints[i], CollidedLocation)));
-		}
-	}
-
-	return false;
 }
 
 void AFYPPlayerController::SetupInputComponent()

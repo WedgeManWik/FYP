@@ -15,16 +15,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FYP_FYPCharacter_generated_h
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPCharacter_h_12_SPARSE_DATA
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPCharacter_h_12_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execCharacterCollidedWithNavLink);
-
-
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execCharacterCollidedWithNavLink);
-
-
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPCharacter_h_12_RPC_WRAPPERS
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPCharacter_h_12_ACCESSORS
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPCharacter_h_12_INCLASS_NO_PURE_DECLS \
 private: \
