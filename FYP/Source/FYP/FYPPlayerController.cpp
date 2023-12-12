@@ -115,3 +115,8 @@ void AFYPPlayerController::OnTouchReleased()
 	bIsTouch = false;
 	OnSetDestinationReleased();
 }
+
+FVector AFYPPlayerController::GetGoalDestination()
+{
+	return CachedDestination;
+}

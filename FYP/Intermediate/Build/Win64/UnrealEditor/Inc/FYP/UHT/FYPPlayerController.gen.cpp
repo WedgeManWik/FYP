@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 // Cross Module References
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
@@ -17,8 +18,52 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_FYP();
 // End Cross Module References
+	DEFINE_FUNCTION(AFYPPlayerController::execGetGoalDestination)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FVector*)Z_Param__Result=P_THIS->GetGoalDestination();
+		P_NATIVE_END;
+	}
 	void AFYPPlayerController::StaticRegisterNativesAFYPPlayerController()
 	{
+		UClass* Class = AFYPPlayerController::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetGoalDestination", &AFYPPlayerController::execGetGoalDestination },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics
+	{
+		struct FYPPlayerController_eventGetGoalDestination_Parms
+		{
+			FVector ReturnValue;
+		};
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FYPPlayerController_eventGetGoalDestination_Parms, ReturnValue), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FYPPlayerController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFYPPlayerController, nullptr, "GetGoalDestination", nullptr, nullptr, sizeof(Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::FYPPlayerController_eventGetGoalDestination_Parms), Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04880401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AFYPPlayerController);
 	UClass* Z_Construct_UClass_AFYPPlayerController_NoRegister()
@@ -28,6 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 	struct Z_Construct_UClass_AFYPPlayerController_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -58,6 +104,9 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 	UObject* (*const Z_Construct_UClass_AFYPPlayerController_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_APlayerController,
 		(UObject* (*)())Z_Construct_UPackage__Script_FYP,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AFYPPlayerController_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination, "GetGoalDestination" }, // 947276957
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFYPPlayerController_Statics::Class_MetaDataParams[] = {
@@ -129,11 +178,11 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AFYPPlayerController_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AFYPPlayerController_Statics::PropPointers),
 		0,
 		0x008002A4u,
@@ -158,9 +207,9 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 3266849894U) },
+		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 879913735U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_2644042109(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_3360386462(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

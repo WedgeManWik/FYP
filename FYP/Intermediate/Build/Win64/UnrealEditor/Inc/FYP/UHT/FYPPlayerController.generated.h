@@ -15,8 +15,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FYP_FYPPlayerController_generated_h
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_SPARSE_DATA
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetGoalDestination);
+
+
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetGoalDestination);
+
+
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS_NO_PURE_DECLS \
 private: \

@@ -60,12 +60,6 @@
     <ClInclude Include="..\..\Source\FYP\FYPPlayerController.h">
       <Filter>Source\FYP</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\FYP\MyNavLinkComponent.cpp">
-      <Filter>Source\FYP</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\FYP\MyNavLinkComponent.h">
-      <Filter>Source\FYP</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\FYP\MyNavLinkGenerator.cpp">
       <Filter>Source\FYP</Filter>
     </ClCompile>
@@ -76,12 +70,6 @@
       <Filter>Source\FYP</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\FYP\MyNavLinkProxy.h">
-      <Filter>Source\FYP</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\FYP\NavInterface.cpp">
-      <Filter>Source\FYP</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\FYP\NavInterface.h">
       <Filter>Source\FYP</Filter>
     </ClInclude>
   </ItemGroup>

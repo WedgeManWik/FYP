@@ -55,6 +55,9 @@ protected:
 	void OnTouchTriggered();
 	void OnTouchReleased();
 
+	UFUNCTION(BlueprintCallable)
+	FVector GetGoalDestination();
+
 private:
 	FVector CachedDestination;
 
