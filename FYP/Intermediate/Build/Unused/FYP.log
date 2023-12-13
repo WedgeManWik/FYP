@@ -4,8 +4,8 @@
   Using 'git status' to determine working set for adaptive non-unity build (D:\GitHub\FYP).
   Parsing headers for FYPEditor
     Running Internal UnrealHeaderTool D:\GitHub\FYP\FYP\FYP.uproject D:\GitHub\FYP\FYP\Intermediate\Build\Win64\FYPEditor\Development\FYPEditor.uhtmanifest -WarningsAsErrors -installed
-  Total of 0 written
-  Reflection code generated for FYPEditor in 1.8268888 seconds
+  Total of 2 written
+  Reflection code generated for FYPEditor in 1.402984 seconds
   Building FYPEditor...
   Using Visual Studio 2022 14.36.32537 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -16,19 +16,15 @@
   [Upgrade]
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-    Requested 1.5 GB free memory per action, 6.22 GB available: limiting max parallel actions to 4
-  Building 10 actions with 4 processes...
-  [1/10] Compile [x64] FYP.init.gen.cpp
-  [2/10] Compile [x64] FYPPlayerController.gen.cpp
-  [3/10] Compile [x64] FYPCharacter.gen.cpp
-  [4/10] Compile [x64] MyNavLinkProxy.cpp
-  [5/10] Compile [x64] FYPCharacter.cpp
-  [6/10] Compile [x64] FYPGameMode.cpp
-  [7/10] Compile [x64] FYPPlayerController.cpp
-  [8/10] Link [x64] UnrealEditor-FYP.lib
+    Requested 1.5 GB free memory per action, 5.1 GB available: limiting max parallel actions to 3
+  Building 6 actions with 3 processes...
+  [1/6] Compile [x64] FYP.init.gen.cpp
+  [2/6] Compile [x64] MyNavLinkGenerator.gen.cpp
+  [3/6] Compile [x64] MyNavLinkGenerator.cpp
+  [4/6] Link [x64] UnrealEditor-FYP.lib
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.exp
-  [9/10] Link [x64] UnrealEditor-FYP.dll
+  [5/6] Link [x64] UnrealEditor-FYP.dll
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
-  [10/10] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 8.79 seconds
-  Total execution time: 11.64 seconds
+  [6/6] WriteMetadata FYPEditor.target
+  Total time in Parallel executor: 4.54 seconds
+  Total execution time: 6.94 seconds

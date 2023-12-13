@@ -45,15 +45,14 @@ public:
 
 	bool DoesAdjacentEdgeExist(FVector& Start, FVector& End, TArray<FNavigationPortalEdge>& EdgeArray);
 
-	void SpawnNavLinkBetweenVerticies(FVector& Start, FVector& End);
-
-	bool IsOnJumpTrajectory(FVector& Orgin, FVector& Destination);
-
-	FPotentialNavLinkSpawn CreatePotentialNavLink(FVector& Start, FVector& End);
+	void SpawnPotentialNavLinksBetweenVerticies(FVector& Start, FVector& End);
 
 	UPROPERTY(EditAnywhere)
 		int32 AgentJumpHeight;
 
 	UPROPERTY(EditAnywhere)
 		int32 AgentJumpDistance;
+
+	UPROPERTY(EditAnywhere)
+		int32 DistBetweenNavLinks;
 };

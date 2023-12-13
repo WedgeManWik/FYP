@@ -11,6 +11,7 @@ AMyNavLinkGenerator::AMyNavLinkGenerator()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
+	DistBetweenNavLinks = 100;
 }
 
 void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
@@ -57,30 +58,18 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 			{
 				if (!DoesAdjacentEdgeExist(CurrentPolygonVertices[j], CurrentPolygonVertices[0], CurrentPolygonEdges))
 				{
-					FPotentialNavLinkSpawn PotentialNavLink = CreatePotentialNavLink(CurrentPolygonVertices[j], CurrentPolygonVertices[0]);
-					SpawnPotentialNavLink(PotentialNavLink.Location, PotentialNavLink.Rotation);
-					//PotentialNavLinkSpawns.Add(CreatePotentialNavLink(CurrentPolygonVertices[j], CurrentPolygonVertices[0]));
+					SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[0]);
 				}
 			}
 			else
 			{
 				if (!DoesAdjacentEdgeExist(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], CurrentPolygonEdges))
 				{
-					FPotentialNavLinkSpawn PotentialNavLink = CreatePotentialNavLink(CurrentPolygonVertices[j], CurrentPolygonVertices[j+1]);
-					SpawnPotentialNavLink(PotentialNavLink.Location, PotentialNavLink.Rotation);
-					//PotentialNavLinkSpawns.Add(CreatePotentialNavLink(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]));
+					SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]);
 				}
 			}
 		}
 
-	}
-
-	for (int i = 0; i < PotentialNavLinkSpawns.Num(); i++)
-	{
-		FVector EndLoc = PotentialNavLinkSpawns[i].Location + (PotentialNavLinkSpawns[i].Rotation);
-		EndLoc.Z -= 200;
-		SpawnNavLinkBetweenVerticies(PotentialNavLinkSpawns[i].Location, EndLoc);
-		SpawnNavLink(PotentialNavLinkSpawns[i].Location, EndLoc);
 	}
 }
 
@@ -145,44 +134,28 @@ bool AMyNavLinkGenerator::DoesAdjacentEdgeExist(FVector& Start, FVector& End, TA
 	return false;
 }
 
-void AMyNavLinkGenerator::SpawnNavLinkBetweenVerticies(FVector& Start, FVector& End)
+void AMyNavLinkGenerator::SpawnPotentialNavLinksBetweenVerticies(FVector& Start, FVector& End)
 {
-	UWorld* const world = GetWorld();
-	if (world == nullptr) { return; }
+	int32 TotalDistance = FVector::Dist(Start,End);
+	int32 EdgeDistances = (TotalDistance % DistBetweenNavLinks) / 2;
+	int32 numPotentialLinksToSpawn = (TotalDistance - (EdgeDistances * 2)) / DistBetweenNavLinks;
 
-	FHitResult hit(ForceInit);
-	TArray<AActor*> ActorsToIgnore;
-	UKismetSystemLibrary::LineTraceSingle(world, Start, End,
-		UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel2), false, ActorsToIgnore,
-		EDrawDebugTrace::Persistent, hit, true, FLinearColor::Red, FLinearColor::Red, 200);
+	FVector Direction = End - Start;
+	Direction.Normalize();
 
-	//double MidX = (Start.X + End.X) / 2.0f;
-	//double MidY = (Start.Y + End.Y) / 2.0f;
-	//double MidZ = (Start.Z + End.Z) / 2.0f;
-
-	//FVector Location(MidX, MidY, MidZ);
-	//FRotator Rotation(0.0f, 0.0f, 0.0f);
-
-
-	//FActorSpawnParameters SpawnInfo;
-	//SpawnInfo.Owner = GetOwner();
-	//SpawnInfo.Instigator = GetInstigator();
-	//SpawnInfo.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	//GetWorld()->SpawnActor<AActor>(_NavLink, Location, Rotation, SpawnInfo);
-}
-
-FPotentialNavLinkSpawn AMyNavLinkGenerator::CreatePotentialNavLink(FVector& Start, FVector& End)
-{
-	double MidX = (Start.X + End.X) / 2.0f;
-	double MidY = (Start.Y + End.Y) / 2.0f;
-	double MidZ = (Start.Z + End.Z) / 2.0f;
-
-	FVector ThisEdge = Start - End;
-
-	FVector Location(MidX, MidY, MidZ);
-	FVector DirectionOut = FVector::CrossProduct(ThisEdge, FVector(0, 0, 1));
+	FVector DirectionOut = FVector::CrossProduct(Direction, FVector(0, 0, 1));
 	DirectionOut.Normalize();
-	DirectionOut *= 100;
+	DirectionOut *= -1;
 
-	return FPotentialNavLinkSpawn(Location, DirectionOut);
+	FVector FirstPotentialNavLink = Start + Direction * EdgeDistances;
+	SpawnPotentialNavLink(FirstPotentialNavLink, DirectionOut);
+
+	for (int i = 0; i < numPotentialLinksToSpawn; i++)
+	{
+		FVector SpawnLocation = Start + (Direction * (EdgeDistances + DistBetweenNavLinks * i));
+		SpawnPotentialNavLink(SpawnLocation, DirectionOut);
+	}
+
+	FVector LastPotentialNavLink = End - (Direction * EdgeDistances);
+	SpawnPotentialNavLink(LastPotentialNavLink, DirectionOut);
 }
