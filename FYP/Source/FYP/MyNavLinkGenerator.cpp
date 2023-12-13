@@ -52,6 +52,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		TArray<FVector> CurrentPolygonVertices;
 		Nav->GetPolyVerts(EachPolys[i].Ref, CurrentPolygonVertices);
 
+		//TArray<FNavigationPortalEdge> NavMeshEdges;
 		for (int j = 0; j < CurrentPolygonVertices.Num(); j++)
 		{
 			if (j == CurrentPolygonVertices.Num() - 1)
@@ -59,6 +60,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 				if (!DoesAdjacentEdgeExist(CurrentPolygonVertices[j], CurrentPolygonVertices[0], CurrentPolygonEdges))
 				{
 					SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[0]);
+					//NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[0], EachPolys[i].Ref));
 				}
 			}
 			else
@@ -66,10 +68,16 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 				if (!DoesAdjacentEdgeExist(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], CurrentPolygonEdges))
 				{
 					SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]);
+					//NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], EachPolys[i].Ref));
 				}
 			}
 		}
 
+		//TArray<FVector> Corners;
+		//for (int j = 0; j < NavMeshEdges.Num(); j++)
+		//{
+
+		//}
 	}
 }
 
@@ -158,4 +166,47 @@ void AMyNavLinkGenerator::SpawnPotentialNavLinksBetweenVerticies(FVector& Start,
 
 	FVector LastPotentialNavLink = End - (Direction * EdgeDistances);
 	SpawnPotentialNavLink(LastPotentialNavLink, DirectionOut);
+}
+
+void AMyNavLinkGenerator::SpawnPotentialNavLinksOnVertex(FVector& VertexLocation, FVector& Neighbour1, FVector& Neighbour2)
+{
+	FVector DirectionOut1 = FVector::CrossProduct(Neighbour1 - VertexLocation, FVector(0, 0, 1));
+	DirectionOut1.Normalize();
+	FVector DirectionOut2 = FVector::CrossProduct(VertexLocation - Neighbour2, FVector(0, 0, 1));
+	DirectionOut2.Normalize();
+
+	FVector End1 = VertexLocation + (DirectionOut1 * 50);
+	FVector End2 = VertexLocation + (DirectionOut2 * 50);
+
+	UWorld* const world = GetWorld();
+	if (world == nullptr) { return; }
+
+	FHitResult hit(ForceInit);
+	TArray<AActor*> ActorsToIgnore;
+	UKismetSystemLibrary::LineTraceSingle(world, VertexLocation, End1,
+		UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel2), false, ActorsToIgnore,
+		EDrawDebugTrace::Persistent, hit, true, FLinearColor::Red, FLinearColor::Red, 200);
+
+	UKismetSystemLibrary::LineTraceSingle(world, VertexLocation, End2,
+		UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel2), false, ActorsToIgnore,
+		EDrawDebugTrace::Persistent, hit, true, FLinearColor::Red, FLinearColor::Red, 200);
+
+	//int32 numPotentialNavLinksToSpawn = FMath::Floor(Angle / 0.1f);
+
+	//UWorld* const world = GetWorld();
+	//if (world == nullptr) { return; }
+
+	//FHitResult hit(ForceInit);
+	//TArray<AActor*> ActorsToIgnore;
+	//for (int i = 0; i < numPotentialNavLinksToSpawn; i++)
+	//{
+		//FVector Direction = Neighbour1.RotateAngleAxis(9, FVector(0, 0, 1));
+		////SpawnPotentialNavLink(VertexLocation, Direction);
+
+		//FVector End = VertexLocation + (Direction * 50);
+
+		//UKismetSystemLibrary::LineTraceSingle(world, VertexLocation, End,
+		//	UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel2), false, ActorsToIgnore,
+		//	EDrawDebugTrace::Persistent, hit, true, FLinearColor::Red, FLinearColor::Red, 200);
+	//}
 }

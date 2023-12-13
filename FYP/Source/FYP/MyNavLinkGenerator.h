@@ -25,7 +25,6 @@ class FYP_API AMyNavLinkGenerator : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AMyNavLinkGenerator();
 
 	UFUNCTION(BlueprintCallable)
@@ -33,9 +32,6 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void SpawnPotentialNavLink(FVector Location, FVector Direction);
-
-	UFUNCTION(BlueprintImplementableEvent)
-		void SpawnNavLink(FVector Location, FVector Destination);
 
 	bool IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2);
 
@@ -46,6 +42,8 @@ public:
 	bool DoesAdjacentEdgeExist(FVector& Start, FVector& End, TArray<FNavigationPortalEdge>& EdgeArray);
 
 	void SpawnPotentialNavLinksBetweenVerticies(FVector& Start, FVector& End);
+
+	void SpawnPotentialNavLinksOnVertex(FVector& VertexLocation, FVector& Neighbour1, FVector& Neighbour2);
 
 	UPROPERTY(EditAnywhere)
 		int32 AgentJumpHeight;
