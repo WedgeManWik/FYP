@@ -13845,3 +13845,31 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2023.12.13-15.39.24:540][ 97]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D47C501_1587026304
 [2023.12.13-15.39.24:540][ 97]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D47C501_1587042311
 [2023.12.13-15.39.24:540][ 97]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D47C501_1587164361
+[2023.12.13-15.41.37:567][329]LogDerivedDataCache: C:/Users/wikto/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:36.422 and deleted 0 files with total size 0 MiB and 7 empty folders. Scanned 18765 files in 21610 folders with total size 1811 MiB.
+[2023.12.13-15.43.02:761][192]BlueprintLog: New page: Compile BI_Character
+[2023.12.13-15.43.02:844][192]LogUObjectHash: Compacting FUObjectHashTables data took   1.97ms
+[2023.12.13-15.43.03:731][238]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.12.13-15.43.03:822][238]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BI_Character" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BI_Character.uasset" SILENT=true
+[2023.12.13-15.43.03:826][238]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BI_Character
+[2023.12.13-15.43.03:826][238]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BI_CharacterF775EA164ED16A030DA63687ED64C1FC.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BI_Character.uasset'
+[2023.12.13-15.43.03:836][238]LogFileHelpers: InternalPromptForCheckoutAndSave took 104 ms (total: 5.84 sec)
+[2023.12.13-15.43.03:844][238]AssetCheck: New page: Asset Save: BI_Character
+[2023.12.13-15.43.03:844][238]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BI_Character.BI_Character
+[2023.12.13-15.43.08:506][769]BlueprintLog: New page: Compile BP_TopDownCharacter
+[2023.12.13-15.43.08:685][769]LogUObjectHash: Compacting FUObjectHashTables data took   1.81ms
+[2023.12.13-15.43.10:183][932]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.12.13-15.43.10:313][932]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_TopDownCharacter" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_TopDownCharacter.uasset" SILENT=true
+[2023.12.13-15.43.10:329][932]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_TopDownCharacter
+[2023.12.13-15.43.10:329][932]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_TopDownCharacterDC457CC64AEDF41147B5089507730C76.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_TopDownCharacter.uasset'
+[2023.12.13-15.43.10:338][932]LogFileHelpers: InternalPromptForCheckoutAndSave took 154 ms (total: 5.99 sec)
+[2023.12.13-15.43.10:348][932]AssetCheck: New page: Asset Save: BP_TopDownCharacter
+[2023.12.13-15.43.10:348][932]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_TopDownCharacter.BP_TopDownCharacter
+[2023.12.13-15.43.16:850][694]BlueprintLog: New page: Compile BI_Controller
+[2023.12.13-15.43.16:927][694]LogUObjectHash: Compacting FUObjectHashTables data took   1.72ms
+[2023.12.13-15.43.17:812][788]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.12.13-15.43.17:886][788]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BI_Controller" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BI_Controller.uasset" SILENT=true
+[2023.12.13-15.43.17:889][788]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BI_Controller
+[2023.12.13-15.43.17:890][788]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BI_ControllerD7D4AC2A4C69B573F64ECC915198BE6A.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BI_Controller.uasset'
+[2023.12.13-15.43.17:898][788]LogFileHelpers: InternalPromptForCheckoutAndSave took 86 ms (total: 6.08 sec)
+[2023.12.13-15.43.17:906][788]AssetCheck: New page: Asset Save: BI_Controller
+[2023.12.13-15.43.17:906][788]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BI_Controller.BI_Controller
