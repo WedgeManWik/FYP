@@ -8,17 +8,6 @@
 
 class ARecastNavMesh;
 
-struct FPotentialNavLinkSpawn
-{
-	FPotentialNavLinkSpawn(FVector InLoc, FVector InRot)
-	{
-		Location = InLoc;
-		Rotation = InRot;
-	}
-	FVector Location;
-	FVector Rotation;
-};
-
 UCLASS()
 class FYP_API AMyNavLinkGenerator : public AActor
 {
@@ -43,7 +32,7 @@ public:
 
 	void SpawnPotentialNavLinksBetweenVerticies(FVector& Start, FVector& End);
 
-	void SpawnPotentialNavLinksOnVertex(FVector& VertexLocation, FVector& Neighbour1, FVector& Neighbour2);
+	FNavigationPortalEdge& FindEdgeWithMatchingVertex(FNavigationPortalEdge& ThisEdge, FVector& Vertex, TArray<FNavigationPortalEdge>& EdgeArray);
 
 	UPROPERTY(EditAnywhere)
 		int32 AgentJumpHeight;
