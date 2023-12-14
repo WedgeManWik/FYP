@@ -89,7 +89,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		int numPotentialNavLinksToSpawn = DotProd >= 0.0f ? FMath::Floor((1 - DotProd) / 0.3f) : FMath::Floor((1 + (DotProd * -1)) / 0.3f);
 
 		UWorld* const world = GetWorld();
-		if (world == nullptr || numPotentialNavLinksToSpawn <= 0) { return; }
+		if (world == nullptr || numPotentialNavLinksToSpawn <= 0 || DotProd == 1.0f) { return; }
 		
 		for (int j = 0; j < numPotentialNavLinksToSpawn; j++)
 		{
