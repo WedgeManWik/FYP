@@ -16,7 +16,7 @@ AMyNavLinkGenerator::AMyNavLinkGenerator()
 
 void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 {
-	TArray<NavNodeRef> PolyRefs;
+	//TArray<NavNodeRef> PolyRefs;
 
 	int32 NumTiles = Nav->GetNavMeshTilesCount();
 
@@ -29,15 +29,6 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		TileBounds = Nav->GetNavMeshTileBounds(i);
 		if (TileBounds.IsValid == 0) { continue; }
 		Nav->GetPolysInTile(i, EachPolys);
-
-		if (EachPolys.Num() > 0)
-		{
-			for (int j = 0; j < EachPolys.Num(); j++)
-			{
-				PolyRefs.Add(EachPolys[j].Ref);
-			}
-		}
-
 	}
 
 	TArray<FNavigationPortalEdge> NavMeshEdges;
@@ -180,17 +171,24 @@ void AMyNavLinkGenerator::SpawnPotentialNavLinksBetweenVerticies(FVector& Start,
 	DirectionOut.Normalize();
 	DirectionOut *= -1;
 
+	TArray<FVector> SpawnSplineLocations;
 	FVector FirstPotentialNavLink = Start + Direction * EdgeDistances;
-	SpawnPotentialNavLink(FirstPotentialNavLink, DirectionOut);
+
+	SpawnSplineLocations.Add(FirstPotentialNavLink);
+	//SpawnPotentialNavLink(FirstPotentialNavLink, DirectionOut);
 
 	for (int i = 0; i < numPotentialLinksToSpawn; i++)
 	{
 		FVector SpawnLocation = Start + (Direction * (EdgeDistances + DistBetweenNavLinks * i));
-		SpawnPotentialNavLink(SpawnLocation, DirectionOut);
+		//SpawnPotentialNavLink(SpawnLocation, DirectionOut);
+		SpawnSplineLocations.Add(SpawnLocation);
 	}
 
 	FVector LastPotentialNavLink = End - (Direction * EdgeDistances);
-	SpawnPotentialNavLink(LastPotentialNavLink, DirectionOut);
+	//SpawnPotentialNavLink(LastPotentialNavLink, DirectionOut);
+	SpawnSplineLocations.Add(LastPotentialNavLink);
+
+	CreateNavJumpLinkAreaOnEdge(Start, End, SpawnSplineLocations, DirectionOut);
 }
 
 FNavigationPortalEdge& AMyNavLinkGenerator::FindEdgeWithMatchingVertex(FNavigationPortalEdge& ThisEdge, FVector& Vertex, TArray<FNavigationPortalEdge>& EdgeArray)
@@ -212,3 +210,4 @@ FNavigationPortalEdge& AMyNavLinkGenerator::FindEdgeWithMatchingVertex(FNavigati
 
 	return ThisEdge;
 }
+

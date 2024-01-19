@@ -22,6 +22,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void SpawnPotentialNavLink(FVector Location, FVector Direction);
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void CreateNavJumpLinkAreaOnEdge(FVector Start, FVector End, const TArray<FVector>& SplineCheckLocations, FVector Direction);
+
 	bool IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2);
 
 	bool DoShareSameEdges(TArray<FNavigationPortalEdge>& EdgeArray1, TArray<FNavigationPortalEdge>& EdgeArray2);
