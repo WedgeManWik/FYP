@@ -19,6 +19,9 @@ class AFYPPlayerController : public APlayerController
 public:
 	AFYPPlayerController();
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void DrawPath();
+
 	/** Time Threshold to know if it was a short press */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	float ShortPressThreshold;

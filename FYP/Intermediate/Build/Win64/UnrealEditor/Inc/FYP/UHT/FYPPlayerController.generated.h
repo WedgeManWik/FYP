@@ -26,6 +26,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_CALLBACK_WRAPPERS
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFYPPlayerController(); \
@@ -77,6 +78,7 @@ public: \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_SPARSE_DATA \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_CALLBACK_WRAPPERS \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_STANDARD_CONSTRUCTORS \
 public: \
@@ -89,6 +91,7 @@ public: \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_SPARSE_DATA \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_CALLBACK_WRAPPERS \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS_NO_PURE_DECLS \
 	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ENHANCED_CONSTRUCTORS \
 private: \
