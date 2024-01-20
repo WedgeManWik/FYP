@@ -3833,3 +3833,1253 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2024.01.20-22.23.40:585][288]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1218693092
 [2024.01.20-22.23.40:585][288]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1218695093
 [2024.01.20-22.23.40:585][288]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1218697094
+[2024.01.20-22.24.08:344][702]LogUObjectHash: Compacting FUObjectHashTables data took   1.57ms
+[2024.01.20-22.24.08:347][702]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.039
+[2024.01.20-22.24.22:979][ 32]LogSlate: Window 'Pick Parent Class' being destroyed
+[2024.01.20-22.24.22:991][ 32]LogContentBrowser: Deferred new asset file creation: NewBlueprint
+[2024.01.20-22.24.23:003][ 32]LogContentBrowser: Creating deferred item: NewBlueprint
+[2024.01.20-22.24.23:026][ 33]LogContentBrowser: Renaming the item being created (Deferred Item: NewBlueprint).
+[2024.01.20-22.24.25:888][209]LogContentBrowser: Attempting asset rename: NewBlueprint -> NA_Jump
+[2024.01.20-22.24.25:896][209]LogContentBrowser: End creating deferred item NewBlueprint
+[2024.01.20-22.24.27:895][345]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.24.27:957][345]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/NA_Jump" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/NA_Jump.uasset" SILENT=true
+[2024.01.20-22.24.27:959][345]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/NA_Jump
+[2024.01.20-22.24.27:959][345]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/NA_JumpC7C4A1AC46AB3DD217DF6DAE2E1E1FE6.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/NA_Jump.uasset'
+[2024.01.20-22.24.27:973][345]LogFileHelpers: InternalPromptForCheckoutAndSave took 78 ms (total: 2.33 sec)
+[2024.01.20-22.24.27:980][345]AssetCheck: New page: Asset Save: NA_Jump
+[2024.01.20-22.24.27:980][345]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/NA_Jump.NA_Jump
+[2024.01.20-22.24.29:433][432]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/TopDown/Blueprints/NA_Jump.NA_Jump
+[2024.01.20-22.24.29:433][432]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.20-22.24.29:434][432]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.20-22.24.35:231][ 95]LogSlate: Window 'Color Picker' being destroyed
+[2024.01.20-22.24.36:421][236]BlueprintLog: New page: Compile NA_Jump
+[2024.01.20-22.24.36:466][236]LogUObjectHash: Compacting FUObjectHashTables data took   1.85ms
+[2024.01.20-22.24.36:975][293]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.24.37:034][293]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/NA_Jump" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/NA_Jump.uasset" SILENT=true
+[2024.01.20-22.24.37:037][293]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/NA_Jump
+[2024.01.20-22.24.37:037][293]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/NA_Jump75167EED4FE21983FF812AADA66CE119.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/NA_Jump.uasset'
+[2024.01.20-22.24.37:050][293]LogFileHelpers: InternalPromptForCheckoutAndSave took 75 ms (total: 2.41 sec)
+[2024.01.20-22.24.37:058][293]AssetCheck: New page: Asset Save: NA_Jump
+[2024.01.20-22.24.37:058][293]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/NA_Jump.NA_Jump
+[2024.01.20-22.24.59:143][293]LogSlate: Took 0.000748 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensedItalic.ttf' (160K)
+[2024.01.20-22.25.03:688][634]BlueprintLog: New page: Compile BP_MyNavLink
+[2024.01.20-22.25.03:910][634]LogUObjectHash: Compacting FUObjectHashTables data took   1.76ms
+[2024.01.20-22.25.04:352][661]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.25.04:410][661]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_MyNavLink" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset" SILENT=true
+[2024.01.20-22.25.04:433][661]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_MyNavLink
+[2024.01.20-22.25.04:433][661]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_MyNavLink8265D3AF425E545A2213C0AF4E7FB7BD.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset'
+[2024.01.20-22.25.04:443][661]LogFileHelpers: InternalPromptForCheckoutAndSave took 89 ms (total: 2.50 sec)
+[2024.01.20-22.25.04:451][661]AssetCheck: New page: Asset Save: BP_MyNavLink
+[2024.01.20-22.25.04:451][661]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink
+[2024.01.20-22.25.21:107][983]BlueprintLog: New page: Compile BP_NavLinkGenerator
+[2024.01.20-22.25.21:205][983]LogUObjectHash: Compacting FUObjectHashTables data took   1.67ms
+[2024.01.20-22.25.21:777][ 19]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.25.21:843][ 19]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_NavLinkGenerator" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_NavLinkGenerator.uasset" SILENT=true
+[2024.01.20-22.25.21:869][ 19]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_NavLinkGenerator
+[2024.01.20-22.25.21:869][ 19]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_NavLinkGenerator38BFD0684B6AE26C885F9DAEDC4E69EA.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_NavLinkGenerator.uasset'
+[2024.01.20-22.25.21:879][ 19]LogFileHelpers: InternalPromptForCheckoutAndSave took 100 ms (total: 2.60 sec)
+[2024.01.20-22.25.21:887][ 19]AssetCheck: New page: Asset Save: BP_NavLinkGenerator
+[2024.01.20-22.25.21:888][ 19]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_NavLinkGenerator.BP_NavLinkGenerator
+[2024.01.20-22.26.16:892][672]BlueprintLog: New page: Compile BP_MyNavLink
+[2024.01.20-22.26.17:035][672]LogUObjectHash: Compacting FUObjectHashTables data took   1.79ms
+[2024.01.20-22.26.17:492][714]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.26.17:553][714]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_MyNavLink" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset" SILENT=true
+[2024.01.20-22.26.17:578][714]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_MyNavLink
+[2024.01.20-22.26.17:578][714]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_MyNavLink8310FAF84FF02E1A8481A3BA4E45D66E.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset'
+[2024.01.20-22.26.17:592][714]LogFileHelpers: InternalPromptForCheckoutAndSave took 98 ms (total: 2.70 sec)
+[2024.01.20-22.26.17:601][714]AssetCheck: New page: Asset Save: BP_MyNavLink
+[2024.01.20-22.26.17:601][714]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink
+[2024.01.20-22.26.40:647][329]BlueprintLog: New page: Compile BP_MyNavLink
+[2024.01.20-22.26.40:889][329]LogUObjectHash: Compacting FUObjectHashTables data took   1.69ms
+[2024.01.20-22.26.41:681][395]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.26.41:742][395]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_MyNavLink" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset" SILENT=true
+[2024.01.20-22.26.41:766][395]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_MyNavLink
+[2024.01.20-22.26.41:767][395]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_MyNavLink98196EF24B963E75813577B2FCF29CC1.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset'
+[2024.01.20-22.26.41:779][395]LogFileHelpers: InternalPromptForCheckoutAndSave took 97 ms (total: 2.80 sec)
+[2024.01.20-22.26.41:786][395]AssetCheck: New page: Asset Save: BP_MyNavLink
+[2024.01.20-22.26.41:786][395]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink
+[2024.01.20-22.26.45:684][645]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.20-22.26.45:691][645]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.20-22.26.45:695][645]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.20-22.26.45:695][645]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.20-22.26.45:695][645]LogWorldPartition: Display: GetPartitionedActors took 65 us (total: 772 us)
+[2024.01.20-22.26.45:696][645]LogWorldPartition: Display: GenerateStreaming took 536 us (total: 5 ms)
+[2024.01.20-22.26.45:696][645]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.20-22.26.45:696][645]PIE: New page: PIE session: TopDownMap (20 Jan 2024, 22:26:45)
+[2024.01.20-22.26.45:696][645]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.26.45:707][645]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010477s)
+[2024.01.20-22.26.45:707][645]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.010721s)
+[2024.01.20-22.26.45:707][645]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.20-22.26.45:707][645]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.20-22.26.45:708][645]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.20-22.26.45:709][645]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.20-22.26.45:709][645]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.20-22.26.45:709][645]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.20-22.26.45:712][645]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.20-22.26.45:712][645]LogWorldPartition: Display: WorldPartition initialize took 2 ms (total: 639 ms)
+[2024.01.20-22.26.45:712][645]LogPlayLevel: PIE: World Init took: (0.004414s)
+[2024.01.20-22.26.45:744][645]LogUObjectHash: Compacting FUObjectHashTables data took   1.59ms
+[2024.01.20-22.26.45:748][645]LogAudio: Display: Creating Audio Device:                 Id: 10, Scope: Unique, Realtime: True
+[2024.01.20-22.26.45:748][645]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.20-22.26.45:748][645]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.20-22.26.45:748][645]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.20-22.26.45:748][645]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.20-22.26.45:748][645]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.20-22.26.45:749][645]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.20-22.26.45:749][645]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.20-22.26.45:749][645]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.20-22.26.45:749][645]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.20-22.26.45:749][645]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.20-22.26.45:749][645]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.20-22.26.45:753][645]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.20-22.26.45:797][645]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.20-22.26.45:797][645]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.20-22.26.45:797][645]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.20-22.26.45:797][645]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.20-22.26.45:798][645]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=10
+[2024.01.20-22.26.45:798][645]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=10
+[2024.01.20-22.26.45:803][645]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=10
+[2024.01.20-22.26.45:803][645]LogInit: FAudioDevice initialized with ID 10.
+[2024.01.20-22.26.45:803][645]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=10
+[2024.01.20-22.26.45:803][645]LogAudio: Display: Audio Device (ID: 10) registered with world 'TopDownMap'.
+[2024.01.20-22.26.45:803][645]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 10
+[2024.01.20-22.26.45:807][645]LogLoad: Game class is 'FYPGameMode'
+[2024.01.20-22.26.45:810][645]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.20-22.26.45
+[2024.01.20-22.26.45:810][645]LogWorld: Bringing up level for play took: 0.002325
+[2024.01.20-22.26.45:816][645]LogOnline: OSS: Created online subsystem instance for: :Context_17
+[2024.01.20-22.26.45:824][645]PIE: Server logged in
+[2024.01.20-22.26.45:826][645]PIE: Play in editor total start time 0.135 seconds.
+[2024.01.20-22.26.45:867][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:868][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:869][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:869][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:870][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:871][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:871][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:872][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:872][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:873][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:874][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:874][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:875][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:876][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:876][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:877][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:878][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:878][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:879][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:880][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:881][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:882][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:883][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:883][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:884][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:884][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:885][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:886][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:891][645]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:982][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:982][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:983][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:984][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:984][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:985][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:986][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:986][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:987][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:988][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:988][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:989][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:990][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:990][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:991][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:992][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:992][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:993][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:994][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:994][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:995][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:996][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:997][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:997][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:998][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.45:999][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.46:000][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.46:001][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.46:007][646]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.55:022][332]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.26.55:022][332]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.26.55:022][332]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.26.55:023][332]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.26.55:023][332]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.20-22.26.55:029][332]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.20-22.26.55:036][332]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.26.55:072][332]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.01.20-22.26.55:072][332]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 10
+[2024.01.20-22.26.55:072][332]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=10
+[2024.01.20-22.26.55:074][332]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=10
+[2024.01.20-22.26.55:080][332]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.26.55:085][332]LogUObjectHash: Compacting FUObjectHashTables data took   1.73ms
+[2024.01.20-22.26.55:122][332]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.55:132][332]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.55:148][333]LogPlayLevel: Display: Destroying online subsystem :Context_17
+[2024.01.20-22.26.55:191][333]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.26.55:200][333]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.08:117][309]BlueprintLog: New page: Compile BP_MyNavLink
+[2024.01.20-22.27.08:317][309]LogUObjectHash: Compacting FUObjectHashTables data took   1.78ms
+[2024.01.20-22.27.08:734][335]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.27.08:786][335]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_MyNavLink" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset" SILENT=true
+[2024.01.20-22.27.08:810][335]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_MyNavLink
+[2024.01.20-22.27.08:811][335]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_MyNavLinkDB482934486E4D71EA5C538645F8C89C.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset'
+[2024.01.20-22.27.08:822][335]LogFileHelpers: InternalPromptForCheckoutAndSave took 87 ms (total: 2.88 sec)
+[2024.01.20-22.27.08:830][335]AssetCheck: New page: Asset Save: BP_MyNavLink
+[2024.01.20-22.27.08:830][335]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink
+[2024.01.20-22.27.10:845][463]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.20-22.27.10:853][463]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.20-22.27.10:857][463]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.20-22.27.10:857][463]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.20-22.27.10:857][463]LogWorldPartition: Display: GetPartitionedActors took 65 us (total: 838 us)
+[2024.01.20-22.27.10:858][463]LogWorldPartition: Display: GenerateStreaming took 558 us (total: 5 ms)
+[2024.01.20-22.27.10:858][463]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.20-22.27.10:858][463]PIE: New page: PIE session: TopDownMap (20 Jan 2024, 22:27:10)
+[2024.01.20-22.27.10:858][463]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.27.10:869][463]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010259s)
+[2024.01.20-22.27.10:869][463]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.010487s)
+[2024.01.20-22.27.10:869][463]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.20-22.27.10:869][463]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.20-22.27.10:870][463]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.20-22.27.10:870][463]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.20-22.27.10:871][463]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.20-22.27.10:871][463]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.20-22.27.10:873][463]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.20-22.27.10:873][463]LogWorldPartition: Display: WorldPartition initialize took 2 ms (total: 641 ms)
+[2024.01.20-22.27.10:873][463]LogPlayLevel: PIE: World Init took: (0.004456s)
+[2024.01.20-22.27.10:904][463]LogUObjectHash: Compacting FUObjectHashTables data took   1.65ms
+[2024.01.20-22.27.10:908][463]LogAudio: Display: Creating Audio Device:                 Id: 11, Scope: Unique, Realtime: True
+[2024.01.20-22.27.10:908][463]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.20-22.27.10:908][463]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.20-22.27.10:908][463]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.20-22.27.10:908][463]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.20-22.27.10:908][463]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.20-22.27.10:909][463]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.20-22.27.10:909][463]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.20-22.27.10:909][463]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.20-22.27.10:909][463]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.20-22.27.10:909][463]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.20-22.27.10:909][463]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.20-22.27.10:913][463]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.20-22.27.10:955][463]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.20-22.27.10:955][463]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.20-22.27.10:955][463]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.20-22.27.10:956][463]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.20-22.27.10:957][463]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=11
+[2024.01.20-22.27.10:957][463]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=11
+[2024.01.20-22.27.10:961][463]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=11
+[2024.01.20-22.27.10:961][463]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=11
+[2024.01.20-22.27.10:961][463]LogInit: FAudioDevice initialized with ID 11.
+[2024.01.20-22.27.10:961][463]LogAudio: Display: Audio Device (ID: 11) registered with world 'TopDownMap'.
+[2024.01.20-22.27.10:961][463]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 11
+[2024.01.20-22.27.10:965][463]LogLoad: Game class is 'FYPGameMode'
+[2024.01.20-22.27.10:968][463]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.20-22.27.10
+[2024.01.20-22.27.10:968][463]LogWorld: Bringing up level for play took: 0.002691
+[2024.01.20-22.27.10:973][463]LogOnline: OSS: Created online subsystem instance for: :Context_18
+[2024.01.20-22.27.10:981][463]PIE: Server logged in
+[2024.01.20-22.27.10:983][463]PIE: Play in editor total start time 0.13 seconds.
+[2024.01.20-22.27.11:024][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:025][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:026][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:027][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:027][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:028][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:029][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:030][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:031][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:032][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:032][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:033][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:034][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:035][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:036][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:036][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:037][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:038][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:039][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:039][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:040][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:041][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:042][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:042][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:043][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:043][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:044][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:045][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:050][463]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:066][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:066][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:067][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:068][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:069][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:070][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:071][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:072][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:073][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:073][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:074][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:075][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:076][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:077][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:077][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:078][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:079][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:080][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:081][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:082][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:083][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:083][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:084][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:085][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:085][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:086][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:086][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:087][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.11:092][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.15:353][782]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.27.15:353][782]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.27.15:353][782]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.27.15:354][782]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.27.15:354][782]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.20-22.27.15:360][782]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.20-22.27.15:366][782]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.27.15:404][782]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.01.20-22.27.15:405][782]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 11
+[2024.01.20-22.27.15:406][782]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=11
+[2024.01.20-22.27.15:408][782]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=11
+[2024.01.20-22.27.15:413][782]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.27.15:417][782]LogUObjectHash: Compacting FUObjectHashTables data took   1.84ms
+[2024.01.20-22.27.15:455][782]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.15:464][782]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.15:478][783]LogPlayLevel: Display: Destroying online subsystem :Context_18
+[2024.01.20-22.27.15:522][783]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.15:531][783]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.21:370][250]BlueprintLog: New page: Compile BP_MyNavLink
+[2024.01.20-22.27.21:501][250]LogUObjectHash: Compacting FUObjectHashTables data took   1.95ms
+[2024.01.20-22.27.21:965][281]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.27.22:031][281]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_MyNavLink" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset" SILENT=true
+[2024.01.20-22.27.22:056][281]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_MyNavLink
+[2024.01.20-22.27.22:056][281]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_MyNavLink620C326C44214F5C43568B997FF2AB3B.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset'
+[2024.01.20-22.27.22:067][281]LogFileHelpers: InternalPromptForCheckoutAndSave took 101 ms (total: 2.99 sec)
+[2024.01.20-22.27.22:075][281]AssetCheck: New page: Asset Save: BP_MyNavLink
+[2024.01.20-22.27.22:076][281]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink
+[2024.01.20-22.27.27:006][586]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.20-22.27.27:014][586]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.20-22.27.27:018][586]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.20-22.27.27:018][586]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.20-22.27.27:018][586]LogWorldPartition: Display: GetPartitionedActors took 93 us (total: 931 us)
+[2024.01.20-22.27.27:018][586]LogWorldPartition: Display: GenerateStreaming took 577 us (total: 6 ms)
+[2024.01.20-22.27.27:019][586]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.20-22.27.27:019][586]PIE: New page: PIE session: TopDownMap (20 Jan 2024, 22:27:27)
+[2024.01.20-22.27.27:019][586]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.27.27:029][586]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010295s)
+[2024.01.20-22.27.27:029][586]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.010532s)
+[2024.01.20-22.27.27:030][586]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.20-22.27.27:030][586]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.20-22.27.27:031][586]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.20-22.27.27:032][586]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.20-22.27.27:032][586]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.20-22.27.27:032][586]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.20-22.27.27:034][586]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.20-22.27.27:035][586]LogWorldPartition: Display: WorldPartition initialize took 2 ms (total: 644 ms)
+[2024.01.20-22.27.27:035][586]LogPlayLevel: PIE: World Init took: (0.004848s)
+[2024.01.20-22.27.27:066][586]LogUObjectHash: Compacting FUObjectHashTables data took   1.60ms
+[2024.01.20-22.27.27:070][586]LogAudio: Display: Creating Audio Device:                 Id: 12, Scope: Unique, Realtime: True
+[2024.01.20-22.27.27:070][586]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.20-22.27.27:070][586]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.20-22.27.27:070][586]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.20-22.27.27:070][586]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.20-22.27.27:070][586]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.20-22.27.27:070][586]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.20-22.27.27:070][586]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.20-22.27.27:070][586]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.20-22.27.27:071][586]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.20-22.27.27:071][586]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.20-22.27.27:071][586]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.20-22.27.27:075][586]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.20-22.27.27:116][586]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.20-22.27.27:117][586]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.20-22.27.27:117][586]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.20-22.27.27:117][586]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.20-22.27.27:120][586]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=12
+[2024.01.20-22.27.27:120][586]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=12
+[2024.01.20-22.27.27:123][586]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=12
+[2024.01.20-22.27.27:124][586]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=12
+[2024.01.20-22.27.27:124][586]LogInit: FAudioDevice initialized with ID 12.
+[2024.01.20-22.27.27:124][586]LogAudio: Display: Audio Device (ID: 12) registered with world 'TopDownMap'.
+[2024.01.20-22.27.27:124][586]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 12
+[2024.01.20-22.27.27:129][586]LogLoad: Game class is 'FYPGameMode'
+[2024.01.20-22.27.27:131][586]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.20-22.27.27
+[2024.01.20-22.27.27:131][586]LogWorld: Bringing up level for play took: 0.002274
+[2024.01.20-22.27.27:136][586]LogOnline: OSS: Created online subsystem instance for: :Context_19
+[2024.01.20-22.27.27:145][586]PIE: Server logged in
+[2024.01.20-22.27.27:147][586]PIE: Play in editor total start time 0.133 seconds.
+[2024.01.20-22.27.27:189][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:190][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:191][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:192][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:192][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:192][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:193][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:193][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:194][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:195][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:195][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:196][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:197][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:197][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:198][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:199][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:199][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:200][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:201][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:202][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:202][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:203][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:204][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:204][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:205][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:206][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:207][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:207][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:213][586]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:230][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:231][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:232][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:232][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:233][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:234][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:235][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:236][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:237][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:237][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:238][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:238][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:239][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:240][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:240][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:241][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:242][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:242][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:243][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:244][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:245][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:245][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:246][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:247][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:248][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:248][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:249][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:250][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.27:255][587]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.30:463][832]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.20-22.27.30:463][832]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_0
+[2024.01.20-22.27.32:803][ 15]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.20-22.27.32:803][ 15]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_1
+[2024.01.20-22.27.33:879][100]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.20-22.27.33:879][100]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_2
+[2024.01.20-22.27.36:852][329]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.27.36:853][329]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.27.36:853][329]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.27.36:853][329]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.27.36:854][329]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.20-22.27.36:860][329]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.20-22.27.36:867][329]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.27.36:907][329]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.01.20-22.27.36:907][329]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 12
+[2024.01.20-22.27.36:907][329]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=12
+[2024.01.20-22.27.36:910][329]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=12
+[2024.01.20-22.27.36:916][329]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.27.36:920][329]LogUObjectHash: Compacting FUObjectHashTables data took   1.72ms
+[2024.01.20-22.27.36:958][329]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.36:967][329]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.36:982][330]LogPlayLevel: Display: Destroying online subsystem :Context_19
+[2024.01.20-22.27.37:026][330]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.27.37:035][330]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.28.22:141][962]LogEditorTransaction: Undo Create Pin Link
+[2024.01.20-22.28.23:424][ 52]LogEditorTransaction: Undo Create Pin Link
+[2024.01.20-22.28.57:581][247]BlueprintLog: New page: Compile BP_NavLinkGenerator
+[2024.01.20-22.28.57:681][247]LogUObjectHash: Compacting FUObjectHashTables data took   2.03ms
+[2024.01.20-22.28.58:165][279]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.28.58:230][279]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_NavLinkGenerator" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_NavLinkGenerator.uasset" SILENT=true
+[2024.01.20-22.28.58:257][279]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_NavLinkGenerator
+[2024.01.20-22.28.58:257][279]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_NavLinkGenerator05D34FC04FEB6401310331948F4490FD.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_NavLinkGenerator.uasset'
+[2024.01.20-22.28.58:269][279]LogFileHelpers: InternalPromptForCheckoutAndSave took 104 ms (total: 3.09 sec)
+[2024.01.20-22.28.58:278][279]AssetCheck: New page: Asset Save: BP_NavLinkGenerator
+[2024.01.20-22.28.58:278][279]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_NavLinkGenerator.BP_NavLinkGenerator
+[2024.01.20-22.28.58:541][300]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.28.58:550][300]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.29.47:409][ 94]BlueprintLog: New page: Compile BP_MyNavLink
+[2024.01.20-22.29.47:573][ 94]LogUObjectHash: Compacting FUObjectHashTables data took   1.72ms
+[2024.01.20-22.29.48:047][137]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.29.48:110][137]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_MyNavLink" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset" SILENT=true
+[2024.01.20-22.29.48:134][137]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_MyNavLink
+[2024.01.20-22.29.48:135][137]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_MyNavLink97CEE2AE4E63B410A81D378E1A1D9065.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset'
+[2024.01.20-22.29.48:146][137]LogFileHelpers: InternalPromptForCheckoutAndSave took 98 ms (total: 3.19 sec)
+[2024.01.20-22.29.48:153][137]AssetCheck: New page: Asset Save: BP_MyNavLink
+[2024.01.20-22.29.48:153][137]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink
+[2024.01.20-22.29.50:548][302]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.30.01:252][188]BlueprintLog: New page: Compile BP_NavLinkGenerator
+[2024.01.20-22.30.01:359][188]LogUObjectHash: Compacting FUObjectHashTables data took   1.68ms
+[2024.01.20-22.30.01:944][227]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.30.02:011][227]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_NavLinkGenerator" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_NavLinkGenerator.uasset" SILENT=true
+[2024.01.20-22.30.02:037][227]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_NavLinkGenerator
+[2024.01.20-22.30.02:038][227]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_NavLinkGeneratorD0AFC50246EBB2DEA9784897DD10B13F.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_NavLinkGenerator.uasset'
+[2024.01.20-22.30.02:050][227]LogFileHelpers: InternalPromptForCheckoutAndSave took 105 ms (total: 3.30 sec)
+[2024.01.20-22.30.02:058][227]AssetCheck: New page: Asset Save: BP_NavLinkGenerator
+[2024.01.20-22.30.02:058][227]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_NavLinkGenerator.BP_NavLinkGenerator
+[2024.01.20-22.30.02:573][279]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.31.45:163][729]BlueprintLog: New page: Compile BP_MyNavLink
+[2024.01.20-22.31.45:339][729]LogUObjectHash: Compacting FUObjectHashTables data took   2.49ms
+[2024.01.20-22.31.46:185][788]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.31.46:247][788]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/TopDown/Blueprints/BP_MyNavLink" FILE="../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset" SILENT=true
+[2024.01.20-22.31.46:271][788]LogSavePackage: Moving output files for package: /Game/TopDown/Blueprints/BP_MyNavLink
+[2024.01.20-22.31.46:272][788]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BP_MyNavLinkE199E18648689275FC22D0BCD343FBBA.tmp' to '../../../../GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_MyNavLink.uasset'
+[2024.01.20-22.31.46:281][788]LogFileHelpers: InternalPromptForCheckoutAndSave took 96 ms (total: 3.39 sec)
+[2024.01.20-22.31.46:291][788]AssetCheck: New page: Asset Save: BP_MyNavLink
+[2024.01.20-22.31.46:291][788]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink
+[2024.01.20-22.34.32:400][499]LogUObjectHash: Compacting FUObjectHashTables data took   1.68ms
+[2024.01.20-22.34.32:405][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/L3/6UWKC5F8SQ59U22JMLMU95_Auto1
+[2024.01.20-22.34.32:406][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/6UWKC5F8SQ59U22JMLMU95_Auto1FF659EC148237335C7B649B8CF05E4CD.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/L3/6UWKC5F8SQ59U22JMLMU95_Auto1.uasset'
+[2024.01.20-22.34.32:409][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/MO/5JAMNY3M02AGM7SWYJC3XG_Auto1
+[2024.01.20-22.34.32:409][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/5JAMNY3M02AGM7SWYJC3XG_Auto1C2FFBF754DB3DA35EF2B28A49594A2F6.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/MO/5JAMNY3M02AGM7SWYJC3XG_Auto1.uasset'
+[2024.01.20-22.34.32:414][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/SB/BIBYV5HNWBC39MEUPJHTHK_Auto1
+[2024.01.20-22.34.32:414][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BIBYV5HNWBC39MEUPJHTHK_Auto1C1616EE84CE60719A6D93AAECC11F45A.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/SB/BIBYV5HNWBC39MEUPJHTHK_Auto1.uasset'
+[2024.01.20-22.34.32:417][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/YC/LWPR6O73EE5ZWAO7N1O420_Auto1
+[2024.01.20-22.34.32:417][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/LWPR6O73EE5ZWAO7N1O420_Auto14F56A6F24CEAB78512530389BF40B3EC.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/YC/LWPR6O73EE5ZWAO7N1O420_Auto1.uasset'
+[2024.01.20-22.34.32:421][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/NO/7INTLTIG4HZZX2RXDIQS2T_Auto1
+[2024.01.20-22.34.32:421][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/7INTLTIG4HZZX2RXDIQS2T_Auto11310C27A468E2F3490ABEDBF25544925.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/NO/7INTLTIG4HZZX2RXDIQS2T_Auto1.uasset'
+[2024.01.20-22.34.32:424][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/A1/Z2MZO56VAD16OY1MZPRYCR_Auto1
+[2024.01.20-22.34.32:424][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/Z2MZO56VAD16OY1MZPRYCR_Auto11AC8F5684BFD4B68B82216ADD2556871.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/A1/Z2MZO56VAD16OY1MZPRYCR_Auto1.uasset'
+[2024.01.20-22.34.32:428][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/9K/0B2KB23DBGVBBS4CBHDI5J_Auto1
+[2024.01.20-22.34.32:428][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/0B2KB23DBGVBBS4CBHDI5J_Auto130AB6DE1402FA3CEED152D95B892BDE1.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/9K/0B2KB23DBGVBBS4CBHDI5J_Auto1.uasset'
+[2024.01.20-22.34.32:431][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/F7/CZM2HH9IEPOSW06WNLPTBF_Auto1
+[2024.01.20-22.34.32:432][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/CZM2HH9IEPOSW06WNLPTBF_Auto11C32F2DD4E6591AB2D92D8AA05F664E5.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/F7/CZM2HH9IEPOSW06WNLPTBF_Auto1.uasset'
+[2024.01.20-22.34.32:435][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/D4/F0H6I8FN2I9557CSBAJAB1_Auto1
+[2024.01.20-22.34.32:435][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/F0H6I8FN2I9557CSBAJAB1_Auto1819BF2454487E50FA9702193740A7AD5.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/D4/F0H6I8FN2I9557CSBAJAB1_Auto1.uasset'
+[2024.01.20-22.34.32:439][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/MT/K1BU2SVBB7NF4A6EYF6FFH_Auto1
+[2024.01.20-22.34.32:439][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/K1BU2SVBB7NF4A6EYF6FFH_Auto14B90488447C45E4C4D5CE58730C0EC8C.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/MT/K1BU2SVBB7NF4A6EYF6FFH_Auto1.uasset'
+[2024.01.20-22.34.32:443][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/BK/VQN4SL00TAFN08FITYSOHB_Auto1
+[2024.01.20-22.34.32:443][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/VQN4SL00TAFN08FITYSOHB_Auto171FA7F45461A675D12190A8DE6F09DAA.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/BK/VQN4SL00TAFN08FITYSOHB_Auto1.uasset'
+[2024.01.20-22.34.32:447][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/ES/TDIQIQ2PH5W8TQY5B22X01_Auto1
+[2024.01.20-22.34.32:447][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/TDIQIQ2PH5W8TQY5B22X01_Auto138E4273D4283510AD792B18A1B01FB76.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/ES/TDIQIQ2PH5W8TQY5B22X01_Auto1.uasset'
+[2024.01.20-22.34.32:450][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/3H/WYQWT4GKR1FTTM32NROFJN_Auto1
+[2024.01.20-22.34.32:450][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/WYQWT4GKR1FTTM32NROFJN_Auto1D7337264476AA84FA43FC6988E584FF5.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/3H/WYQWT4GKR1FTTM32NROFJN_Auto1.uasset'
+[2024.01.20-22.34.32:454][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/AA/4BWV7RSQGTX9EGZHDUFY0Y_Auto1
+[2024.01.20-22.34.32:454][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/4BWV7RSQGTX9EGZHDUFY0Y_Auto1306287B548B2037E944FFBA0593F9624.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/AA/4BWV7RSQGTX9EGZHDUFY0Y_Auto1.uasset'
+[2024.01.20-22.34.32:458][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/WD/EX7LQ91ZFXCZ88FZMVAMGX_Auto1
+[2024.01.20-22.34.32:458][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/EX7LQ91ZFXCZ88FZMVAMGX_Auto1A4A4024442C717646CE8EE9BC9843647.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/WD/EX7LQ91ZFXCZ88FZMVAMGX_Auto1.uasset'
+[2024.01.20-22.34.32:461][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/U5/YMZ7F6UW4C9KKVKLW9XC60_Auto1
+[2024.01.20-22.34.32:462][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/YMZ7F6UW4C9KKVKLW9XC60_Auto11EDEDA544ECD9A91A11ED4A9B1690C57.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/U5/YMZ7F6UW4C9KKVKLW9XC60_Auto1.uasset'
+[2024.01.20-22.34.32:465][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/KF/I0WDHKGL0M93AJCX55S9ZG_Auto1
+[2024.01.20-22.34.32:465][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/I0WDHKGL0M93AJCX55S9ZG_Auto123D765834029367B5D6CCDBC7EBA4AD2.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/KF/I0WDHKGL0M93AJCX55S9ZG_Auto1.uasset'
+[2024.01.20-22.34.32:468][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/K7/B7E6A2BWVNRY0DDRCVJX7Z_Auto1
+[2024.01.20-22.34.32:468][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/B7E6A2BWVNRY0DDRCVJX7Z_Auto1CEA5249946E2E8572C0328A300C4F5ED.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/K7/B7E6A2BWVNRY0DDRCVJX7Z_Auto1.uasset'
+[2024.01.20-22.34.32:472][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/E/1G/JNPBMGM81Q2W3DDH6UYC4T_Auto1
+[2024.01.20-22.34.32:472][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/JNPBMGM81Q2W3DDH6UYC4T_Auto1D25E54134177FC293F6C34A658A05422.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/E/1G/JNPBMGM81Q2W3DDH6UYC4T_Auto1.uasset'
+[2024.01.20-22.34.32:475][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/ND/L7818UG043K3U27TZ69HRW_Auto1
+[2024.01.20-22.34.32:476][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/L7818UG043K3U27TZ69HRW_Auto11F01DDCD432A9D84FF0AE0A99291D172.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/ND/L7818UG043K3U27TZ69HRW_Auto1.uasset'
+[2024.01.20-22.34.32:479][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/0/WU/CD46N7MCP88BDJ5BVF7QUY_Auto1
+[2024.01.20-22.34.32:479][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/CD46N7MCP88BDJ5BVF7QUY_Auto1FE81478042CD65785C79159F4436417A.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/0/WU/CD46N7MCP88BDJ5BVF7QUY_Auto1.uasset'
+[2024.01.20-22.34.32:482][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/GY/XIEXPU0X4EHDO8L2J217J0_Auto1
+[2024.01.20-22.34.32:483][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/XIEXPU0X4EHDO8L2J217J0_Auto1112ADB0B451C17D241EE93B1FDF592BF.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/GY/XIEXPU0X4EHDO8L2J217J0_Auto1.uasset'
+[2024.01.20-22.34.32:486][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/RJ/46UOJ4EFMEN211VUU5RCQC_Auto1
+[2024.01.20-22.34.32:486][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/46UOJ4EFMEN211VUU5RCQC_Auto1CEAF165A4558CAB7BA76338914371BAD.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/RJ/46UOJ4EFMEN211VUU5RCQC_Auto1.uasset'
+[2024.01.20-22.34.32:489][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/23/B1YGWG61IBLI1YIS4KTBEP_Auto1
+[2024.01.20-22.34.32:490][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/B1YGWG61IBLI1YIS4KTBEP_Auto1F5BF3FC54A7BEFE987E8B0BDF3E13362.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/23/B1YGWG61IBLI1YIS4KTBEP_Auto1.uasset'
+[2024.01.20-22.34.32:493][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/JW/84BR3XBHQJ78NZMO3BT6YC_Auto1
+[2024.01.20-22.34.32:493][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/84BR3XBHQJ78NZMO3BT6YC_Auto15FF00B69499891AB7AE5B5BD0066C8D0.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/JW/84BR3XBHQJ78NZMO3BT6YC_Auto1.uasset'
+[2024.01.20-22.34.32:496][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/5S/T11YVKDD0WNEH5QXB9GTGO_Auto1
+[2024.01.20-22.34.32:497][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/T11YVKDD0WNEH5QXB9GTGO_Auto1F4BBF9ED4F756D4219D627B077617BDD.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/5S/T11YVKDD0WNEH5QXB9GTGO_Auto1.uasset'
+[2024.01.20-22.34.32:500][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/B6/6EGRPRHNI4FNHOP2UZEYDL_Auto1
+[2024.01.20-22.34.32:500][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/6EGRPRHNI4FNHOP2UZEYDL_Auto1BDDD652F448ACB71BAE47CA0A3F50615.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/B6/6EGRPRHNI4FNHOP2UZEYDL_Auto1.uasset'
+[2024.01.20-22.34.32:504][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/RU/LKKRMT6MSX7I4ZXM93N7WZ_Auto1
+[2024.01.20-22.34.32:504][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/LKKRMT6MSX7I4ZXM93N7WZ_Auto16813AF8A4CDA3B47DF53CBB75220BDAC.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/RU/LKKRMT6MSX7I4ZXM93N7WZ_Auto1.uasset'
+[2024.01.20-22.34.32:507][499]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/1P/JJ4PXB6Q2TXFXDQOE64UE5_Auto1
+[2024.01.20-22.34.32:508][499]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/JJ4PXB6Q2TXFXDQOE64UE5_Auto18371B7364DCFC63C623C049E79FE2FFF.tmp' to '../../../../GitHub/FYP/FYP/Saved/Autosaves/Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/1P/JJ4PXB6Q2TXFXDQOE64UE5_Auto1.uasset'
+[2024.01.20-22.34.32:509][499]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.145
+[2024.01.20-22.34.32:509][499]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.145
+[2024.01.20-22.43.43:489][484]LogUObjectHash: Compacting FUObjectHashTables data took   0.92ms
+[2024.01.20-22.43.43:501][484]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.43.43:609][484]LogUObjectHash: Compacting FUObjectHashTables data took   0.76ms
+[2024.01.20-22.43.43:642][484]LogUObjectHash: Compacting FUObjectHashTables data took   0.75ms
+[2024.01.20-22.43.43:678][484]LogUObjectHash: Compacting FUObjectHashTables data took   0.74ms
+[2024.01.20-22.43.43:695][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/L3/6UWKC5F8SQ59U22JMLMU95
+[2024.01.20-22.43.43:696][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/6UWKC5F8SQ59U22JMLMU9523EFDAF347AC579BD699E39046DC83D8.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/L3/6UWKC5F8SQ59U22JMLMU95.uasset'
+[2024.01.20-22.43.43:699][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/MO/5JAMNY3M02AGM7SWYJC3XG
+[2024.01.20-22.43.43:699][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/5JAMNY3M02AGM7SWYJC3XG74F45B214A5B5DA2C6A941B454C43DB1.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/1/MO/5JAMNY3M02AGM7SWYJC3XG.uasset'
+[2024.01.20-22.43.43:703][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/SB/BIBYV5HNWBC39MEUPJHTHK
+[2024.01.20-22.43.43:703][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BIBYV5HNWBC39MEUPJHTHKAA3F08A14150685BC7316B84472167EB.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/SB/BIBYV5HNWBC39MEUPJHTHK.uasset'
+[2024.01.20-22.43.43:707][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/YC/LWPR6O73EE5ZWAO7N1O420
+[2024.01.20-22.43.43:707][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/LWPR6O73EE5ZWAO7N1O42046E90FF8459D8826BD6363B7628C92AE.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/YC/LWPR6O73EE5ZWAO7N1O420.uasset'
+[2024.01.20-22.43.43:710][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/NO/7INTLTIG4HZZX2RXDIQS2T
+[2024.01.20-22.43.43:711][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/7INTLTIG4HZZX2RXDIQS2TC4E3C0AA4DD5A6F94D4E2BB10C668CCB.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/NO/7INTLTIG4HZZX2RXDIQS2T.uasset'
+[2024.01.20-22.43.43:714][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/A1/Z2MZO56VAD16OY1MZPRYCR
+[2024.01.20-22.43.43:714][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/Z2MZO56VAD16OY1MZPRYCR2478FB514512A3190CF64F929AA5A5B6.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/A1/Z2MZO56VAD16OY1MZPRYCR.uasset'
+[2024.01.20-22.43.43:718][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/9K/0B2KB23DBGVBBS4CBHDI5J
+[2024.01.20-22.43.43:718][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/0B2KB23DBGVBBS4CBHDI5J051BCD2A471382B46EA985B4A183F841.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/1/9K/0B2KB23DBGVBBS4CBHDI5J.uasset'
+[2024.01.20-22.43.43:722][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/F7/CZM2HH9IEPOSW06WNLPTBF
+[2024.01.20-22.43.43:722][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/CZM2HH9IEPOSW06WNLPTBF3DAABE034A7DF4BCBD3FCAA7A0654649.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/C/F7/CZM2HH9IEPOSW06WNLPTBF.uasset'
+[2024.01.20-22.43.43:726][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/D4/F0H6I8FN2I9557CSBAJAB1
+[2024.01.20-22.43.43:726][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/F0H6I8FN2I9557CSBAJAB13851D5A44B71A8617822B8958E558C43.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/D4/F0H6I8FN2I9557CSBAJAB1.uasset'
+[2024.01.20-22.43.43:730][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/MT/K1BU2SVBB7NF4A6EYF6FFH
+[2024.01.20-22.43.43:730][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/K1BU2SVBB7NF4A6EYF6FFH448AD4264F568F43EBA6BF97BD629528.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/MT/K1BU2SVBB7NF4A6EYF6FFH.uasset'
+[2024.01.20-22.43.43:733][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/BK/VQN4SL00TAFN08FITYSOHB
+[2024.01.20-22.43.43:734][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/VQN4SL00TAFN08FITYSOHB9A69BA2F448911D8683EEA97621A64E2.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/BK/VQN4SL00TAFN08FITYSOHB.uasset'
+[2024.01.20-22.43.43:737][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/ES/TDIQIQ2PH5W8TQY5B22X01
+[2024.01.20-22.43.43:737][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/TDIQIQ2PH5W8TQY5B22X01054183CF447F1F2AC5F4D0805E3829ED.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/ES/TDIQIQ2PH5W8TQY5B22X01.uasset'
+[2024.01.20-22.43.43:741][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/3H/WYQWT4GKR1FTTM32NROFJN
+[2024.01.20-22.43.43:741][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/WYQWT4GKR1FTTM32NROFJN65DB5E484FD02B679E5420AE8C19BCF8.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/3H/WYQWT4GKR1FTTM32NROFJN.uasset'
+[2024.01.20-22.43.43:744][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/AA/4BWV7RSQGTX9EGZHDUFY0Y
+[2024.01.20-22.43.43:744][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/4BWV7RSQGTX9EGZHDUFY0YD948CA7C41EC647969A9D2B43388A473.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/AA/4BWV7RSQGTX9EGZHDUFY0Y.uasset'
+[2024.01.20-22.43.43:748][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/WD/EX7LQ91ZFXCZ88FZMVAMGX
+[2024.01.20-22.43.43:748][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/EX7LQ91ZFXCZ88FZMVAMGX7A24952847F422BBF338E7AAFF1F08A9.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/WD/EX7LQ91ZFXCZ88FZMVAMGX.uasset'
+[2024.01.20-22.43.43:751][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/U5/YMZ7F6UW4C9KKVKLW9XC60
+[2024.01.20-22.43.43:752][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/YMZ7F6UW4C9KKVKLW9XC60AB0652AC45D764F2170DD9B83CBAF124.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/U5/YMZ7F6UW4C9KKVKLW9XC60.uasset'
+[2024.01.20-22.43.43:755][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/KF/I0WDHKGL0M93AJCX55S9ZG
+[2024.01.20-22.43.43:755][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/I0WDHKGL0M93AJCX55S9ZG72F8709543F69BE1FF36129448902E91.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/KF/I0WDHKGL0M93AJCX55S9ZG.uasset'
+[2024.01.20-22.43.43:759][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/K7/B7E6A2BWVNRY0DDRCVJX7Z
+[2024.01.20-22.43.43:759][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/B7E6A2BWVNRY0DDRCVJX7ZABBBDBD14F98ABF5CA2F20A4FC711D07.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/K7/B7E6A2BWVNRY0DDRCVJX7Z.uasset'
+[2024.01.20-22.43.43:765][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/E/1G/JNPBMGM81Q2W3DDH6UYC4T
+[2024.01.20-22.43.43:765][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/JNPBMGM81Q2W3DDH6UYC4TC5A239E24088467C5C939CB9E4A24E0C.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/E/1G/JNPBMGM81Q2W3DDH6UYC4T.uasset'
+[2024.01.20-22.43.43:768][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/ND/L7818UG043K3U27TZ69HRW
+[2024.01.20-22.43.43:768][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/L7818UG043K3U27TZ69HRWBF6B88404CEAB42E87040CBF7AE4A03B.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/ND/L7818UG043K3U27TZ69HRW.uasset'
+[2024.01.20-22.43.43:772][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/0/WU/CD46N7MCP88BDJ5BVF7QUY
+[2024.01.20-22.43.43:772][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/CD46N7MCP88BDJ5BVF7QUYAD09806547337B8C869D698ABD506764.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/0/WU/CD46N7MCP88BDJ5BVF7QUY.uasset'
+[2024.01.20-22.43.43:776][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/GY/XIEXPU0X4EHDO8L2J217J0
+[2024.01.20-22.43.43:776][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/XIEXPU0X4EHDO8L2J217J0664CE16542AA3835F4C0728A91BB8676.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/C/GY/XIEXPU0X4EHDO8L2J217J0.uasset'
+[2024.01.20-22.43.43:780][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/RJ/46UOJ4EFMEN211VUU5RCQC
+[2024.01.20-22.43.43:780][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/46UOJ4EFMEN211VUU5RCQCDE9CB57A4C51CFF360C048BB6A66BA9E.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/RJ/46UOJ4EFMEN211VUU5RCQC.uasset'
+[2024.01.20-22.43.43:783][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/23/B1YGWG61IBLI1YIS4KTBEP
+[2024.01.20-22.43.43:784][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/B1YGWG61IBLI1YIS4KTBEPDCEE7C5F4E34187FF351EFB528D4913A.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/23/B1YGWG61IBLI1YIS4KTBEP.uasset'
+[2024.01.20-22.43.43:787][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/JW/84BR3XBHQJ78NZMO3BT6YC
+[2024.01.20-22.43.43:787][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/84BR3XBHQJ78NZMO3BT6YCFC4EB90740968B93A003B6842D053F46.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/JW/84BR3XBHQJ78NZMO3BT6YC.uasset'
+[2024.01.20-22.43.43:791][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/5S/T11YVKDD0WNEH5QXB9GTGO
+[2024.01.20-22.43.43:791][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/T11YVKDD0WNEH5QXB9GTGO9B0402BE4A741F68B6F92AAE88509D2A.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/8/5S/T11YVKDD0WNEH5QXB9GTGO.uasset'
+[2024.01.20-22.43.43:795][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/B6/6EGRPRHNI4FNHOP2UZEYDL
+[2024.01.20-22.43.43:795][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/6EGRPRHNI4FNHOP2UZEYDL9C28E5624EEAE131C88245911ACD8504.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/B6/6EGRPRHNI4FNHOP2UZEYDL.uasset'
+[2024.01.20-22.43.43:799][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/RU/LKKRMT6MSX7I4ZXM93N7WZ
+[2024.01.20-22.43.43:799][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/LKKRMT6MSX7I4ZXM93N7WZ5EBC8BED45A318396BFF6D80DFA2113E.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/RU/LKKRMT6MSX7I4ZXM93N7WZ.uasset'
+[2024.01.20-22.43.43:803][484]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/1P/JJ4PXB6Q2TXFXDQOE64UE5
+[2024.01.20-22.43.43:803][484]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/JJ4PXB6Q2TXFXDQOE64UE50BB6444A404025CA2563BB879BB883F1.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/1P/JJ4PXB6Q2TXFXDQOE64UE5.uasset'
+[2024.01.20-22.43.43:814][484]LogFileHelpers: InternalPromptForCheckoutAndSave took 313 ms (total: 3.70 sec)
+[2024.01.20-22.43.43:833][484]AssetCheck: New page: Asset Save: multiple assets
+[2024.01.20-22.43.43:833][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633634233
+[2024.01.20-22.43.43:833][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633630231
+[2024.01.20-22.43.43:833][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633627229
+[2024.01.20-22.43.43:833][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633623227
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633620225
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633616223
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633612221
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633608219
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633604217
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633600215
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633597213
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633593211
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633590209
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7DD101_1633582207
+[2024.01.20-22.43.43:834][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633636234
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633632232
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633628230
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633625228
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633621226
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633618224
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633613222
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633610220
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633606218
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633602216
+[2024.01.20-22.43.43:835][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633598214
+[2024.01.20-22.43.43:836][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633594212
+[2024.01.20-22.43.43:836][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633591210
+[2024.01.20-22.43.43:836][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7DD101_1633588208
+[2024.01.20-22.43.43:836][484]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_NavLinkGenerator.BP_NavLinkGenerator_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_NavLinkGenerator_C_UAID_B42E991F4C8D30C501_1461393988
+[2024.01.20-22.43.47:296][770]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.20-22.43.47:304][770]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.20-22.43.47:306][770]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.20-22.43.47:306][770]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.20-22.43.47:306][770]LogWorldPartition: Display: GetPartitionedActors took 69 us (total: 1 ms)
+[2024.01.20-22.43.47:307][770]LogWorldPartition: Display: GenerateStreaming took 529 us (total: 6 ms)
+[2024.01.20-22.43.47:307][770]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.20-22.43.47:307][770]PIE: New page: PIE session: TopDownMap (20 Jan 2024, 22:43:47)
+[2024.01.20-22.43.47:308][770]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.43.47:318][770]LogPlayLevel: PIE: StaticDuplicateObject took: (0.010199s)
+[2024.01.20-22.43.47:318][770]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.010429s)
+[2024.01.20-22.43.47:318][770]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.20-22.43.47:318][770]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.20-22.43.47:319][770]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.20-22.43.47:320][770]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.20-22.43.47:320][770]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.20-22.43.47:320][770]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.20-22.43.47:322][770]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.20-22.43.47:322][770]LogWorldPartition: Display: WorldPartition initialize took 2 ms (total: 647 ms)
+[2024.01.20-22.43.47:322][770]LogPlayLevel: PIE: World Init took: (0.004395s)
+[2024.01.20-22.43.47:357][770]LogUObjectHash: Compacting FUObjectHashTables data took   1.72ms
+[2024.01.20-22.43.47:359][770]LogAudio: Display: Creating Audio Device:                 Id: 13, Scope: Unique, Realtime: True
+[2024.01.20-22.43.47:359][770]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.20-22.43.47:359][770]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.20-22.43.47:359][770]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.20-22.43.47:359][770]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.20-22.43.47:359][770]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.20-22.43.47:360][770]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.20-22.43.47:360][770]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.20-22.43.47:360][770]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.20-22.43.47:360][770]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.20-22.43.47:360][770]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.20-22.43.47:360][770]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.20-22.43.47:364][770]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.20-22.43.47:409][770]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.20-22.43.47:410][770]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.20-22.43.47:410][770]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.20-22.43.47:410][770]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.20-22.43.47:410][770]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=13
+[2024.01.20-22.43.47:410][770]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=13
+[2024.01.20-22.43.47:415][770]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=13
+[2024.01.20-22.43.47:415][770]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=13
+[2024.01.20-22.43.47:415][770]LogInit: FAudioDevice initialized with ID 13.
+[2024.01.20-22.43.47:415][770]LogAudio: Display: Audio Device (ID: 13) registered with world 'TopDownMap'.
+[2024.01.20-22.43.47:415][770]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 13
+[2024.01.20-22.43.47:419][770]LogLoad: Game class is 'FYPGameMode'
+[2024.01.20-22.43.47:422][770]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.20-22.43.47
+[2024.01.20-22.43.47:422][770]LogWorld: Bringing up level for play took: 0.002637
+[2024.01.20-22.43.47:427][770]LogOnline: OSS: Created online subsystem instance for: :Context_20
+[2024.01.20-22.43.47:437][770]PIE: Server logged in
+[2024.01.20-22.43.47:439][770]PIE: Play in editor total start time 0.135 seconds.
+[2024.01.20-22.43.47:478][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:479][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:480][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:481][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:481][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:482][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:483][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:483][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:484][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:484][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:485][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:486][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:486][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:487][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:488][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:489][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:489][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:490][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:491][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:491][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:492][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:493][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:494][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:494][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:495][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:496][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:497][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:497][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:503][770]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:518][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:519][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:520][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:521][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:521][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:522][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:522][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:523][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:524][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:524][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:525][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:526][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:526][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:527][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:528][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:529][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:529][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:530][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:531][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:531][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:532][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:533][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:534][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:534][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:535][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:536][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:537][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:537][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.47:543][771]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.57:422][530]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.43.57:422][530]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.43.57:423][530]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.43.57:423][530]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.43.57:423][530]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.20-22.43.57:430][530]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.20-22.43.57:436][530]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.43.57:480][530]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.43.57:481][530]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 13
+[2024.01.20-22.43.57:481][530]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=13
+[2024.01.20-22.43.57:484][530]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=13
+[2024.01.20-22.43.57:494][530]LogUObjectHash: Compacting FUObjectHashTables data took   1.73ms
+[2024.01.20-22.43.57:532][530]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.57:541][530]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.57:556][531]LogPlayLevel: Display: Destroying online subsystem :Context_20
+[2024.01.20-22.43.57:625][531]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.43.57:635][531]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:226][750]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.20-22.44.01:234][750]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.20-22.44.01:238][750]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.20-22.44.01:238][750]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.20-22.44.01:238][750]LogWorldPartition: Display: GetPartitionedActors took 65 us (total: 1 ms)
+[2024.01.20-22.44.01:239][750]LogWorldPartition: Display: GenerateStreaming took 545 us (total: 7 ms)
+[2024.01.20-22.44.01:239][750]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.20-22.44.01:239][750]PIE: New page: PIE session: TopDownMap (20 Jan 2024, 22:44:01)
+[2024.01.20-22.44.01:239][750]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.44.01:251][750]LogPlayLevel: PIE: StaticDuplicateObject took: (0.011266s)
+[2024.01.20-22.44.01:251][750]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.011492s)
+[2024.01.20-22.44.01:251][750]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.20-22.44.01:251][750]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.20-22.44.01:252][750]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.20-22.44.01:253][750]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.20-22.44.01:253][750]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.20-22.44.01:253][750]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.20-22.44.01:255][750]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.20-22.44.01:256][750]LogWorldPartition: Display: WorldPartition initialize took 2 ms (total: 649 ms)
+[2024.01.20-22.44.01:256][750]LogPlayLevel: PIE: World Init took: (0.004522s)
+[2024.01.20-22.44.01:285][750]LogUObjectHash: Compacting FUObjectHashTables data took   1.58ms
+[2024.01.20-22.44.01:289][750]LogAudio: Display: Creating Audio Device:                 Id: 14, Scope: Unique, Realtime: True
+[2024.01.20-22.44.01:289][750]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.20-22.44.01:289][750]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.20-22.44.01:289][750]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.20-22.44.01:289][750]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.20-22.44.01:289][750]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.20-22.44.01:289][750]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.20-22.44.01:289][750]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.20-22.44.01:289][750]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.20-22.44.01:290][750]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.20-22.44.01:290][750]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.20-22.44.01:290][750]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.20-22.44.01:294][750]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.20-22.44.01:336][750]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.20-22.44.01:336][750]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.20-22.44.01:336][750]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.20-22.44.01:336][750]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.20-22.44.01:337][750]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=14
+[2024.01.20-22.44.01:337][750]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=14
+[2024.01.20-22.44.01:341][750]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=14
+[2024.01.20-22.44.01:341][750]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=14
+[2024.01.20-22.44.01:341][750]LogInit: FAudioDevice initialized with ID 14.
+[2024.01.20-22.44.01:341][750]LogAudio: Display: Audio Device (ID: 14) registered with world 'TopDownMap'.
+[2024.01.20-22.44.01:341][750]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 14
+[2024.01.20-22.44.01:346][750]LogLoad: Game class is 'FYPGameMode'
+[2024.01.20-22.44.01:348][750]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.20-22.44.01
+[2024.01.20-22.44.01:348][750]LogWorld: Bringing up level for play took: 0.002332
+[2024.01.20-22.44.01:352][750]LogOnline: OSS: Created online subsystem instance for: :Context_21
+[2024.01.20-22.44.01:362][750]PIE: Server logged in
+[2024.01.20-22.44.01:364][750]PIE: Play in editor total start time 0.13 seconds.
+[2024.01.20-22.44.01:403][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:403][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:404][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:404][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:405][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:406][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:406][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:407][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:408][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:408][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:409][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:409][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:410][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:411][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:411][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:412][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:413][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:413][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:414][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:415][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:416][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:416][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:417][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:418][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:419][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:420][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:420][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:421][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:427][750]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:444][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:444][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:445][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:446][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:447][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:447][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:448][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:449][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:449][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:450][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:451][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:452][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:452][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:453][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:454][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:454][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:455][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:456][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:456][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:457][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:458][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:459][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:459][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:460][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:461][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:462][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:462][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:462][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.01:468][751]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.04:528][985]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.20-22.44.04:528][985]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_0
+[2024.01.20-22.44.06:531][143]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.20-22.44.06:531][143]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_1
+[2024.01.20-22.44.08:313][276]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.20-22.44.08:313][276]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_2
+[2024.01.20-22.44.10:832][464]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.44.10:833][464]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.20-22.44.10:833][464]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.10:834][464]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.10:834][464]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.20-22.44.10:840][464]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.20-22.44.10:849][464]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.10:887][464]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.01.20-22.44.10:888][464]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 14
+[2024.01.20-22.44.10:888][464]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=14
+[2024.01.20-22.44.10:890][464]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=14
+[2024.01.20-22.44.10:897][464]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.20-22.44.10:901][464]LogUObjectHash: Compacting FUObjectHashTables data took   1.68ms
+[2024.01.20-22.44.10:941][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.10:951][464]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.10:965][465]LogPlayLevel: Display: Destroying online subsystem :Context_21
+[2024.01.20-22.44.11:010][465]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.11:019][465]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.20-22.44.12:747][574]LogUObjectHash: Compacting FUObjectHashTables data took   1.83ms
+[2024.01.20-22.44.12:760][574]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.20-22.44.12:873][574]LogUObjectHash: Compacting FUObjectHashTables data took   0.89ms
+[2024.01.20-22.44.12:909][574]LogUObjectHash: Compacting FUObjectHashTables data took   0.84ms
+[2024.01.20-22.44.12:944][574]LogUObjectHash: Compacting FUObjectHashTables data took   0.75ms
+[2024.01.20-22.44.12:958][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/WQ/SIQCXV09OLHB7PJD4ZCODA
+[2024.01.20-22.44.12:958][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/SIQCXV09OLHB7PJD4ZCODA8A505BAA4C5375344783B59659C4F27D.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/WQ/SIQCXV09OLHB7PJD4ZCODA.uasset'
+[2024.01.20-22.44.12:962][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/XC/J7OJNS4KW3M10HPNURXVFZ
+[2024.01.20-22.44.12:962][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/J7OJNS4KW3M10HPNURXVFZ3FE5BC3044E040262D47889478935562.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/XC/J7OJNS4KW3M10HPNURXVFZ.uasset'
+[2024.01.20-22.44.12:967][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/KJ/V9CK5FFMJ1IXS9GSM22L8U
+[2024.01.20-22.44.12:967][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/V9CK5FFMJ1IXS9GSM22L8U93D9A30748384CD04AA8269AD87ED3AB.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/KJ/V9CK5FFMJ1IXS9GSM22L8U.uasset'
+[2024.01.20-22.44.12:971][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/5J/DQJTQMCOQNRWLKYQZOQ4E5
+[2024.01.20-22.44.12:971][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/DQJTQMCOQNRWLKYQZOQ4E5DEBA69104A626B73553865BBED4A0CDA.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/5J/DQJTQMCOQNRWLKYQZOQ4E5.uasset'
+[2024.01.20-22.44.12:974][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/FJ/L7GWIMPGDOAZXC91HHTT89
+[2024.01.20-22.44.12:974][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/L7GWIMPGDOAZXC91HHTT89DA014A024343EC7E1E58FB82DD10B16D.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/FJ/L7GWIMPGDOAZXC91HHTT89.uasset'
+[2024.01.20-22.44.12:978][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/0Q/QBJZ5O7AKVMCEGN7HMEGB0
+[2024.01.20-22.44.12:978][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/QBJZ5O7AKVMCEGN7HMEGB0BCA630E14092E9A974442D86F59B5ED1.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/0Q/QBJZ5O7AKVMCEGN7HMEGB0.uasset'
+[2024.01.20-22.44.12:982][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/JV/MNPJW2E59G614DAWZXIKZY
+[2024.01.20-22.44.12:982][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/MNPJW2E59G614DAWZXIKZY637176A3420C43B8CCB5B98FFCB77149.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/JV/MNPJW2E59G614DAWZXIKZY.uasset'
+[2024.01.20-22.44.12:986][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/T6/B9OQ8S1ENBDYBZXI0ZSSGB
+[2024.01.20-22.44.12:987][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/B9OQ8S1ENBDYBZXI0ZSSGB651E124741E0E8C202E4B6A27353C2E3.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/T6/B9OQ8S1ENBDYBZXI0ZSSGB.uasset'
+[2024.01.20-22.44.12:990][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/YU/XRUWV76CQ5ODM17RTYB4IB
+[2024.01.20-22.44.12:990][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/XRUWV76CQ5ODM17RTYB4IBACC6D4FC49DC62A5F573E397E1A80762.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/YU/XRUWV76CQ5ODM17RTYB4IB.uasset'
+[2024.01.20-22.44.12:994][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/6/FA/VDJKVOOPCG26IRWYFBMVZB
+[2024.01.20-22.44.12:994][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/VDJKVOOPCG26IRWYFBMVZB42BD3A4E4E35E992F2A99DBBFAF58C10.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/6/FA/VDJKVOOPCG26IRWYFBMVZB.uasset'
+[2024.01.20-22.44.12:998][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/4U/AKFAGNBG6P9K5QOCOVFAYL
+[2024.01.20-22.44.12:998][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/AKFAGNBG6P9K5QOCOVFAYL6B21C2954C8A3E3C7E8AB4B81DB42C9D.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/4U/AKFAGNBG6P9K5QOCOVFAYL.uasset'
+[2024.01.20-22.44.13:002][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/6/7X/2J672MB1JZ643MBGP7Q2IL
+[2024.01.20-22.44.13:002][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/2J672MB1JZ643MBGP7Q2IL59AC02074B17824D1810938D7A063E5D.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/6/7X/2J672MB1JZ643MBGP7Q2IL.uasset'
+[2024.01.20-22.44.13:006][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/1A/1YQ2MJLGHTLVVC4KJ7SZ3T
+[2024.01.20-22.44.13:006][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/1YQ2MJLGHTLVVC4KJ7SZ3T55C024F7485A1F5B5FDCA0AEA100F1ED.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/1/1A/1YQ2MJLGHTLVVC4KJ7SZ3T.uasset'
+[2024.01.20-22.44.13:010][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/LH/CH5J38VH37YY0QURS1JF8I
+[2024.01.20-22.44.13:010][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/CH5J38VH37YY0QURS1JF8I39F0B93C403375A3B479B89C2E232E25.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/LH/CH5J38VH37YY0QURS1JF8I.uasset'
+[2024.01.20-22.44.13:013][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/OM/DHPR1QZGFQB4LWQ82BHXAW
+[2024.01.20-22.44.13:013][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/DHPR1QZGFQB4LWQ82BHXAW344D0F194F690F7C269E5BA90EBD2571.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/8/OM/DHPR1QZGFQB4LWQ82BHXAW.uasset'
+[2024.01.20-22.44.13:018][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/I3/FTOJFQ1BM5HM4JQZFGOGZC
+[2024.01.20-22.44.13:018][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/FTOJFQ1BM5HM4JQZFGOGZC859497244E0DD7AD1DF157892951BE55.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/8/I3/FTOJFQ1BM5HM4JQZFGOGZC.uasset'
+[2024.01.20-22.44.13:021][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/6/QO/4I1Z7HKZHDF2IKMDTNP6S3
+[2024.01.20-22.44.13:021][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/4I1Z7HKZHDF2IKMDTNP6S39C73AA084846D4FFE16017BCC8D44762.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/6/QO/4I1Z7HKZHDF2IKMDTNP6S3.uasset'
+[2024.01.20-22.44.13:025][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/8N/MKKSITFDBANC7BVRPKVGUX
+[2024.01.20-22.44.13:025][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/MKKSITFDBANC7BVRPKVGUX62E1543A4EBCDFAA1C7FD2B4F5B2D4D9.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/8N/MKKSITFDBANC7BVRPKVGUX.uasset'
+[2024.01.20-22.44.13:030][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/0/78/AAP7AR9MPDLN42988MQV8S
+[2024.01.20-22.44.13:030][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/AAP7AR9MPDLN42988MQV8S665827834D08EA762B2324B5F19B4468.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/0/78/AAP7AR9MPDLN42988MQV8S.uasset'
+[2024.01.20-22.44.13:035][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/RE/1ZRDYSKZWXZCPHJYZ1GXJT
+[2024.01.20-22.44.13:035][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/1ZRDYSKZWXZCPHJYZ1GXJT5912A7FD48199CC1AEF2968737F8EAB7.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/RE/1ZRDYSKZWXZCPHJYZ1GXJT.uasset'
+[2024.01.20-22.44.13:038][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/WS/Z7SIQAGH10H9Q86OCV1NNC
+[2024.01.20-22.44.13:038][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/Z7SIQAGH10H9Q86OCV1NNCDEDED20140AE5CA2D0A4829B3AC6D39C.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/8/WS/Z7SIQAGH10H9Q86OCV1NNC.uasset'
+[2024.01.20-22.44.13:042][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/6O/HEQW366GL24UVWT8OWD3VE
+[2024.01.20-22.44.13:042][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/HEQW366GL24UVWT8OWD3VEB396B9CF4A042F872A15AC823C64A16C.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/6O/HEQW366GL24UVWT8OWD3VE.uasset'
+[2024.01.20-22.44.13:046][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/FQ/VJ8WXF5IZ3FCQO1VN0T0SN
+[2024.01.20-22.44.13:046][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/VJ8WXF5IZ3FCQO1VN0T0SND98F773B47F7D89E13223A9529495663.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/FQ/VJ8WXF5IZ3FCQO1VN0T0SN.uasset'
+[2024.01.20-22.44.13:050][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/L3/HG4DG7HX33LY9J3E5UHASD
+[2024.01.20-22.44.13:050][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/HG4DG7HX33LY9J3E5UHASD0EC94F5D45FBD88B3A0A9BA626A06AE2.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/1/L3/HG4DG7HX33LY9J3E5UHASD.uasset'
+[2024.01.20-22.44.13:053][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/0/P3/NPMSOZQU6HISU95040K2T9
+[2024.01.20-22.44.13:053][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/NPMSOZQU6HISU95040K2T9524A39524530CF67079BFEA8466F2833.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/0/P3/NPMSOZQU6HISU95040K2T9.uasset'
+[2024.01.20-22.44.13:057][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/OM/FXSW4PGA8N0RL78CHNSBOM
+[2024.01.20-22.44.13:057][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/FXSW4PGA8N0RL78CHNSBOMF615082E41FF889C6094ADA89C36DAB5.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/OM/FXSW4PGA8N0RL78CHNSBOM.uasset'
+[2024.01.20-22.44.13:060][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/7F/EV2RVC5TEPMJBW31QBQ8T3
+[2024.01.20-22.44.13:060][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/EV2RVC5TEPMJBW31QBQ8T389ACE48742D5F089C5A6FFB9FB37D4E9.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/C/7F/EV2RVC5TEPMJBW31QBQ8T3.uasset'
+[2024.01.20-22.44.13:065][574]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/AL/II048F5LB0QC67TMD5FKI3
+[2024.01.20-22.44.13:065][574]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/II048F5LB0QC67TMD5FKI3CAA264884E42579947607E93B9B39F9F.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/AL/II048F5LB0QC67TMD5FKI3.uasset'
+[2024.01.20-22.44.13:077][574]LogFileHelpers: InternalPromptForCheckoutAndSave took 316 ms (total: 4.02 sec)
+[2024.01.20-22.44.13:086][574]AssetCheck: New page: Asset Save: multiple assets
+[2024.01.20-22.44.13:086][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395380438
+[2024.01.20-22.44.13:086][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395378437
+[2024.01.20-22.44.13:086][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395376436
+[2024.01.20-22.44.13:086][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395374435
+[2024.01.20-22.44.13:086][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395372434
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395371433
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395369432
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395367431
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395365430
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395363429
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395361428
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395359427
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395357426
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395356425
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395354424
+[2024.01.20-22.44.13:087][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395352423
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395350422
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395348421
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395346420
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395344419
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395342418
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395340417
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395338416
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395337415
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395335414
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395333413
+[2024.01.20-22.44.13:088][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8D7ED101_1395331412
+[2024.01.20-22.44.13:089][574]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8D7ED101_1395328411
+[2024.01.20-22.44.14:880][683]LogUObjectHash: Compacting FUObjectHashTables data took   1.70ms
+[2024.01.20-22.44.17:002][795]LogUObjectHash: Compacting FUObjectHashTables data took   0.75ms
+[2024.01.20-22.44.17:009][795]LogStall: Shutdown...
+[2024.01.20-22.44.17:015][795]LogStall: Shutdown complete.
+[2024.01.20-22.44.17:061][795]LogWorld: UWorld::CleanupWorld for World_1, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.17:061][795]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.17:126][795]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2024.01.20-22.44.17:126][795]LogWorld: UWorld::CleanupWorld for World_2, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.17:126][795]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.17:196][795]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2024.01.20-22.44.17:196][795]LogWorld: UWorld::CleanupWorld for World_3, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.17:196][795]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.17:271][795]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2024.01.20-22.44.17:271][795]LogWorld: UWorld::CleanupWorld for World_5, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.17:271][795]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.17:337][795]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2024.01.20-22.44.17:337][795]LogWorld: UWorld::CleanupWorld for World_6, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.17:337][795]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.17:398][795]LogWorld: UWorld::CleanupWorld for World_7, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.17:398][795]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.17:459][795]LogSlate: Window 'FYP - Unreal Editor' being destroyed
+[2024.01.20-22.44.17:554][796]Cmd: QUIT_EDITOR
+[2024.01.20-22.44.17:555][796]LogCore: Engine exit requested (reason: UUnrealEdEngine::CloseEditor())
+[2024.01.20-22.44.17:563][796]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2024.01.20-22.44.17:563][796]LogStaticMesh: Abandoning remaining async distance field tasks for shutdown
+[2024.01.20-22.44.17:563][796]LogStaticMesh: Abandoning remaining async card representation tasks for shutdown
+[2024.01.20-22.44.17:565][796]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.17:565][796]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.20-22.44.17:568][796]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.20-22.44.17:572][796]LogStylusInput: Shutting down StylusInput subsystem.
+[2024.01.20-22.44.17:575][796]LogLevelSequenceEditor: LevelSequenceEditor subsystem deinitialized.
+[2024.01.20-22.44.18:352][796]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2024.01.20-22.44.18:353][796]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2024.01.20-22.44.18:353][796]LogAudio: Display: Audio Device unregistered from world 'TopDownMap'.
+[2024.01.20-22.44.18:353][796]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 1
+[2024.01.20-22.44.18:354][796]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2024.01.20-22.44.18:356][796]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2024.01.20-22.44.18:366][796]LogAudio: Display: Audio Device Manager Shutdown
+[2024.01.20-22.44.18:371][796]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2024.01.20-22.44.18:372][796]LogExit: Preparing to exit.
+[2024.01.20-22.44.18:434][796]LogUObjectHash: Compacting FUObjectHashTables data took   1.70ms
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.add_controls_for_selected_options' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.add_controls_for_selected' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.add_null_above_selected' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.align_translation_rotation' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.align_translation_all' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.align_translation_x' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.align_translation_y' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.align_translation_z' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.align_rotation' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:457][796]LogPython: Display: Object '/Engine/PythonTypes.align_scale' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.search_replace_name_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.search_replace_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.add_prefix_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.add_prefix_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.add_suffix_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.add_suffix_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.do_rename_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.do_rename_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.18:458][796]LogPython: Display: Object '/Engine/PythonTypes.ControlOutputFormat' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2024.01.20-22.44.19:262][796]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2024.01.20-22.44.19:262][796]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2024.01.20-22.44.19:262][796]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2024.01.20-22.44.19:263][796]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2024.01.20-22.44.19:263][796]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2024.01.20-22.44.19:263][796]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2024.01.20-22.44.19:263][796]LogActorComponent: UnregisterComponent: (None.None) Not registered. Aborting.
+[2024.01.20-22.44.19:263][796]LogWorld: UWorld::CleanupWorld for None, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.19:265][796]LogWorld: UWorld::CleanupWorld for World_4, bSessionEnded=true, bCleanupResources=true
+[2024.01.20-22.44.19:338][796]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
+[2024.01.20-22.44.19:379][796]LogExit: Editor shut down
+[2024.01.20-22.44.19:381][796]LogExit: Transaction tracking system shut down
+[2024.01.20-22.44.19:643][796]LogExit: Object subsystem successfully closed.
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: ================================================
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: Total job queries 0, among them cache hits 0 (0.00%)
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: Tracking 0 distinct input hashes that result in 0 distinct outputs (0.00%)
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: RAM used: 240.00 B of 819.20 MiB budget. Usage: 0.00%
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: Shaders Compiled: 0
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0.00%)
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2024.01.20-22.44.19:658][796]LogShaderCompilers: Display: ================================================
+[2024.01.20-22.44.19:756][796]LogShaderCompilers: Display: Shaders left to compile 0
+[2024.01.20-22.44.19:792][796]LogVirtualization: UE::Virtualization was shutdown
+[2024.01.20-22.44.20:036][796]LogModuleManager: Shutting down and abandoning module MovieSceneCapture (1017)
+[2024.01.20-22.44.20:036][796]LogModuleManager: Shutting down and abandoning module Voice (1015)
+[2024.01.20-22.44.20:037][796]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (1013)
+[2024.01.20-22.44.20:037][796]LogModuleManager: Shutting down and abandoning module SceneOutliner (1011)
+[2024.01.20-22.44.20:037][796]LogModuleManager: Shutting down and abandoning module AddContentDialog (1009)
+[2024.01.20-22.44.20:038][796]LogModuleManager: Shutting down and abandoning module WidgetCarousel (1008)
+[2024.01.20-22.44.20:038][796]LogModuleManager: Shutting down and abandoning module SubobjectEditor (1005)
+[2024.01.20-22.44.20:038][796]LogModuleManager: Shutting down and abandoning module StatusBar (1003)
+[2024.01.20-22.44.20:038][796]LogModuleManager: Shutting down and abandoning module UnsavedAssetsTracker (1001)
+[2024.01.20-22.44.20:038][796]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (999)
+[2024.01.20-22.44.20:039][796]LogModuleManager: Shutting down and abandoning module StatsViewer (997)
+[2024.01.20-22.44.20:039][796]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (995)
+[2024.01.20-22.44.20:039][796]LogModuleManager: Shutting down and abandoning module AutomationWorker (993)
+[2024.01.20-22.44.20:039][796]LogModuleManager: Shutting down and abandoning module PlanarCut (991)
+[2024.01.20-22.44.20:040][796]LogModuleManager: Shutting down and abandoning module FractureEngine (989)
+[2024.01.20-22.44.20:040][796]LogModuleManager: Shutting down and abandoning module CharacterAI (987)
+[2024.01.20-22.44.20:040][796]LogModuleManager: Shutting down and abandoning module CameraShakePreviewer (985)
+[2024.01.20-22.44.20:041][796]LogModuleManager: Shutting down and abandoning module WaveTableEditor (983)
+[2024.01.20-22.44.20:041][796]LogModuleManager: Shutting down and abandoning module ResonanceAudioEditor (981)
+[2024.01.20-22.44.20:041][796]LogModuleManager: Shutting down and abandoning module GooglePADEditor (979)
+[2024.01.20-22.44.20:041][796]LogModuleManager: Shutting down and abandoning module AudioCaptureEditor (977)
+[2024.01.20-22.44.20:042][796]LogModuleManager: Shutting down and abandoning module AndroidFileServerEditor (975)
+[2024.01.20-22.44.20:042][796]LogModuleManager: Shutting down and abandoning module TextureAlignMode (973)
+[2024.01.20-22.44.20:042][796]LogModuleManager: Shutting down and abandoning module BspMode (971)
+[2024.01.20-22.44.20:042][796]LogModuleManager: Shutting down and abandoning module GeometryMode (969)
+[2024.01.20-22.44.20:042][796]LogModuleManager: Shutting down and abandoning module EngineAssetDefinitions (967)
+[2024.01.20-22.44.20:042][796]LogModuleManager: Shutting down and abandoning module TemplateSequenceEditor (965)
+[2024.01.20-22.44.20:043][796]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (963)
+[2024.01.20-22.44.20:044][796]LogModuleManager: Shutting down and abandoning module ActorSequenceEditor (961)
+[2024.01.20-22.44.20:044][796]LogModuleManager: Shutting down and abandoning module IKRigEditor (959)
+[2024.01.20-22.44.20:045][796]LogModuleManager: Shutting down and abandoning module ControlRigEditor (957)
+[2024.01.20-22.44.20:047][796]LogModuleManager: Shutting down and abandoning module WebMMediaFactory (955)
+[2024.01.20-22.44.20:047][796]LogModuleManager: Shutting down and abandoning module WebMMediaEditor (953)
+[2024.01.20-22.44.20:048][796]LogModuleManager: Shutting down and abandoning module WebMMedia (951)
+[2024.01.20-22.44.20:048][796]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (949)
+[2024.01.20-22.44.20:048][796]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (947)
+[2024.01.20-22.44.20:048][796]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (945)
+[2024.01.20-22.44.20:049][796]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (943)
+[2024.01.20-22.44.20:049][796]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (941)
+[2024.01.20-22.44.20:049][796]LogModuleManager: Shutting down and abandoning module ImgMediaEditor (939)
+[2024.01.20-22.44.20:050][796]LogModuleManager: Shutting down and abandoning module MediaCompositingEditor (937)
+[2024.01.20-22.44.20:051][796]LogModuleManager: Shutting down and abandoning module SequenceRecorder (936)
+[2024.01.20-22.44.20:051][796]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (933)
+[2024.01.20-22.44.20:051][796]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (931)
+[2024.01.20-22.44.20:051][796]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (929)
+[2024.01.20-22.44.20:051][796]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (927)
+[2024.01.20-22.44.20:051][796]LogModuleManager: Shutting down and abandoning module SmartSnapping (925)
+[2024.01.20-22.44.20:051][796]LogModuleManager: Shutting down and abandoning module SessionServices (923)
+[2024.01.20-22.44.20:053][796]LogModuleManager: Shutting down and abandoning module MeshPaint (921)
+[2024.01.20-22.44.20:053][796]LogModuleManager: Shutting down and abandoning module VirtualTexturingEditor (919)
+[2024.01.20-22.44.20:053][796]LogModuleManager: Shutting down and abandoning module PlacementMode (918)
+[2024.01.20-22.44.20:054][796]LogModuleManager: Shutting down and abandoning module FoliageEdit (915)
+[2024.01.20-22.44.20:055][796]LogModuleManager: Shutting down and abandoning module LandscapeEditor (913)
+[2024.01.20-22.44.20:056][796]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (911)
+[2024.01.20-22.44.20:056][796]LogModuleManager: Shutting down and abandoning module ActorPickerMode (909)
+[2024.01.20-22.44.20:056][796]LogModuleManager: Shutting down and abandoning module ViewportSnapping (907)
+[2024.01.20-22.44.20:057][796]LogModuleManager: Shutting down and abandoning module ViewportInteraction (905)
+[2024.01.20-22.44.20:057][796]LogModuleManager: Shutting down and abandoning module ClothPainter (903)
+[2024.01.20-22.44.20:057][796]LogModuleManager: Shutting down and abandoning module SkeletalMeshEditor (902)
+[2024.01.20-22.44.20:058][796]LogModuleManager: Shutting down and abandoning module LogVisualizer (899)
+[2024.01.20-22.44.20:060][796]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (897)
+[2024.01.20-22.44.20:060][796]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (895)
+[2024.01.20-22.44.20:060][796]LogModuleManager: Shutting down and abandoning module PIEPreviewDeviceProfileSelector (894)
+[2024.01.20-22.44.20:061][796]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (892)
+[2024.01.20-22.44.21:041][796]LogModuleManager: Shutting down and abandoning module WindowsPlatformEditor (889)
+[2024.01.20-22.44.21:042][796]LogModuleManager: Shutting down and abandoning module HoloLensPlatformEditor (887)
+[2024.01.20-22.44.21:042][796]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (885)
+[2024.01.20-22.44.21:042][796]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (883)
+[2024.01.20-22.44.21:042][796]LogModuleManager: Shutting down and abandoning module RenderResourceViewer (881)
+[2024.01.20-22.44.21:042][796]LogModuleManager: Shutting down and abandoning module GameplayDebuggerEditor (879)
+[2024.01.20-22.44.21:042][796]LogModuleManager: Shutting down and abandoning module AnimationSettings (877)
+[2024.01.20-22.44.21:043][796]LogModuleManager: Shutting down and abandoning module VirtualizationEditor (875)
+[2024.01.20-22.44.21:043][796]LogModuleManager: Shutting down and abandoning module CSVtoSVG (873)
+[2024.01.20-22.44.21:043][796]LogModuleManager: Shutting down and abandoning module DerivedDataEditor (871)
+[2024.01.20-22.44.21:043][796]LogModuleManager: Shutting down and abandoning module EditorConfig (869)
+[2024.01.20-22.44.21:043][796]LogModuleManager: Shutting down and abandoning module EditorFramework (867)
+[2024.01.20-22.44.21:043][796]LogModuleManager: Shutting down and abandoning module StaticMeshEditor (865)
+[2024.01.20-22.44.21:044][796]LogModuleManager: Shutting down and abandoning module TraceInsights (863)
+[2024.01.20-22.44.21:047][796]MemoryProfiler: Shutdown
+[2024.01.20-22.44.21:047][796]NetworkingProfiler: Shutdown
+[2024.01.20-22.44.21:048][796]LoadingProfiler: Shutdown
+[2024.01.20-22.44.21:048][796]TimingProfiler: Shutdown
+[2024.01.20-22.44.21:050][796]LogModuleManager: Shutting down and abandoning module TraceServices (862)
+[2024.01.20-22.44.21:052][796]LogModuleManager: Shutting down and abandoning module TraceAnalysis (861)
+[2024.01.20-22.44.21:052][796]LogModuleManager: Shutting down and abandoning module EditorInteractiveToolsFramework (857)
+[2024.01.20-22.44.21:052][796]LogModuleManager: Shutting down and abandoning module InteractiveToolsFramework (856)
+[2024.01.20-22.44.21:052][796]LogModuleManager: Shutting down and abandoning module InputBindingEditor (853)
+[2024.01.20-22.44.21:052][796]LogModuleManager: Shutting down and abandoning module MergeActors (851)
+[2024.01.20-22.44.21:053][796]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (849)
+[2024.01.20-22.44.21:053][796]LogModuleManager: Shutting down and abandoning module LocalizationService (848)
+[2024.01.20-22.44.21:053][796]LogModuleManager: Shutting down and abandoning module HardwareTargeting (845)
+[2024.01.20-22.44.21:053][796]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (843)
+[2024.01.20-22.44.21:054][796]LogModuleManager: Shutting down and abandoning module UndoHistory (841)
+[2024.01.20-22.44.21:054][796]LogModuleManager: Shutting down and abandoning module XmlParser (839)
+[2024.01.20-22.44.21:054][796]LogModuleManager: Shutting down and abandoning module Blutility (837)
+[2024.01.20-22.44.21:055][796]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (835)
+[2024.01.20-22.44.21:055][796]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (834)
+[2024.01.20-22.44.21:055][796]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (831)
+[2024.01.20-22.44.21:055][796]LogModuleManager: Shutting down and abandoning module InternationalizationSettings (830)
+[2024.01.20-22.44.21:055][796]LogModuleManager: Shutting down and abandoning module SettingsEditor (827)
+[2024.01.20-22.44.21:055][796]LogModuleManager: Shutting down and abandoning module ProjectLauncher (825)
+[2024.01.20-22.44.21:056][796]LogModuleManager: Shutting down and abandoning module SessionFrontend (823)
+[2024.01.20-22.44.21:056][796]LogModuleManager: Shutting down and abandoning module ProfilerClient (821)
+[2024.01.20-22.44.21:056][796]LogModuleManager: Shutting down and abandoning module DeviceManager (819)
+[2024.01.20-22.44.21:057][796]LogModuleManager: Shutting down and abandoning module AutomationController (817)
+[2024.01.20-22.44.21:058][796]LogModuleManager: Shutting down and abandoning module AutomationWindow (815)
+[2024.01.20-22.44.21:058][796]LogModuleManager: Shutting down and abandoning module Layers (813)
+[2024.01.20-22.44.21:059][796]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (811)
+[2024.01.20-22.44.21:059][796]LogModuleManager: Shutting down and abandoning module DetailCustomizations (809)
+[2024.01.20-22.44.21:060][796]LogModuleManager: Shutting down and abandoning module PackagesDialog (807)
+[2024.01.20-22.44.21:060][796]LogModuleManager: Shutting down and abandoning module AnimationBlueprintEditor (805)
+[2024.01.20-22.44.21:061][796]LogModuleManager: Shutting down and abandoning module Persona (803)
+[2024.01.20-22.44.21:062][796]LogModuleManager: Shutting down and abandoning module AdvancedPreviewScene (802)
+[2024.01.20-22.44.21:062][796]LogModuleManager: Shutting down and abandoning module Kismet (799)
+[2024.01.20-22.44.21:077][796]LogModuleManager: Shutting down and abandoning module KismetWidgets (798)
+[2024.01.20-22.44.21:077][796]LogModuleManager: Shutting down and abandoning module GraphEditor (795)
+[2024.01.20-22.44.21:078][796]LogModuleManager: Shutting down and abandoning module StructViewer (793)
+[2024.01.20-22.44.21:078][796]LogModuleManager: Shutting down and abandoning module NaniteTools (791)
+[2024.01.20-22.44.21:078][796]LogModuleManager: Shutting down and abandoning module UncontrolledChangelists (789)
+[2024.01.20-22.44.21:078][796]LogModuleManager: Shutting down and abandoning module SourceControlWindowExtender (787)
+[2024.01.20-22.44.21:078][796]LogModuleManager: Shutting down and abandoning module SourceControlWindows (785)
+[2024.01.20-22.44.21:079][796]LogModuleManager: Shutting down and abandoning module OutputLog (783)
+[2024.01.20-22.44.21:080][796]LogModuleManager: Shutting down and abandoning module Documentation (781)
+[2024.01.20-22.44.21:080][796]LogModuleManager: Shutting down and abandoning module LiveCoding (779)
+[2024.01.20-22.44.21:092][796]LogModuleManager: Shutting down and abandoning module SparseVolumeTexture (777)
+[2024.01.20-22.44.21:092][796]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (775)
+[2024.01.20-22.44.21:092][796]LogModuleManager: Shutting down and abandoning module MovieScene (773)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (771)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module BinkAudioDecoder (769)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module AudioMixerXAudio2 (767)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module AudioMixer (766)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module AudioMixerCore (765)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module LauncherPlatform (761)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module AnalyticsET (759)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module PortalServices (757)
+[2024.01.20-22.44.21:093][796]LogModuleManager: Shutting down and abandoning module PortalRpc (755)
+[2024.01.20-22.44.21:094][796]LogModuleManager: Shutting down and abandoning module MessagingRpc (753)
+[2024.01.20-22.44.21:094][796]LogModuleManager: Shutting down and abandoning module AIModule (751)
+[2024.01.20-22.44.21:094][796]LogModuleManager: Shutting down and abandoning module GameplayDebugger (750)
+[2024.01.20-22.44.21:094][796]LogModuleManager: Shutting down and abandoning module AITestSuite (748)
+[2024.01.20-22.44.21:094][796]LogModuleManager: Shutting down and abandoning module NavigationSystem (746)
+[2024.01.20-22.44.21:094][796]LogModuleManager: Shutting down and abandoning module DataLayerEditor (743)
+[2024.01.20-22.44.21:095][796]LogModuleManager: Shutting down and abandoning module EditorWidgets (742)
+[2024.01.20-22.44.21:095][796]LogModuleManager: Shutting down and abandoning module LevelInstanceEditor (739)
+[2024.01.20-22.44.21:095][796]LogModuleManager: Shutting down and abandoning module TypedElementRuntime (737)
+[2024.01.20-22.44.21:095][796]LogModuleManager: Shutting down and abandoning module TypedElementFramework (735)
+[2024.01.20-22.44.21:095][796]LogModuleManager: Shutting down and abandoning module ImageWriteQueue (733)
+[2024.01.20-22.44.21:095][796]LogModuleManager: Shutting down and abandoning module ProfilerService (731)
