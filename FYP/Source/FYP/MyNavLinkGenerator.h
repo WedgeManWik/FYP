@@ -22,6 +22,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void SpawnPotentialNavLink(FVector Location, FVector Direction);
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void SpawnNavJumpLinkArea(FVector Start, FVector End, FVector Direction);
+
 	bool IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2);
 
 	bool DoShareSameEdges(TArray<FNavigationPortalEdge>& EdgeArray1, TArray<FNavigationPortalEdge>& EdgeArray2);
@@ -33,6 +36,8 @@ public:
 	void SpawnPotentialNavLinksBetweenVerticies(FVector& Start, FVector& End);
 
 	FNavigationPortalEdge& FindEdgeWithMatchingVertex(FNavigationPortalEdge& ThisEdge, FVector& Vertex, TArray<FNavigationPortalEdge>& EdgeArray);
+
+	FVector GetDirecionOut(FVector& Start, FVector& End);
 
 	UPROPERTY(EditAnywhere)
 		int32 AgentJumpHeight;
