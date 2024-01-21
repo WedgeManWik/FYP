@@ -9,6 +9,9 @@
 #include "Engine/World.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "NavigationPath.h"
+#include "NavMesh/RecastNavMesh.h"
+#include "Runtime/NavigationSystem/Public/NavigationSystem.h"
 
 AFYPPlayerController::AFYPPlayerController()
 {
@@ -16,6 +19,47 @@ AFYPPlayerController::AFYPPlayerController()
 	DefaultMouseCursor = EMouseCursor::Default;
 	CachedDestination = FVector::ZeroVector;
 	FollowTime = 0.f;
+}
+
+void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
+{
+	UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
+	APawn* ControlledPawn = GetPawn();
+	UNavigationPath* path = NavSys->FindPathToLocationSynchronously(this, ControlledPawn->GetActorLocation(), CachedDestination, ControlledPawn);
+
+	TArray<FVector> MoveToLocations;
+
+	if (path && path->IsValid())
+	{
+		TArray<FNavPathPoint> pathpoints = path->GetPath()->GetPathPoints();
+
+		for (int i = 1; i < pathpoints.Num(); i++)
+		{
+			NavNodeRef nodeRef = pathpoints[i].NodeRef;
+			TArray<FVector> CurrentPolygonVertices;
+			Nav->GetPolyVerts(nodeRef, CurrentPolygonVertices);
+			float ClosestDistance = BIG_NUMBER;
+			int ClosestIndex = 0;
+			for (int j = 1; j < CurrentPolygonVertices.Num(); j++)
+			{
+				float calcDistance = FVector::DistSquared(ControlledPawn->GetActorLocation(), CurrentPolygonVertices[j]);
+				if (calcDistance < ClosestDistance)
+				{
+					ClosestIndex = j;
+					ClosestDistance = calcDistance;
+				}
+			}
+
+			//pathpoints[i].Location = CurrentPolygonVertices[ClosestIndex];
+			MoveToLocations.Add(CurrentPolygonVertices[ClosestIndex]);
+		}
+	}
+
+	FollowPath(MoveToLocations);
+
+	DrawPath();
+
+	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, FXCursor, CachedDestination, FRotator::ZeroRotator, FVector(1.f, 1.f, 1.f), true, true, ENCPoolMethod::None, true);
 }
 
 void AFYPPlayerController::BeginPlay()
@@ -96,10 +140,9 @@ void AFYPPlayerController::OnSetDestinationReleased()
 	if (FollowTime <= ShortPressThreshold)
 	{
 		// We move there and spawn some particles
-		UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, CachedDestination);
-		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, FXCursor, CachedDestination, FRotator::ZeroRotator, FVector(1.f, 1.f, 1.f), true, true, ENCPoolMethod::None, true);
+		//UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, CachedDestination);
 
-		DrawPath();
+		FindNavData();
 	}
 
 	FollowTime = 0.f;

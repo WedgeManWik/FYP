@@ -15,6 +15,7 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 	FYP_API UClass* Z_Construct_UClass_AFYPPlayerController();
 	FYP_API UClass* Z_Construct_UClass_AFYPPlayerController_NoRegister();
+	NAVIGATIONSYSTEM_API UClass* Z_Construct_UClass_ARecastNavMesh_NoRegister();
 	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_FYP();
 // End Cross Module References
@@ -25,15 +26,40 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		*(FVector*)Z_Param__Result=P_THIS->GetGoalDestination();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AFYPPlayerController::execFindPath)
+	{
+		P_GET_OBJECT(ARecastNavMesh,Z_Param_Nav);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->FindPath(Z_Param_Nav);
+		P_NATIVE_END;
+	}
+	struct FYPPlayerController_eventFollowPath_Parms
+	{
+		TArray<FVector> PathPoints;
+	};
 	static FName NAME_AFYPPlayerController_DrawPath = FName(TEXT("DrawPath"));
 	void AFYPPlayerController::DrawPath()
 	{
 		ProcessEvent(FindFunctionChecked(NAME_AFYPPlayerController_DrawPath),NULL);
 	}
+	static FName NAME_AFYPPlayerController_FindNavData = FName(TEXT("FindNavData"));
+	void AFYPPlayerController::FindNavData()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AFYPPlayerController_FindNavData),NULL);
+	}
+	static FName NAME_AFYPPlayerController_FollowPath = FName(TEXT("FollowPath"));
+	void AFYPPlayerController::FollowPath(TArray<FVector> const& PathPoints)
+	{
+		FYPPlayerController_eventFollowPath_Parms Parms;
+		Parms.PathPoints=PathPoints;
+		ProcessEvent(FindFunctionChecked(NAME_AFYPPlayerController_FollowPath),&Parms);
+	}
 	void AFYPPlayerController::StaticRegisterNativesAFYPPlayerController()
 	{
 		UClass* Class = AFYPPlayerController::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "FindPath", &AFYPPlayerController::execFindPath },
 			{ "GetGoalDestination", &AFYPPlayerController::execGetGoalDestination },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -57,6 +83,99 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFYPPlayerController_DrawPath_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AFYPPlayerController_FindNavData_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_FindNavData_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FYPPlayerController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFYPPlayerController_FindNavData_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFYPPlayerController, nullptr, "FindNavData", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFYPPlayerController_FindNavData_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FindNavData_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFYPPlayerController_FindNavData()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFYPPlayerController_FindNavData_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics
+	{
+		struct FYPPlayerController_eventFindPath_Parms
+		{
+			ARecastNavMesh* Nav;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Nav;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::NewProp_Nav = { "Nav", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FYPPlayerController_eventFindPath_Parms, Nav), Z_Construct_UClass_ARecastNavMesh_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::NewProp_Nav,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FYPPlayerController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFYPPlayerController, nullptr, "FindPath", nullptr, nullptr, sizeof(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::FYPPlayerController_eventFindPath_Parms), Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFYPPlayerController_FindPath()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics
+	{
+		static const UECodeGen_Private::FStructPropertyParams NewProp_PathPoints_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PathPoints_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_PathPoints;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::NewProp_PathPoints_Inner = { "PathPoints", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::NewProp_PathPoints_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::NewProp_PathPoints = { "PathPoints", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FYPPlayerController_eventFollowPath_Parms, PathPoints), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::NewProp_PathPoints_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::NewProp_PathPoints_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::NewProp_PathPoints_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::NewProp_PathPoints,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "FYPPlayerController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFYPPlayerController, nullptr, "FollowPath", nullptr, nullptr, sizeof(FYPPlayerController_eventFollowPath_Parms), Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08420800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFYPPlayerController_FollowPath()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFYPPlayerController_FollowPath_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -134,6 +253,9 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AFYPPlayerController_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AFYPPlayerController_DrawPath, "DrawPath" }, // 3854245040
+		{ &Z_Construct_UFunction_AFYPPlayerController_FindNavData, "FindNavData" }, // 3145709781
+		{ &Z_Construct_UFunction_AFYPPlayerController_FindPath, "FindPath" }, // 4270711578
+		{ &Z_Construct_UFunction_AFYPPlayerController_FollowPath, "FollowPath" }, // 3180373670
 		{ &Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination, "GetGoalDestination" }, // 947276957
 	};
 #if WITH_METADATA
@@ -235,9 +357,9 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 52869244U) },
+		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 427510858U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_1159850963(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_1199721385(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

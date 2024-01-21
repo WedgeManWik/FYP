@@ -22,6 +22,15 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void DrawPath();
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void FindNavData();
+
+	UFUNCTION(BlueprintCallable)
+		void FindPath(ARecastNavMesh* Nav);
+
+	UFUNCTION(BlueprintImplementableEvent)
+		void FollowPath(const TArray<FVector>& PathPoints);
+
 	/** Time Threshold to know if it was a short press */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	float ShortPressThreshold;

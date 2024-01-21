@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ARecastNavMesh;
 #ifdef FYP_FYPPlayerController_generated_h
 #error "FYPPlayerController.generated.h already included, missing '#pragma once' in FYPPlayerController.h"
 #endif
@@ -17,12 +18,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_SPARSE_DATA
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execGetGoalDestination);
+	DECLARE_FUNCTION(execGetGoalDestination); \
+	DECLARE_FUNCTION(execFindPath);
 
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execGetGoalDestination);
+	DECLARE_FUNCTION(execGetGoalDestination); \
+	DECLARE_FUNCTION(execFindPath);
 
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS
