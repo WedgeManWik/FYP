@@ -27,37 +27,47 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 	APawn* ControlledPawn = GetPawn();
 	UNavigationPath* path = NavSys->FindPathToLocationSynchronously(this, ControlledPawn->GetActorLocation(), CachedDestination, ControlledPawn);
 
-	TArray<FVector> MoveToLocations;
-
 	if (path && path->IsValid())
 	{
 		TArray<FNavPathPoint> pathpoints = path->GetPath()->GetPathPoints();
 
-		for (int i = 1; i < pathpoints.Num(); i++)
+		for (int i = 0; i < pathpoints.Num(); i++)
 		{
 			NavNodeRef nodeRef = pathpoints[i].NodeRef;
 			TArray<FVector> CurrentPolygonVertices;
 			Nav->GetPolyVerts(nodeRef, CurrentPolygonVertices);
-			float ClosestDistance = BIG_NUMBER;
-			int ClosestIndex = 0;
+
+			//DRAW POLYGONS 
 			for (int j = 1; j < CurrentPolygonVertices.Num(); j++)
 			{
-				float calcDistance = FVector::DistSquared(ControlledPawn->GetActorLocation(), CurrentPolygonVertices[j]);
-				if (calcDistance < ClosestDistance)
+				// POLYGON IS NAV LINK
+				if (CurrentPolygonVertices.Num() == 2)
+				{				
+					if (i == 0)
+					{
+						//AGENT ALREADY ON POLYGON TO JUMP
+					}
+					else
+					{
+						
+					}
+				}
+				else
 				{
-					ClosestIndex = j;
-					ClosestDistance = calcDistance;
+					DrawDebugLine(GetWorld(), CurrentPolygonVertices[j], CurrentPolygonVertices[j - 1], FColor(255, 0, 0), true, 0, 2.f);
 				}
 			}
+			DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1], FColor(255, 0, 0), true, 0, 2.f);
 
-			//pathpoints[i].Location = CurrentPolygonVertices[ClosestIndex];
-			MoveToLocations.Add(CurrentPolygonVertices[ClosestIndex]);
+			if (CurrentPolygonVertices.Num() == 2)
+			{
+				//Draw green line for nav link
+				DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[1], FColor(0, 255, 0), true, 0, 5.f);
+			}
 		}
 	}
 
-	FollowPath(MoveToLocations);
 
-	DrawPath();
 
 	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, FXCursor, CachedDestination, FRotator::ZeroRotator, FVector(1.f, 1.f, 1.f), true, true, ENCPoolMethod::None, true);
 }
@@ -164,4 +174,90 @@ void AFYPPlayerController::OnTouchReleased()
 FVector AFYPPlayerController::GetGoalDestination()
 {
 	return CachedDestination;
+}
+
+int AFYPPlayerController::stringPull(const float* portals, int nportals, float* pts, const int maxPts)
+{
+	// Find straight path.
+	int npts = 0;
+	// Init scan state
+	float portalApex[2], portalLeft[2], portalRight[2];
+	int apexIndex = 0, leftIndex = 0, rightIndex = 0;
+	vcpy(portalApex, &portals[0]);
+	vcpy(portalLeft, &portals[0]);
+	vcpy(portalRight, &portals[2]);
+
+	// Add start point.
+	vcpy(&pts[npts * 2], portalApex);
+	npts++;
+
+	for (int i = 1; i < nportals && npts < maxPts; ++i)
+	{
+		const float* left = &portals[i * 4 + 0];
+		const float* right = &portals[i * 4 + 2];
+
+		// Update right vertex.
+		if (triarea2(portalApex, portalRight, right) <= 0.0f)
+		{
+			if (vequal(portalApex, portalRight) || triarea2(portalApex, portalLeft, right) > 0.0f)
+			{
+				// Tighten the funnel.
+				vcpy(portalRight, right);
+				rightIndex = i;
+			}
+			else
+			{
+				// Right over left, insert left to path and restart scan from portal left point.
+				vcpy(&pts[npts * 2], portalLeft);
+				npts++;
+				// Make current left the new apex.
+				vcpy(portalApex, portalLeft);
+				apexIndex = leftIndex;
+				// Reset portal
+				vcpy(portalLeft, portalApex);
+				vcpy(portalRight, portalApex);
+				leftIndex = apexIndex;
+				rightIndex = apexIndex;
+				// Restart scan
+				i = apexIndex;
+				continue;
+			}
+		}
+
+		// Update left vertex.
+		if (triarea2(portalApex, portalLeft, left) >= 0.0f)
+		{
+			if (vequal(portalApex, portalLeft) || triarea2(portalApex, portalRight, left) < 0.0f)
+			{
+				// Tighten the funnel.
+				vcpy(portalLeft, left);
+				leftIndex = i;
+			}
+			else
+			{
+				// Left over right, insert right to path and restart scan from portal right point.
+				vcpy(&pts[npts * 2], portalRight);
+				npts++;
+				// Make current right the new apex.
+				vcpy(portalApex, portalRight);
+				apexIndex = rightIndex;
+				// Reset portal
+				vcpy(portalLeft, portalApex);
+				vcpy(portalRight, portalApex);
+				leftIndex = apexIndex;
+				rightIndex = apexIndex;
+				// Restart scan
+				i = apexIndex;
+				continue;
+			}
+		}
+	}
+	// Append last point to path.
+	if (npts < maxPts)
+	{
+		vcpy(&pts[npts * 2], &portals[(nportals - 1) * 4 + 0]);
+		npts++;
+	}
+
+	return npts;
 }
