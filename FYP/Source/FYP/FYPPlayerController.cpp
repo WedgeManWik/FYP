@@ -53,41 +53,65 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 				IsJump = true;
 				//DRAW NAV LINK
 				DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[1], FColor(0, 255, 0), true, 0, 5.f);
-				if (i == 0)
-				{
-					//AGENT ALREADY ON POLYGON TO JUMP
-					path->GetPath()->GetPathPoints()[i].Location = ControlledPawn->GetActorLocation();
 
-					DrawDebugSphere(GetWorld(), ControlledPawn->GetActorLocation(), 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
+				//PREVIOUS POLYGON
+				NavNodeRef prevNodeRef = pathpoints[i - 1].NodeRef;
+				TArray<FVector> PrevPolygonVertices;
+				Nav->GetPolyVerts(prevNodeRef, PrevPolygonVertices);
+
+				if (i == 1)
+				{
+					//AGENT ALREADY ON POLYGON
+
+					FVector Point = ControlledPawn->GetActorLocation();
+					if (pathpoints[i + 1].Location.Z <= pathpoints[i].Location.Z + 5.f)
+					{
+						//Dropping down so have to go to edge
+						FVector Closest = FMath::ClosestPointOnSegment(pathpoints[i], PrevPolygonVertices[0], PrevPolygonVertices[PrevPolygonVertices.Num() - 1]);
+						for (int j = 0; j < PrevPolygonVertices.Num() - 1; j++)
+						{
+							//DRAW PREVIOUS POLYGON
+							DrawDebugLine(GetWorld(), PrevPolygonVertices[j], PrevPolygonVertices[j + 1], FColor(255, 0, 0), true, 0, 5.f);
+
+							FVector ClosestPoint = FMath::ClosestPointOnSegment(pathpoints[i], PrevPolygonVertices[j], PrevPolygonVertices[j + 1]);
+							DrawDebugSphere(GetWorld(), ClosestPoint, 5.f, 5, FColor(255, 0, 255), true, 0, 5.f);
+							if (FVector::DistSquared(pathpoints[i], ClosestPoint) < FVector::DistSquared(pathpoints[i], Closest))
+							{
+								Closest = ClosestPoint;
+							}
+						}
+
+						Point = Closest;
+					}
+
+					pathpoints[i].Location = Point;
+					DrawDebugSphere(GetWorld(), pathpoints[i].Location, 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
 
 					FJumpPoint newJumpPoint;
-					newJumpPoint.Left = ControlledPawn->GetActorLocation();
+					newJumpPoint.Left = pathpoints[i].Location;
 					newJumpPoint.Right = pathpoints[i + 1].Location;
 					FinalJumppPointPath.Add(newJumpPoint);
 				}
 				else
 				{
-					//PREVIOUS POLYGON
-					NavNodeRef prevNodeRef = pathpoints[i - 1].NodeRef;
-					TArray<FVector> PrevPolygonVertices;
-					Nav->GetPolyVerts(prevNodeRef, PrevPolygonVertices);
-
 					//STRING PULL
 					DrawDebugLine(GetWorld(), PrevPolygonVertices[0], PrevPolygonVertices[PrevPolygonVertices.Num() - 1], FColor(255, 0, 255), true, 0, 5.f);
-					FVector Closest = FMath::ClosestPointOnSegment(ControlledPawn->GetActorLocation(), PrevPolygonVertices[0], PrevPolygonVertices[PrevPolygonVertices.Num() - 1]);
+
+					FVector Point = pathpoints[i + 1].Location.Z > pathpoints[i].Location.Z ? pathpoints[i - 1] : pathpoints[i];
+					FVector Closest = FMath::ClosestPointOnSegment(Point, PrevPolygonVertices[0], PrevPolygonVertices[PrevPolygonVertices.Num() - 1]);
 					for (int j = 0; j < PrevPolygonVertices.Num() - 1; j++)
 					{
 						//DRAW PREVIOUS POLYGON
-						DrawDebugLine(GetWorld(), PrevPolygonVertices[j], PrevPolygonVertices[j+1], FColor(255, 0, 0), true, 0, 5.f);
+						DrawDebugLine(GetWorld(), PrevPolygonVertices[j], PrevPolygonVertices[j + 1], FColor(255, 0, 0), true, 0, 5.f);
 
-						FVector ClosestPoint = FMath::ClosestPointOnSegment(ControlledPawn->GetActorLocation(), PrevPolygonVertices[j], PrevPolygonVertices[j+1]);
+						FVector ClosestPoint = FMath::ClosestPointOnSegment(Point, PrevPolygonVertices[j], PrevPolygonVertices[j + 1]);
 						DrawDebugSphere(GetWorld(), ClosestPoint, 5.f, 5, FColor(255, 0, 255), true, 0, 5.f);
-						if (FVector::DistSquared(ControlledPawn->GetActorLocation(), ClosestPoint) < FVector::DistSquared(ControlledPawn->GetActorLocation(), Closest))
+						if (FVector::DistSquared(Point, ClosestPoint) < FVector::DistSquared(Point, Closest))
 						{
 							Closest = ClosestPoint;
 						}
 					}
-					path->GetPath()->GetPathPoints()[i].Location = Closest;
+					pathpoints[i].Location = Closest;
 
 					DrawDebugSphere(GetWorld(), Closest, 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
 
@@ -234,13 +258,9 @@ void AFYPPlayerController::FollowCustomPath()
 
 void AFYPPlayerController::GoToNextPointOnCustomPath()
 {
-	if (JumpPoints.Num() == 0)
+	if (JumpPoints.Num() == 0 || CurrentPathIndex >= JumpPoints.Num())
 	{
 		UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, CachedDestination);
-	}
-
-	if (CurrentPathIndex == JumpPoints.Num())
-	{
 		return;
 	}
 
