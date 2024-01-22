@@ -9,6 +9,7 @@
 #include "Engine/World.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+
 #include "NavigationPath.h"
 #include "NavMesh/RecastNavMesh.h"
 #include "Runtime/NavigationSystem/Public/NavigationSystem.h"
@@ -27,6 +28,10 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 	APawn* ControlledPawn = GetPawn();
 	UNavigationPath* path = NavSys->FindPathToLocationSynchronously(this, ControlledPawn->GetActorLocation(), CachedDestination, ControlledPawn);
 
+	TArray<FCustomPathPoint> FinalPath;
+
+	TArray<FJumpPoint> FinalJumppPointPath;
+
 	if (path && path->IsValid())
 	{
 		TArray<FNavPathPoint> pathpoints = path->GetPath()->GetPathPoints();
@@ -37,37 +42,82 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 			TArray<FVector> CurrentPolygonVertices;
 			Nav->GetPolyVerts(nodeRef, CurrentPolygonVertices);
 
-			//DRAW POLYGONS 
-			for (int j = 1; j < CurrentPolygonVertices.Num(); j++)
+			TArray<FNavigationPortalEdge> CurrentPolygonEdges;
+			Nav->GetPolyEdges(nodeRef, CurrentPolygonEdges);
+
+			bool IsJump = false;
+
+			// POLYGON IS NAV LINK
+			if (CurrentPolygonVertices.Num() == 2)
 			{
-				// POLYGON IS NAV LINK
-				if (CurrentPolygonVertices.Num() == 2)
-				{				
-					if (i == 0)
-					{
-						//AGENT ALREADY ON POLYGON TO JUMP
-					}
-					else
-					{
-						
-					}
+				IsJump = true;
+				//DRAW NAV LINK
+				DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[1], FColor(0, 255, 0), true, 0, 5.f);
+				if (i == 0)
+				{
+					//AGENT ALREADY ON POLYGON TO JUMP
+					path->GetPath()->GetPathPoints()[i].Location = ControlledPawn->GetActorLocation();
+
+					DrawDebugSphere(GetWorld(), ControlledPawn->GetActorLocation(), 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
+
+					FJumpPoint newJumpPoint;
+					newJumpPoint.Left = ControlledPawn->GetActorLocation();
+					newJumpPoint.Right = pathpoints[i + 1].Location;
+					FinalJumppPointPath.Add(newJumpPoint);
 				}
 				else
 				{
-					DrawDebugLine(GetWorld(), CurrentPolygonVertices[j], CurrentPolygonVertices[j - 1], FColor(255, 0, 0), true, 0, 2.f);
+					//PREVIOUS POLYGON
+					NavNodeRef prevNodeRef = pathpoints[i - 1].NodeRef;
+					TArray<FVector> PrevPolygonVertices;
+					Nav->GetPolyVerts(prevNodeRef, PrevPolygonVertices);
+
+					//STRING PULL
+					DrawDebugLine(GetWorld(), PrevPolygonVertices[0], PrevPolygonVertices[PrevPolygonVertices.Num() - 1], FColor(255, 0, 255), true, 0, 5.f);
+					FVector Closest = FMath::ClosestPointOnSegment(ControlledPawn->GetActorLocation(), PrevPolygonVertices[0], PrevPolygonVertices[PrevPolygonVertices.Num() - 1]);
+					for (int j = 0; j < PrevPolygonVertices.Num() - 1; j++)
+					{
+						//DRAW PREVIOUS POLYGON
+						DrawDebugLine(GetWorld(), PrevPolygonVertices[j], PrevPolygonVertices[j+1], FColor(255, 0, 0), true, 0, 5.f);
+
+						FVector ClosestPoint = FMath::ClosestPointOnSegment(ControlledPawn->GetActorLocation(), PrevPolygonVertices[j], PrevPolygonVertices[j+1]);
+						DrawDebugSphere(GetWorld(), ClosestPoint, 5.f, 5, FColor(255, 0, 255), true, 0, 5.f);
+						if (FVector::DistSquared(ControlledPawn->GetActorLocation(), ClosestPoint) < FVector::DistSquared(ControlledPawn->GetActorLocation(), Closest))
+						{
+							Closest = ClosestPoint;
+						}
+					}
+					path->GetPath()->GetPathPoints()[i].Location = Closest;
+
+					DrawDebugSphere(GetWorld(), Closest, 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
+
+					FJumpPoint newJumpPoint;
+					newJumpPoint.Left = Closest;
+					newJumpPoint.Right = pathpoints[i + 1].Location;
+					FinalJumppPointPath.Add(newJumpPoint);
 				}
 			}
-			DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1], FColor(255, 0, 0), true, 0, 2.f);
-
-			if (CurrentPolygonVertices.Num() == 2)
+			else
 			{
-				//Draw green line for nav link
-				DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[1], FColor(0, 255, 0), true, 0, 5.f);
+				//DRAW POLYGON
+				for (int j = 0; j < CurrentPolygonEdges.Num(); j++)
+				{
+					DrawDebugLine(GetWorld(), CurrentPolygonEdges[j].Left, CurrentPolygonEdges[j].Right, FColor(255, 0, 0), true, 0, 5.f);
+				}
+				DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1], FColor(255, 0, 0), true, 0, 5.f);
 			}
+			//FCustomPathPoint pathPointToAdd = FCustomPathPoint();
+			//pathPointToAdd.Location = path->GetPath()->GetPathPointLocation(i).Position;
+			//pathPointToAdd.IsJumpPoint = IsJump;
+			//FinalPath.Add(pathPointToAdd);
 		}
 	}
 
+	CustomPath = FinalPath;
 
+	JumpPoints = FinalJumppPointPath;
+
+	FollowCustomPath();
 
 	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, FXCursor, CachedDestination, FRotator::ZeroRotator, FVector(1.f, 1.f, 1.f), true, true, ENCPoolMethod::None, true);
 }
@@ -176,88 +226,44 @@ FVector AFYPPlayerController::GetGoalDestination()
 	return CachedDestination;
 }
 
-int AFYPPlayerController::stringPull(const float* portals, int nportals, float* pts, const int maxPts)
+void AFYPPlayerController::FollowCustomPath()
 {
-	// Find straight path.
-	int npts = 0;
-	// Init scan state
-	float portalApex[2], portalLeft[2], portalRight[2];
-	int apexIndex = 0, leftIndex = 0, rightIndex = 0;
-	vcpy(portalApex, &portals[0]);
-	vcpy(portalLeft, &portals[0]);
-	vcpy(portalRight, &portals[2]);
-
-	// Add start point.
-	vcpy(&pts[npts * 2], portalApex);
-	npts++;
-
-	for (int i = 1; i < nportals && npts < maxPts; ++i)
-	{
-		const float* left = &portals[i * 4 + 0];
-		const float* right = &portals[i * 4 + 2];
-
-		// Update right vertex.
-		if (triarea2(portalApex, portalRight, right) <= 0.0f)
-		{
-			if (vequal(portalApex, portalRight) || triarea2(portalApex, portalLeft, right) > 0.0f)
-			{
-				// Tighten the funnel.
-				vcpy(portalRight, right);
-				rightIndex = i;
-			}
-			else
-			{
-				// Right over left, insert left to path and restart scan from portal left point.
-				vcpy(&pts[npts * 2], portalLeft);
-				npts++;
-				// Make current left the new apex.
-				vcpy(portalApex, portalLeft);
-				apexIndex = leftIndex;
-				// Reset portal
-				vcpy(portalLeft, portalApex);
-				vcpy(portalRight, portalApex);
-				leftIndex = apexIndex;
-				rightIndex = apexIndex;
-				// Restart scan
-				i = apexIndex;
-				continue;
-			}
-		}
-
-		// Update left vertex.
-		if (triarea2(portalApex, portalLeft, left) >= 0.0f)
-		{
-			if (vequal(portalApex, portalLeft) || triarea2(portalApex, portalRight, left) < 0.0f)
-			{
-				// Tighten the funnel.
-				vcpy(portalLeft, left);
-				leftIndex = i;
-			}
-			else
-			{
-				// Left over right, insert right to path and restart scan from portal right point.
-				vcpy(&pts[npts * 2], portalRight);
-				npts++;
-				// Make current right the new apex.
-				vcpy(portalApex, portalRight);
-				apexIndex = rightIndex;
-				// Reset portal
-				vcpy(portalLeft, portalApex);
-				vcpy(portalRight, portalApex);
-				leftIndex = apexIndex;
-				rightIndex = apexIndex;
-				// Restart scan
-				i = apexIndex;
-				continue;
-			}
-		}
-	}
-	// Append last point to path.
-	if (npts < maxPts)
-	{
-		vcpy(&pts[npts * 2], &portals[(nportals - 1) * 4 + 0]);
-		npts++;
-	}
-
-	return npts;
+	CurrentPathIndex = 0;
+	GoToNextPointOnCustomPath();
 }
+
+void AFYPPlayerController::GoToNextPointOnCustomPath()
+{
+	if (JumpPoints.Num() == 0)
+	{
+		UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, CachedDestination);
+	}
+
+	if (CurrentPathIndex == JumpPoints.Num())
+	{
+		return;
+	}
+
+	UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, JumpPoints[CurrentPathIndex].Left);
+	CustomGoingToNextPoint(JumpPoints[CurrentPathIndex]);
+	CurrentPathIndex++;
+	//if (CurrentPathIndex >= CustomPath.Num())
+	//{
+	//	return;
+	//}
+
+	//if (CustomPath[CurrentPathIndex].IsJumpPoint)
+	//{
+	//	FVector Upper = CustomPath[CurrentPathIndex].Location.Z > CustomPath[CurrentPathIndex + 1].Location.Z ? CustomPath[CurrentPathIndex].Location : CustomPath[CurrentPathIndex + 1].Location;
+	//	FVector Lower = CustomPath[CurrentPathIndex].Location.Z < CustomPath[CurrentPathIndex + 1].Location.Z ? CustomPath[CurrentPathIndex].Location : CustomPath[CurrentPathIndex + 1].Location;
+	//	CustomJump(Lower, Upper);
+	//}
+	//else
+	//{
+	//	UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, CustomPath[CurrentPathIndex].Location);
+	//	CustomGoingToNextPoint(CustomPath[CurrentPathIndex].Location);
+	//}
+
+	//CurrentPathIndex++;
+}
+
