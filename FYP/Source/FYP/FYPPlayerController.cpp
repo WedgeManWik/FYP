@@ -212,6 +212,10 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 		return;
 	}
 	TArray<FMyPolyEdge> PortalsButNoHeight;
+
+	TArray<FVector> PathPoints;
+	PathPoints.Add(Start);
+
 	Start.Z = 0;
 	Destination.Z = 0;
 
@@ -225,9 +229,6 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 	}
 
 	MyPortals = PortalsButNoHeight;
-
-	TArray<FVector> PathPoints;
-	PathPoints.Add(Start);
 
 	MyPathPoints.Empty();
 	MyPathPoints.Add(Start);
@@ -249,6 +250,7 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 	DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 10.f);
 	DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 10.f);
 
+	bool AddingPathPoint = false;
 	for (int i = 1; i <= PortalsButNoHeight.Num() - 1; i++)
 	{
 		//Update Barrier 1
@@ -256,7 +258,7 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 		if (UpdateBarrier(Barrier1, Barrier2, PortalsButNoHeight[i], DotProduct, NewPathPoint, FColor(0, 0, 255)))
 		{
 			//TEMPORARY
-			NewPathPoint.Z = Portals[i].Left.Z;
+			NewPathPoint.Z = Portals[i - 1].Left.Z;
 
 			PathPoints.Add(NewPathPoint);
 			if (i != PortalsButNoHeight.Num() - 1)
@@ -272,7 +274,7 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 		if (UpdateBarrier(Barrier2, Barrier1, PortalsButNoHeight[i], DotProduct, NewPathPoint, FColor(255, 125, 0)))
 		{
 			//TEMPORARY
-			NewPathPoint.Z = Portals[i].Left.Z;
+			NewPathPoint.Z = Portals[i - 1].Left.Z;
 
 			PathPoints.Add(NewPathPoint);
 			if (i != PortalsButNoHeight.Num() - 1)
@@ -290,10 +292,42 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 
 	PathPoints.Add(CachedDestination);
 
-	for (int i = 1; i < PathPoints.Num(); i++)
+	TArray<FVector> FinalPathPoints;
+	FinalPathPoints.Add(PathPoints[0]);
+	DrawDebugSphere(GetWorld(), PathPoints[0], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+
+	int PathPointIndex = 0;
+	for (int j = 0; j < PortalsButNoHeight.Num() - 1; j++)
 	{
-		DrawDebugLine(GetWorld(), PathPoints[i - 1], PathPoints[i], FColor(255, 0, 0), true, 0,20.f);
+		if (PathPointIndex >= PathPoints.Num() - 1)
+		{
+			break;
+		}
+		FVector StartOfLine = PathPoints[PathPointIndex];
+		StartOfLine.Z = 0;
+		FVector EndOfLine = PathPoints[PathPointIndex + 1];
+		EndOfLine.Z = 0;
+		if (PortalsButNoHeight[j].IsJumpEdge)
+		{
+			FVector Intersect;
+			if (FindSegmentSegmentIntersection(StartOfLine, EndOfLine, PortalsButNoHeight[j].Left, PortalsButNoHeight[j].Right, Intersect))
+			{
+				//TEMPORARY
+				Intersect.Z = Portals[j].Left.Z;
+
+				FinalPathPoints.Add(Intersect);
+				DrawDebugSphere(GetWorld(), Intersect, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+			}
+			else
+			{
+				PathPointIndex++;
+			}
+		}
+
 	}
+
+	FinalPathPoints.Add(CachedDestination);
+	DrawDebugSphere(GetWorld(), CachedDestination, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
 }
 
 FMyPolyEdge AFYPPlayerController::GetEdgeClosestToPointOnPolygon(const FVector& Point, const TArray<FVector>& PolygonVerticies)
