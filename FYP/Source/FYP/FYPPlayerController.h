@@ -17,20 +17,14 @@ struct FJumpPoint
 	GENERATED_BODY()
 
 		UPROPERTY(BlueprintReadOnly)
-		FVector Left;
+	FVector Left;
 	UPROPERTY(BlueprintReadOnly)
-		FVector Right;
-};
+	FVector Right;
 
-USTRUCT(BlueprintType)
-struct FCustomPathPoint
-{
-	GENERATED_BODY()
+	FJumpPoint()
+	{
 
-	UPROPERTY(BlueprintReadOnly)
-		FVector Location;
-	UPROPERTY(BlueprintReadOnly)
-		bool IsJumpPoint;
+	}
 };
 
 UCLASS()
@@ -102,8 +96,6 @@ private:
 
 	bool bIsTouch; // Is it a touch device
 	float FollowTime; // For how long it has been pressed
-
-	TArray<FCustomPathPoint> CustomPath;
 
 	TArray<FJumpPoint> JumpPoints;
 

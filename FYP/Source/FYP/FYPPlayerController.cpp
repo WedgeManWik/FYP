@@ -28,8 +28,6 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 	APawn* ControlledPawn = GetPawn();
 	UNavigationPath* path = NavSys->FindPathToLocationSynchronously(this, ControlledPawn->GetActorLocation(), CachedDestination, ControlledPawn);
 
-	TArray<FCustomPathPoint> FinalPath;
-
 	TArray<FJumpPoint> FinalJumppPointPath;
 
 	if (path && path->IsValid())
@@ -137,7 +135,7 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 		}
 	}
 
-	CustomPath = FinalPath;
+	//CustomPath = FinalPath;
 
 	JumpPoints = FinalJumppPointPath;
 

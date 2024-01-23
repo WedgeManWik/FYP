@@ -17,8 +17,6 @@ public:
 
 	virtual void BeginPlay() override;
 
-	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
-
 	UFUNCTION(BlueprintCallable)
 		void UpdateSmartLinkProperties();
 	

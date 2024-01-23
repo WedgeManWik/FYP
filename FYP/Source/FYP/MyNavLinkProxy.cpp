@@ -20,16 +20,6 @@ void AMyNavLinkProxy::BeginPlay()
 	}
 }
 
-void AMyNavLinkProxy::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
-{
-	if (PointLinks.Num() == 1)
-	{
-		GetSmartLinkComp()->SetLinkData(PointLinks[0].Left, PointLinks[0].Right, PointLinks[0].Direction);
-	}
-
-	Super::PostEditChangeProperty(PropertyChangedEvent);
-}
-
 void AMyNavLinkProxy::UpdateSmartLinkProperties()
 {
 	if (PointLinks.Num() == 1)
