@@ -65,7 +65,7 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 					FMyPolyEdge EdgeToAdd = GetEdgeClosestToPointOnPolygon(Point, PrevPolygonVertices);
 					EdgeToAdd.IsJumpEdge = true;
 					Portals.Add(EdgeToAdd);
-					//DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(0, 255, 0), true, 0, 5.f);
+					DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(0, 0, 0), true, 0, 5.f);
 				
 					//NEXT POLYGON
 					NavNodeRef nextNodeRef = pathpoints[i + 1].NodeRef;
@@ -76,7 +76,7 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 					EdgeToAdd = GetEdgeClosestToPointOnPolygon(Point, NextPolygonVertices);
 					EdgeToAdd.IsJumpEdge = true;
 					Portals.Add(EdgeToAdd);
-					//DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(0, 255, 0), true, 0, 5.f);
+					DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(0, 0, 0), true, 0, 5.f);
 
 					//DrawDebugSphere(GetWorld(), EdgeToAdd.Left, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 					//DrawDebugSphere(GetWorld(), EdgeToAdd.Right, 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
@@ -86,7 +86,7 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 					FMyPolyEdge EdgeToAdd = GetEdgeClosestToPointOnPolygon(pathpoints[i], PrevPolygonVertices);
 					EdgeToAdd.IsJumpEdge = false;
 					Portals.Add(EdgeToAdd);
-					//DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(0, 255, 0), true, 0, 5.f);
+					DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(255, 255, 255), true, 0, 5.f);
 
 					//DrawDebugSphere(GetWorld(), EdgeToAdd.Left, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 					//DrawDebugSphere(GetWorld(), EdgeToAdd.Right, 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
@@ -226,7 +226,7 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 		PortalsButNoHeight[i].Left.Z = 0;
 		PortalsButNoHeight[i].Right.Z = 0;
 
-		DrawDebugLine(GetWorld(), PortalsButNoHeight[i].Left, PortalsButNoHeight[i].Right, FColor(0, 255, 0), true, 0, 10.f);
+		//DrawDebugLine(GetWorld(), PortalsButNoHeight[i].Left, PortalsButNoHeight[i].Right, FColor(0, 255, 0), true, 0, 10.f);
 	}
 
 	MyPortals = PortalsButNoHeight;
@@ -248,8 +248,8 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 	CurrentPathIndex = 0;
 	DidStep2 = true;
 
-	DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 10.f);
-	DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 10.f);
+	//DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 10.f);
+	//DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 10.f);
 
 	if (PathfindingAuto)
 	{
@@ -263,40 +263,81 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 		FinalPathPoints.Add(MyPathPoints[0]);
 		DrawDebugSphere(GetWorld(), MyPathPoints[0], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
 
-		int PathPointIndex = 0;
-		for (int j = 0; j < PortalsButNoHeight.Num() - 1; j++)
+		//for (int fin = 1; fin < MyPathPoints.Num(); fin++)
+		//{
+		//	DrawDebugLine(GetWorld(), MyPathPoints[fin], MyPathPoints[fin - 1], FColor(255, 255, 0), true, 0, 10.f);
+		//}
+
+		int PathLineIndex = 0;
+		for (int j = 0; j < PortalsButNoHeight.Num(); j++)
 		{
-			if (PathPointIndex >= MyPathPoints.Num() - 1)
+			if (Portals[j].IsJumpEdge)
 			{
-				break;
-			}
-			FVector StartOfLine = MyPathPoints[PathPointIndex];
-			StartOfLine.Z = 0;
-			FVector EndOfLine = MyPathPoints[PathPointIndex + 1];
-			EndOfLine.Z = 0;
-			if (PortalsButNoHeight[j].IsJumpEdge)
-			{
+				FVector StartPoint = MyPathPoints[PathLineIndex];
+				FVector EndPoint = MyPathPoints[PathLineIndex + 1];
+
+				DrawDebugLine(GetWorld(), StartPoint, EndPoint, FColor(0, 0, 255), true, 0, 10.f);
+
 				FVector Intersect;
-				if (FindSegmentSegmentIntersection(StartOfLine, EndOfLine, PortalsButNoHeight[j].Left, PortalsButNoHeight[j].Right, Intersect))
+				if (FindSegmentSegmentIntersection(StartPoint, EndPoint, PortalsButNoHeight[j].Right, PortalsButNoHeight[j].Left, Intersect))
 				{
 					//TEMPORARY
 					Intersect.Z = Portals[j].Left.Z;
 
 					FinalPathPoints.Add(Intersect);
-					DrawDebugSphere(GetWorld(), Intersect, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
 
-					DrawDebugLine(GetWorld(), Intersect, FinalPathPoints[FinalPathPoints.Num() - 1], FColor(255, 0, 0), true, 0, 10.f);
+					DrawDebugSphere(GetWorld(), Intersect, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
 				}
 				else
 				{
-					PathPointIndex++;
+					PathLineIndex++;
 				}
 			}
-
 		}
 
 		FinalPathPoints.Add(CachedDestination);
 		DrawDebugSphere(GetWorld(), CachedDestination, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+
+		for (int fin = 0; fin < FinalPathPoints.Num() - 1; fin++)
+		{
+			DrawDebugLine(GetWorld(), FinalPathPoints[fin], FinalPathPoints[fin + 1], FColor(255, 255, 0), true, 0, 10.f);
+		}
+
+		//TArray<FVector> FinalPathPoints;
+		//FinalPathPoints.Add(MyPathPoints[0]);
+		//DrawDebugSphere(GetWorld(), MyPathPoints[0], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+
+		//int PathPointIndex = 0;
+		//for (int j = 0; j < PortalsButNoHeight.Num() - 1; j++)
+		//{
+		//	if (PathPointIndex >= MyPathPoints.Num() - 1)
+		//	{
+		//		break;
+		//	}
+		//	FVector StartOfLine = MyPathPoints[PathPointIndex];
+		//	StartOfLine.Z = 0;
+		//	FVector EndOfLine = MyPathPoints[PathPointIndex + 1];
+		//	EndOfLine.Z = 0;
+		//	if (Portals[j].IsJumpEdge)
+		//	{
+		//		FVector Intersect;
+		//		if (FindSegmentSegmentIntersection(StartOfLine, EndOfLine, PortalsButNoHeight[j].Left, PortalsButNoHeight[j].Right, Intersect))
+		//		{
+		//			//TEMPORARY
+		//			Intersect.Z = Portals[j].Left.Z;
+
+		//			FinalPathPoints.Add(Intersect);
+		//		}
+		//		else
+		//		{
+		//			PathPointIndex++;
+		//		}
+		//	}
+
+		//}
+
+		//FinalPathPoints.Add(CachedDestination);
+		//DrawDebugSphere(GetWorld(), CachedDestination, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
 	}
 }
 
@@ -362,10 +403,6 @@ void AFYPPlayerController::ComputeNextPathStep()
 			FVector End = CachedDestination;
 			End.Z = 0;
 			MyPathPoints.Add(End);
-			for (int i = 1; i < MyPathPoints.Num(); i++)
-			{
-				DrawDebugLine(GetWorld(), MyPathPoints[i - 1], MyPathPoints[i], FColor(255, 0, 0), true, 0,20.f);
-			}
 
 			PathComplete = true;
 			return;
@@ -396,8 +433,8 @@ void AFYPPlayerController::ComputeNextPathStep()
 
 				DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 
-				DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
-				DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
+				//DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
+				//DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
 			}
 			DidStep2 = true;
 			return;
@@ -430,8 +467,8 @@ void AFYPPlayerController::ComputeNextPathStep()
 
 				DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 
-				DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
-				DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
+				//DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
+				//DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
 			}
 			else
 			{
@@ -497,7 +534,7 @@ bool AFYPPlayerController::UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMyPolyEd
 		//	DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(0, 255, 255), true, 0, 10.f);
 		//}
 		OutNewPathPoint = OtherBarrier.Right;
-		DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(0, 255, 255), true, 0, 10.f);
+		//DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(0, 255, 255), true, 0, 10.f);
 		return true;
 	}
 
@@ -512,7 +549,7 @@ bool AFYPPlayerController::UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMyPolyEd
 		//Funnel got wider
 		BarrierToUpdate.Right = PreviousLocation;
 	}
-	DrawDebugLine(GetWorld(), BarrierToUpdate.Left, BarrierToUpdate.Right, ColourBarrier, true, 0, 10.f);
+	//DrawDebugLine(GetWorld(), BarrierToUpdate.Left, BarrierToUpdate.Right, ColourBarrier, true, 0, 10.f);
 	return false;
 }
 

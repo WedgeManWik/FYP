@@ -140,7 +140,7 @@ protected:
 private:
 	FVector CachedDestination;
 
-	bool bIsTouch; // Is it a touch device
+	bool bIsTouch;
 	float FollowTime; // For how long it has been pressed
 
 	TArray<FJumpPoint> JumpPoints;
