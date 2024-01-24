@@ -12,7 +12,7 @@
   [Upgrade]
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-    Requested 1.5 GB free memory per action, 5.58 GB available: limiting max parallel actions to 3
+    Requested 1.5 GB free memory per action, 5.9 GB available: limiting max parallel actions to 3
   Building 4 actions with 3 processes...
   [1/4] Compile [x64] FYPPlayerController.cpp
   [2/4] Link [x64] UnrealEditor-FYP.lib
@@ -20,5 +20,5 @@
   [3/4] Link [x64] UnrealEditor-FYP.dll
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
   [4/4] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 10.73 seconds
-  Total execution time: 11.63 seconds
+  Total time in Parallel executor: 21.04 seconds
+  Total execution time: 23.65 seconds

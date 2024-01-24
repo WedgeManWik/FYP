@@ -45,7 +45,8 @@
 				"D:/GitHub/FYP/FYP/Content/TopDown/Input/Actions/IA_NextStep.uasset",
 				"D:/GitHub/FYP/FYP/Content/TopDown/Input/IMC_Default.uasset",
 				"D:/GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_TopDownPlayerController.uasset",
-				"D:/GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_TopDownCharacter.uasset"
+				"D:/GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_TopDownCharacter.uasset",
+				"D:/GitHub/FYP/FYP/Content/TopDown/Input/Actions/IA_SwitchPathfindMode.uasset"
 			]
 		}
 	]

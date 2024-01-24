@@ -540,6 +540,10 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_NextPortalAction_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_NextPortalAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SwitchPathfindModeAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SwitchPathfindModeAction;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -621,6 +625,16 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_NextPortalAction = { "NextPortalAction", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFYPPlayerController, NextPortalAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_NextPortalAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_NextPortalAction_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SwitchPathfindModeAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+		{ "Comment", "/** Jump Input Action */" },
+		{ "ModuleRelativePath", "FYPPlayerController.h" },
+		{ "ToolTip", "Jump Input Action" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SwitchPathfindModeAction = { "SwitchPathfindModeAction", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFYPPlayerController, SwitchPathfindModeAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SwitchPathfindModeAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SwitchPathfindModeAction_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFYPPlayerController_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_ShortPressThreshold,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_FXCursor,
@@ -628,6 +642,7 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SetDestinationClickAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SetDestinationTouchAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_NextPortalAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFYPPlayerController_Statics::NewProp_SwitchPathfindModeAction,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFYPPlayerController_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFYPPlayerController>::IsAbstract,
@@ -672,9 +687,9 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		{ FMyPoly::StaticStruct, Z_Construct_UScriptStruct_FMyPoly_Statics::NewStructOps, TEXT("MyPoly"), &Z_Registration_Info_UScriptStruct_MyPoly, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMyPoly), 3033480881U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 3452375553U) },
+		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 861588774U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_3478748170(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_2291764673(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ScriptStructInfo),
 		nullptr, 0);
