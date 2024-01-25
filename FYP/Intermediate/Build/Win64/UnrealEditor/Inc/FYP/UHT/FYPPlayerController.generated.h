@@ -10,18 +10,18 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class ARecastNavMesh;
-struct FJumpPoint;
+struct FPathPoint;
 #ifdef FYP_FYPPlayerController_generated_h
 #error "FYPPlayerController.generated.h already included, missing '#pragma once' in FYPPlayerController.h"
 #endif
 #define FYP_FYPPlayerController_generated_h
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FJumpPoint_Statics; \
+	friend struct Z_Construct_UScriptStruct_FPathPoint_Statics; \
 	FYP_API static class UScriptStruct* StaticStruct();
 
 
-template<> FYP_API UScriptStruct* StaticStruct<struct FJumpPoint>();
+template<> FYP_API UScriptStruct* StaticStruct<struct FPathPoint>();
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_28_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FMyPolyEdge_Statics; \
@@ -42,14 +42,14 @@ template<> FYP_API UScriptStruct* StaticStruct<struct FMyPoly>();
  \
 	DECLARE_FUNCTION(execGetGoalDestination); \
 	DECLARE_FUNCTION(execGoToNextPointOnCustomPath); \
-	DECLARE_FUNCTION(execFindPath);
+	DECLARE_FUNCTION(execFindPathPortals);
 
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetGoalDestination); \
 	DECLARE_FUNCTION(execGoToNextPointOnCustomPath); \
-	DECLARE_FUNCTION(execFindPath);
+	DECLARE_FUNCTION(execFindPathPortals);
 
 
 #define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_ACCESSORS

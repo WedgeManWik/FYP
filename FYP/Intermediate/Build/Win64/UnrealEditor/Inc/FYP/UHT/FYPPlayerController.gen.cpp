@@ -15,91 +15,96 @@ void EmptyLinkFunctionForGeneratedCodeFYPPlayerController() {}
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 	FYP_API UClass* Z_Construct_UClass_AFYPPlayerController();
 	FYP_API UClass* Z_Construct_UClass_AFYPPlayerController_NoRegister();
-	FYP_API UScriptStruct* Z_Construct_UScriptStruct_FJumpPoint();
 	FYP_API UScriptStruct* Z_Construct_UScriptStruct_FMyPoly();
 	FYP_API UScriptStruct* Z_Construct_UScriptStruct_FMyPolyEdge();
+	FYP_API UScriptStruct* Z_Construct_UScriptStruct_FPathPoint();
 	NAVIGATIONSYSTEM_API UClass* Z_Construct_UClass_ARecastNavMesh_NoRegister();
 	NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_FYP();
 // End Cross Module References
-	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_JumpPoint;
-class UScriptStruct* FJumpPoint::StaticStruct()
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_PathPoint;
+class UScriptStruct* FPathPoint::StaticStruct()
 {
-	if (!Z_Registration_Info_UScriptStruct_JumpPoint.OuterSingleton)
+	if (!Z_Registration_Info_UScriptStruct_PathPoint.OuterSingleton)
 	{
-		Z_Registration_Info_UScriptStruct_JumpPoint.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FJumpPoint, (UObject*)Z_Construct_UPackage__Script_FYP(), TEXT("JumpPoint"));
+		Z_Registration_Info_UScriptStruct_PathPoint.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FPathPoint, (UObject*)Z_Construct_UPackage__Script_FYP(), TEXT("PathPoint"));
 	}
-	return Z_Registration_Info_UScriptStruct_JumpPoint.OuterSingleton;
+	return Z_Registration_Info_UScriptStruct_PathPoint.OuterSingleton;
 }
-template<> FYP_API UScriptStruct* StaticStruct<FJumpPoint>()
+template<> FYP_API UScriptStruct* StaticStruct<FPathPoint>()
 {
-	return FJumpPoint::StaticStruct();
+	return FPathPoint::StaticStruct();
 }
-	struct Z_Construct_UScriptStruct_FJumpPoint_Statics
+	struct Z_Construct_UScriptStruct_FPathPoint_Statics
 	{
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Left_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Location_MetaData[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_Left;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Location;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Right_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsJump_MetaData[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_Right;
+		static void NewProp_IsJump_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsJump;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FStructParams ReturnStructParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJumpPoint_Statics::Struct_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FPathPoint_Statics::Struct_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "ModuleRelativePath", "FYPPlayerController.h" },
 	};
 #endif
-	void* Z_Construct_UScriptStruct_FJumpPoint_Statics::NewStructOps()
+	void* Z_Construct_UScriptStruct_FPathPoint_Statics::NewStructOps()
 	{
-		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FJumpPoint>();
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FPathPoint>();
 	}
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Left_MetaData[] = {
-		{ "Category", "JumpPoint" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_Location_MetaData[] = {
+		{ "Category", "PathPoint" },
 		{ "ModuleRelativePath", "FYPPlayerController.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Left = { "Left", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FJumpPoint, Left), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Left_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Left_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_Location = { "Location", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FPathPoint, Location), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_Location_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_Location_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Right_MetaData[] = {
-		{ "Category", "JumpPoint" },
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_IsJump_MetaData[] = {
+		{ "Category", "PathPoint" },
 		{ "ModuleRelativePath", "FYPPlayerController.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Right = { "Right", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FJumpPoint, Right), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Right_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Right_MetaData)) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FJumpPoint_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Left,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FJumpPoint_Statics::NewProp_Right,
+	void Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_IsJump_SetBit(void* Obj)
+	{
+		((FPathPoint*)Obj)->IsJump = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_IsJump = { "IsJump", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(FPathPoint), &Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_IsJump_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_IsJump_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_IsJump_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FPathPoint_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_Location,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPathPoint_Statics::NewProp_IsJump,
 	};
-	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FJumpPoint_Statics::ReturnStructParams = {
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FPathPoint_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_FYP,
 		nullptr,
 		&NewStructOps,
-		"JumpPoint",
-		sizeof(FJumpPoint),
-		alignof(FJumpPoint),
-		Z_Construct_UScriptStruct_FJumpPoint_Statics::PropPointers,
-		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJumpPoint_Statics::PropPointers),
+		"PathPoint",
+		sizeof(FPathPoint),
+		alignof(FPathPoint),
+		Z_Construct_UScriptStruct_FPathPoint_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FPathPoint_Statics::PropPointers),
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FJumpPoint_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FJumpPoint_Statics::Struct_MetaDataParams))
+		METADATA_PARAMS(Z_Construct_UScriptStruct_FPathPoint_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FPathPoint_Statics::Struct_MetaDataParams))
 	};
-	UScriptStruct* Z_Construct_UScriptStruct_FJumpPoint()
+	UScriptStruct* Z_Construct_UScriptStruct_FPathPoint()
 	{
-		if (!Z_Registration_Info_UScriptStruct_JumpPoint.InnerSingleton)
+		if (!Z_Registration_Info_UScriptStruct_PathPoint.InnerSingleton)
 		{
-			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_JumpPoint.InnerSingleton, Z_Construct_UScriptStruct_FJumpPoint_Statics::ReturnStructParams);
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_PathPoint.InnerSingleton, Z_Construct_UScriptStruct_FPathPoint_Statics::ReturnStructParams);
 		}
-		return Z_Registration_Info_UScriptStruct_JumpPoint.InnerSingleton;
+		return Z_Registration_Info_UScriptStruct_PathPoint.InnerSingleton;
 	}
 	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_MyPolyEdge;
 class UScriptStruct* FMyPolyEdge::StaticStruct()
@@ -290,17 +295,17 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		P_THIS->GoToNextPointOnCustomPath();
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(AFYPPlayerController::execFindPath)
+	DEFINE_FUNCTION(AFYPPlayerController::execFindPathPortals)
 	{
 		P_GET_OBJECT(ARecastNavMesh,Z_Param_Nav);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->FindPath(Z_Param_Nav);
+		P_THIS->FindPathPortals(Z_Param_Nav);
 		P_NATIVE_END;
 	}
 	struct FYPPlayerController_eventCustomGoingToNextPoint_Parms
 	{
-		FJumpPoint JumpLink;
+		FPathPoint PathPoint;
 	};
 	struct FYPPlayerController_eventCustomJump_Parms
 	{
@@ -308,10 +313,10 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		FVector UpperLocation;
 	};
 	static FName NAME_AFYPPlayerController_CustomGoingToNextPoint = FName(TEXT("CustomGoingToNextPoint"));
-	void AFYPPlayerController::CustomGoingToNextPoint(FJumpPoint JumpLink)
+	void AFYPPlayerController::CustomGoingToNextPoint(FPathPoint PathPoint)
 	{
 		FYPPlayerController_eventCustomGoingToNextPoint_Parms Parms;
-		Parms.JumpLink=JumpLink;
+		Parms.PathPoint=PathPoint;
 		ProcessEvent(FindFunctionChecked(NAME_AFYPPlayerController_CustomGoingToNextPoint),&Parms);
 	}
 	static FName NAME_AFYPPlayerController_CustomJump = FName(TEXT("CustomJump"));
@@ -331,7 +336,7 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 	{
 		UClass* Class = AFYPPlayerController::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "FindPath", &AFYPPlayerController::execFindPath },
+			{ "FindPathPortals", &AFYPPlayerController::execFindPathPortals },
 			{ "GetGoalDestination", &AFYPPlayerController::execGetGoalDestination },
 			{ "GoToNextPointOnCustomPath", &AFYPPlayerController::execGoToNextPointOnCustomPath },
 		};
@@ -339,16 +344,16 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 	}
 	struct Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint_Statics
 	{
-		static const UECodeGen_Private::FStructPropertyParams NewProp_JumpLink;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_PathPoint;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint_Statics::NewProp_JumpLink = { "JumpLink", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FYPPlayerController_eventCustomGoingToNextPoint_Parms, JumpLink), Z_Construct_UScriptStruct_FJumpPoint, METADATA_PARAMS(nullptr, 0) }; // 1750899947
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint_Statics::NewProp_PathPoint = { "PathPoint", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FYPPlayerController_eventCustomGoingToNextPoint_Parms, PathPoint), Z_Construct_UScriptStruct_FPathPoint, METADATA_PARAMS(nullptr, 0) }; // 2272768330
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint_Statics::NewProp_JumpLink,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint_Statics::NewProp_PathPoint,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint_Statics::Function_MetaDataParams[] = {
@@ -418,9 +423,9 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics
+	struct Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics
 	{
-		struct FYPPlayerController_eventFindPath_Parms
+		struct FYPPlayerController_eventFindPathPortals_Parms
 		{
 			ARecastNavMesh* Nav;
 		};
@@ -431,22 +436,22 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::NewProp_Nav = { "Nav", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FYPPlayerController_eventFindPath_Parms, Nav), Z_Construct_UClass_ARecastNavMesh_NoRegister, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::NewProp_Nav,
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::NewProp_Nav = { "Nav", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(FYPPlayerController_eventFindPathPortals_Parms, Nav), Z_Construct_UClass_ARecastNavMesh_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::NewProp_Nav,
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "FYPPlayerController.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFYPPlayerController, nullptr, "FindPath", nullptr, nullptr, sizeof(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::FYPPlayerController_eventFindPath_Parms), Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AFYPPlayerController_FindPath()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFYPPlayerController, nullptr, "FindPathPortals", nullptr, nullptr, sizeof(Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::FYPPlayerController_eventFindPathPortals_Parms), Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFYPPlayerController_FindPathPortals()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFYPPlayerController_FindPath_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AFYPPlayerController_FindPathPortals_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -553,10 +558,10 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		(UObject* (*)())Z_Construct_UPackage__Script_FYP,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AFYPPlayerController_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint, "CustomGoingToNextPoint" }, // 296265936
+		{ &Z_Construct_UFunction_AFYPPlayerController_CustomGoingToNextPoint, "CustomGoingToNextPoint" }, // 2030904453
 		{ &Z_Construct_UFunction_AFYPPlayerController_CustomJump, "CustomJump" }, // 4003349505
 		{ &Z_Construct_UFunction_AFYPPlayerController_FindNavData, "FindNavData" }, // 3145709781
-		{ &Z_Construct_UFunction_AFYPPlayerController_FindPath, "FindPath" }, // 4270711578
+		{ &Z_Construct_UFunction_AFYPPlayerController_FindPathPortals, "FindPathPortals" }, // 233104680
 		{ &Z_Construct_UFunction_AFYPPlayerController_GetGoalDestination, "GetGoalDestination" }, // 947276957
 		{ &Z_Construct_UFunction_AFYPPlayerController_GoToNextPointOnCustomPath, "GoToNextPointOnCustomPath" }, // 1805034540
 	};
@@ -682,14 +687,14 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPoly>()
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ScriptStructInfo[] = {
-		{ FJumpPoint::StaticStruct, Z_Construct_UScriptStruct_FJumpPoint_Statics::NewStructOps, TEXT("JumpPoint"), &Z_Registration_Info_UScriptStruct_JumpPoint, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FJumpPoint), 1750899947U) },
+		{ FPathPoint::StaticStruct, Z_Construct_UScriptStruct_FPathPoint_Statics::NewStructOps, TEXT("PathPoint"), &Z_Registration_Info_UScriptStruct_PathPoint, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FPathPoint), 2272768330U) },
 		{ FMyPolyEdge::StaticStruct, Z_Construct_UScriptStruct_FMyPolyEdge_Statics::NewStructOps, TEXT("MyPolyEdge"), &Z_Registration_Info_UScriptStruct_MyPolyEdge, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMyPolyEdge), 2912715034U) },
 		{ FMyPoly::StaticStruct, Z_Construct_UScriptStruct_FMyPoly_Statics::NewStructOps, TEXT("MyPoly"), &Z_Registration_Info_UScriptStruct_MyPoly, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMyPoly), 3033480881U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 861588774U) },
+		{ Z_Construct_UClass_AFYPPlayerController, AFYPPlayerController::StaticClass, TEXT("AFYPPlayerController"), &Z_Registration_Info_UClass_AFYPPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFYPPlayerController), 2620578008U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_2291764673(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_1249783842(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_Statics::ScriptStructInfo),
 		nullptr, 0);

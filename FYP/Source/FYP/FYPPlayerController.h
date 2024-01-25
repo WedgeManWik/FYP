@@ -12,14 +12,14 @@
 class UNiagaraSystem;
 
 USTRUCT(BlueprintType)
-struct FJumpPoint
+struct FPathPoint
 {
 	GENERATED_BODY()
 
 	UPROPERTY(BlueprintReadOnly)
-	FVector Left;
+	FVector Location;
 	UPROPERTY(BlueprintReadOnly)
-	FVector Right;
+	bool IsJump;
 };
 
 USTRUCT(BlueprintType)
@@ -65,13 +65,13 @@ public:
 		void CustomJump(FVector LowerLocation, FVector UpperLocation);
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void CustomGoingToNextPoint(FJumpPoint JumpLink);
+		void CustomGoingToNextPoint(FPathPoint PathPoint);
 
 	UFUNCTION(BlueprintImplementableEvent)
 		void FindNavData();
 
 	UFUNCTION(BlueprintCallable)
-		void FindPath(ARecastNavMesh* Nav);
+		void FindPathPortals(ARecastNavMesh* Nav);
 
 	UFUNCTION(BlueprintCallable)
 		void GoToNextPointOnCustomPath();
@@ -123,9 +123,11 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	FVector GetGoalDestination();
 
-	void FollowCustomPath(const TArray<FMyPolyEdge>& Portals, FVector Start, FVector Destination);
+	void CreateCustomPath(const TArray<FMyPolyEdge>& Portals, FVector Start, FVector Destination);
 
 	FMyPolyEdge GetEdgeClosestToPointOnPolygon(const FVector& Point, const TArray<FVector>& PolygonVerticies);
+
+	FMyPolyEdge GetEdgeClosestToAnotherEdgeOnPolygon(const FMyPolyEdge& Edge, const TArray<FVector>& PolygonVerticies);
 
 	bool FindPointSegmentIntersection(const FVector Point, const FVector SegmentStart, const FVector SegmentEnd);
 
@@ -143,7 +145,7 @@ private:
 	bool bIsTouch;
 	float FollowTime; // For how long it has been pressed
 
-	TArray<FJumpPoint> JumpPoints;
+	TArray<FPathPoint> AgentPathPoints;
 
 	TArray<FMyPolyEdge> MyPortals;
 	TArray<FVector> MyPathPoints;

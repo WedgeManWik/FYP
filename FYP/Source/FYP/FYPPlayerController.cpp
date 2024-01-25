@@ -9,7 +9,7 @@
 #include "Engine/World.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-
+#include "Kismet/KismetMathLibrary.h"
 #include "NavigationPath.h"
 #include "NavMesh/RecastNavMesh.h"
 #include "Runtime/NavigationSystem/Public/NavigationSystem.h"
@@ -22,13 +22,11 @@ AFYPPlayerController::AFYPPlayerController()
 	FollowTime = 0.f;
 }
 
-void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
+void AFYPPlayerController::FindPathPortals(ARecastNavMesh* Nav)
 {
 	UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
 	APawn* ControlledPawn = GetPawn();
 	UNavigationPath* path = NavSys->FindPathToLocationSynchronously(this, ControlledPawn->GetActorLocation(), CachedDestination, ControlledPawn);
-
-	//TArray<FJumpPoint> FinalJumppPointPath;
 
 	TArray<FMyPolyEdge> Portals;
 
@@ -45,6 +43,12 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 			TArray<FVector> CurrentPolygonVertices;
 			Nav->GetPolyVerts(nodeRef, CurrentPolygonVertices);
 
+			//for (int j = 1; j < CurrentPolygonVertices.Num(); j++)
+			//{
+			//	DrawDebugLine(GetWorld(), CurrentPolygonVertices[j], CurrentPolygonVertices[j - 1], FColor(0, 255, 0), true, 0, 5.f);
+			//}
+			//DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1], FColor(0, 255, 0), true, 0, 5.f);
+
 			//PREVIOUS POLYGON
 			NavNodeRef prevNodeRef = pathpoints[i - 1].NodeRef;
 			TArray<FVector> PrevPolygonVertices;
@@ -58,25 +62,25 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 			{
 				if (CurrentPolygonVertices.Num() == 2)
 				{
-					//MIDPOINT OF NAV LINK
-					FVector Point = (CurrentPolygonVertices[0] + CurrentPolygonVertices[1]) / 2.f;
-
-					//ADD PREV EDGE
-					FMyPolyEdge EdgeToAdd = GetEdgeClosestToPointOnPolygon(Point, PrevPolygonVertices);
-					EdgeToAdd.IsJumpEdge = true;
-					Portals.Add(EdgeToAdd);
-					DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(0, 0, 0), true, 0, 5.f);
-				
 					//NEXT POLYGON
 					NavNodeRef nextNodeRef = pathpoints[i + 1].NodeRef;
 					TArray<FVector> NextPolygonVertices;
 					Nav->GetPolyVerts(nextNodeRef, NextPolygonVertices);
 
+					FVector MidPoint = (CurrentPolygonVertices[0] + CurrentPolygonVertices[1]) / 2.f;
+
 					//ADD NEXT EDGE
-					EdgeToAdd = GetEdgeClosestToPointOnPolygon(Point, NextPolygonVertices);
-					EdgeToAdd.IsJumpEdge = true;
-					Portals.Add(EdgeToAdd);
-					DrawDebugLine(GetWorld(), EdgeToAdd.Left, EdgeToAdd.Right, FColor(0, 0, 0), true, 0, 5.f);
+					FMyPolyEdge NextEdgeToAdd = GetEdgeClosestToPointOnPolygon(MidPoint, NextPolygonVertices);
+					NextEdgeToAdd.IsJumpEdge = true;
+
+					//ADD PREV EDGE
+					FMyPolyEdge PrevEdgeToAdd = GetEdgeClosestToAnotherEdgeOnPolygon(NextEdgeToAdd, PrevPolygonVertices);
+					PrevEdgeToAdd.IsJumpEdge = false;
+
+					Portals.Add(PrevEdgeToAdd);
+					DrawDebugLine(GetWorld(), PrevEdgeToAdd.Left, PrevEdgeToAdd.Right, FColor(255, 255, 255), true, 0, 5.f);
+					Portals.Add(NextEdgeToAdd);
+					DrawDebugLine(GetWorld(), NextEdgeToAdd.Left, NextEdgeToAdd.Right, FColor(0, 0, 0), true, 0, 5.f);
 
 					//DrawDebugSphere(GetWorld(), EdgeToAdd.Left, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 					//DrawDebugSphere(GetWorld(), EdgeToAdd.Right, 5.f, 5, FColor(0, 0, 255), true, 0, 5.f);
@@ -95,7 +99,7 @@ void AFYPPlayerController::FindPath(ARecastNavMesh* Nav)
 		}
 	}
 
-	FollowCustomPath(Portals, ControlledPawn->GetActorLocation(), CachedDestination);
+	CreateCustomPath(Portals, ControlledPawn->GetActorLocation(), CachedDestination);
 
 	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, FXCursor, CachedDestination, FRotator::ZeroRotator, FVector(1.f, 1.f, 1.f), true, true, ENCPoolMethod::None, true);
 }
@@ -206,8 +210,9 @@ FVector AFYPPlayerController::GetGoalDestination()
 	return CachedDestination;
 }
 
-void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, FVector Start, FVector Destination)
+void AFYPPlayerController::CreateCustomPath(const TArray<FMyPolyEdge>& Portals, FVector Start, FVector Destination)
 {
+	AgentPathPoints.Empty();
 	if (Portals.Num() < 1)
 	{
 		return;
@@ -259,102 +264,66 @@ void AFYPPlayerController::FollowCustomPath(const TArray<FMyPolyEdge>& Portals, 
 			ComputeNextPathStep();
 		}
 
-		TArray<FVector> FinalPathPoints;
-		FinalPathPoints.Add(MyPathPoints[0]);
-		DrawDebugSphere(GetWorld(), MyPathPoints[0], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+		FPathPoint firstPathPoint;
+		firstPathPoint.IsJump = false;
+		firstPathPoint.Location = GetPawn()->GetActorLocation();
+		AgentPathPoints.Add(firstPathPoint);
 
-		//for (int fin = 1; fin < MyPathPoints.Num(); fin++)
-		//{
-		//	DrawDebugLine(GetWorld(), MyPathPoints[fin], MyPathPoints[fin - 1], FColor(255, 255, 0), true, 0, 10.f);
-		//}
-
-		int PathLineIndex = 0;
-		for (int j = 0; j < PortalsButNoHeight.Num(); j++)
+		for (int x = 0; x < PortalsButNoHeight.Num() - 1; x++)
 		{
-			if (Portals[j].IsJumpEdge)
+			for (int y = 0; y < MyPathPoints.Num() - 1; y++)
 			{
-				FVector StartPoint = MyPathPoints[PathLineIndex];
-				FVector EndPoint = MyPathPoints[PathLineIndex + 1];
-
-				DrawDebugLine(GetWorld(), StartPoint, EndPoint, FColor(0, 0, 255), true, 0, 10.f);
-
-				FVector Intersect;
-				if (FindSegmentSegmentIntersection(StartPoint, EndPoint, PortalsButNoHeight[j].Right, PortalsButNoHeight[j].Left, Intersect))
+				if (x == 0)
 				{
-					//TEMPORARY
-					Intersect.Z = Portals[j].Left.Z;
-
-					FinalPathPoints.Add(Intersect);
-
-					DrawDebugSphere(GetWorld(), Intersect, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+					//DrawDebugLine(GetWorld(), MyPathPoints[y], MyPathPoints[y+1], FColor(0, 255, 0), true, 0, 10.f);
 				}
-				else
+				FVector Intersection;
+				if (FindSegmentSegmentIntersection(PortalsButNoHeight[x].Right, PortalsButNoHeight[x].Left, MyPathPoints[y], MyPathPoints[y + 1], Intersection))
 				{
-					PathLineIndex++;
+					FPathPoint newPathPoint;
+					newPathPoint.IsJump = false;
+					newPathPoint.Location = Intersection;
+					newPathPoint.Location.Z = Portals[x].Left.Z;
+					DrawDebugSphere(GetWorld(), newPathPoint.Location, 5.f, 5, FColor(0, 0, 255), true, 0, 20.f);
+					if (Portals[x].IsJumpEdge)
+					{
+						newPathPoint.IsJump = true;
+						DrawDebugSphere(GetWorld(), newPathPoint.Location, 5.f, 5, FColor(0, 255, 0), true, 0, 20.f);
+					}
+					AgentPathPoints.Add(newPathPoint);
 				}
 			}
 		}
+		FPathPoint finalPathPoint;
+		finalPathPoint.Location = CachedDestination;
+		finalPathPoint.IsJump = false;
+		AgentPathPoints.Add(finalPathPoint);
 
-		FinalPathPoints.Add(CachedDestination);
-		DrawDebugSphere(GetWorld(), CachedDestination, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
-
-		for (int fin = 0; fin < FinalPathPoints.Num() - 1; fin++)
+		for (int fin = 1; fin < AgentPathPoints.Num(); fin++)
 		{
-			DrawDebugLine(GetWorld(), FinalPathPoints[fin], FinalPathPoints[fin + 1], FColor(255, 255, 0), true, 0, 10.f);
+			DrawDebugLine(GetWorld(), AgentPathPoints[fin].Location, AgentPathPoints[fin - 1].Location, FColor(255, 255, 0), true, 0, 10.f);
 		}
 
-		//TArray<FVector> FinalPathPoints;
-		//FinalPathPoints.Add(MyPathPoints[0]);
-		//DrawDebugSphere(GetWorld(), MyPathPoints[0], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
-
-		//int PathPointIndex = 0;
-		//for (int j = 0; j < PortalsButNoHeight.Num() - 1; j++)
-		//{
-		//	if (PathPointIndex >= MyPathPoints.Num() - 1)
-		//	{
-		//		break;
-		//	}
-		//	FVector StartOfLine = MyPathPoints[PathPointIndex];
-		//	StartOfLine.Z = 0;
-		//	FVector EndOfLine = MyPathPoints[PathPointIndex + 1];
-		//	EndOfLine.Z = 0;
-		//	if (Portals[j].IsJumpEdge)
-		//	{
-		//		FVector Intersect;
-		//		if (FindSegmentSegmentIntersection(StartOfLine, EndOfLine, PortalsButNoHeight[j].Left, PortalsButNoHeight[j].Right, Intersect))
-		//		{
-		//			//TEMPORARY
-		//			Intersect.Z = Portals[j].Left.Z;
-
-		//			FinalPathPoints.Add(Intersect);
-		//		}
-		//		else
-		//		{
-		//			PathPointIndex++;
-		//		}
-		//	}
-
-		//}
-
-		//FinalPathPoints.Add(CachedDestination);
-		//DrawDebugSphere(GetWorld(), CachedDestination, 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+		CurrentPathIndex = 0;
+		GoToNextPointOnCustomPath();
 	}
 }
 
 FMyPolyEdge AFYPPlayerController::GetEdgeClosestToPointOnPolygon(const FVector& Point, const TArray<FVector>& PolygonVerticies)
 {
 	//FIND EDGE CONNECTING TO PREV POLYGON
-	FVector Closest = FMath::ClosestPointOnSegment(Point, PolygonVerticies[0], PolygonVerticies[PolygonVerticies.Num() - 1]);
+	FVector Closest = PolygonVerticies[0] + PolygonVerticies[PolygonVerticies.Num() - 1] / 2.f;
 	int LeftVert = 0;
 	int RightVert = PolygonVerticies.Num() - 1;
-	for (int j = 0; j < PolygonVerticies.Num() - 1; j++)
+	for (int j = 1; j < PolygonVerticies.Num(); j++)
 	{
-		FVector ClosestPoint = FMath::ClosestPointOnSegment(Point, PolygonVerticies[j], PolygonVerticies[j + 1]);
-		if (FVector::DistSquared(Point, ClosestPoint) < FVector::DistSquared(Point, Closest))
+		FVector MidPoint = (PolygonVerticies[j] + PolygonVerticies[j - 1]) / 2.f;
+		if (FVector::DistSquared(Point, MidPoint) < FVector::DistSquared(Point, Closest))
 		{
-			Closest = ClosestPoint;
+			Closest = MidPoint;
+
 			LeftVert = j;
-			RightVert = j + 1;
+			RightVert = j - 1;
 		}
 	}
 
@@ -365,8 +334,40 @@ FMyPolyEdge AFYPPlayerController::GetEdgeClosestToPointOnPolygon(const FVector& 
 	return Edge;
 }
 
-bool AFYPPlayerController::FindPointSegmentIntersection(const FVector Point, const FVector SegmentStart,
-	const FVector SegmentEnd)
+FMyPolyEdge AFYPPlayerController::GetEdgeClosestToAnotherEdgeOnPolygon(const FMyPolyEdge& Edge, const TArray<FVector>& PolygonVerticies)
+{
+	FVector EdgeDirection = Edge.Right - Edge.Left;
+	int LeftVert = 0;
+	int RightVert = PolygonVerticies.Num() - 1;
+	float Best = fabs(FVector::DotProduct(EdgeDirection, (PolygonVerticies[LeftVert] - PolygonVerticies[RightVert])));
+	float Closest = FVector::DistSquared((Edge.Left + Edge.Right) / 2.f, (PolygonVerticies[LeftVert] + PolygonVerticies[RightVert]) / 2.f);
+	for (int i = 0; i < PolygonVerticies.Num() - 1; i++)
+	{
+		FVector PolyVertDirection = PolygonVerticies[i] - PolygonVerticies[i + 1];
+		float DotProduct = fabs(FVector::DotProduct(EdgeDirection, PolyVertDirection));
+
+		if (DotProduct >= Best)
+		{
+			float Distance = FVector::DistSquared((Edge.Left + Edge.Right) / 2.f, (PolygonVerticies[i] + PolygonVerticies[i+1]) / 2.f);
+			if (Distance < Closest)
+			{
+				Best = DotProduct;
+				Closest = Distance;
+
+				LeftVert = i;
+				RightVert = i + 1;
+			}
+		}
+	}
+
+	FMyPolyEdge ClosestEdge;
+	ClosestEdge.Left = PolygonVerticies[LeftVert];
+	ClosestEdge.Right = PolygonVerticies[RightVert];
+
+	return ClosestEdge;
+}
+
+bool AFYPPlayerController::FindPointSegmentIntersection(const FVector Point, const FVector SegmentStart, const FVector SegmentEnd)
 {
 	const FVector Da = Point - SegmentStart;
 	const FVector Db = SegmentEnd - SegmentStart;
@@ -391,20 +392,40 @@ void AFYPPlayerController::ComputeNextPathStep()
 		CurrentPathIndex++;
 		if (CurrentPathIndex >= MyPortals.Num())
 		{
-			if (FVector::DistSquared(Barrier1.Left, Barrier1.Right) < FVector::DistSquared(Barrier2.Left, Barrier2.Right))
-			{
-				MyPathPoints.Add(Barrier1.Right);
-			}
-			else
-			{
-				MyPathPoints.Add(Barrier2.Right);
-			}
-
 			FVector End = CachedDestination;
 			End.Z = 0;
 			MyPathPoints.Add(End);
 
 			PathComplete = true;
+			return;
+		}
+
+		//CHECK IF BACK TRACKED
+		float distToPrevPortal = FVector::DistSquared(Barrier1.Left, (MyPortals[CurrentPathIndex - 1].Left + MyPortals[CurrentPathIndex - 1].Right) / 2.f);
+		float distToNextPortal = FVector::DistSquared(Barrier1.Left, (MyPortals[CurrentPathIndex].Left + MyPortals[CurrentPathIndex].Right) / 2.f);
+		if (distToNextPortal <= distToPrevPortal)
+		{
+			float Barrier1Length = FVector::DistSquared(Barrier1.Left, Barrier1.Right);
+			float Barrier2Length = FVector::DistSquared(Barrier2.Left, Barrier2.Right);
+
+			NewPathPoint = FMath::ClosestPointOnSegment(MyPathPoints[MyPathPoints.Num() - 1], Barrier1.Right, Barrier2.Right);
+			MyPathPoints.Add(NewPathPoint);
+			Barrier1.Left = NewPathPoint;
+			Barrier2.Left = NewPathPoint;
+
+			for (int portalIndex = 0; portalIndex < MyPortals.Num() - 1; portalIndex++)
+			{
+				if (NewPathPoint == MyPortals[portalIndex].Left || NewPathPoint == MyPortals[portalIndex].Right)
+				{
+					CurrentPathIndex = portalIndex + 1;
+				}
+			}
+			Barrier1.Right = MyPortals[CurrentPathIndex].Left;
+			Barrier2.Right = MyPortals[CurrentPathIndex].Right;
+
+			Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
+
+			DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 			return;
 		}
 
@@ -431,7 +452,7 @@ void AFYPPlayerController::ComputeNextPathStep()
 
 				Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
 
-				DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
+				//DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 
 				//DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
 				//DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
@@ -465,7 +486,7 @@ void AFYPPlayerController::ComputeNextPathStep()
 
 				Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
 
-				DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
+				//DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 
 				//DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
 				//DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
@@ -512,27 +533,6 @@ bool AFYPPlayerController::UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMyPolyEd
 	FVector ExtendOtherBarrier = OtherBarrier.Left + (OtherBarrier.Right - OtherBarrier.Left) * 100.f;
 	if (FindSegmentSegmentIntersection(PreviousLocation, BarrierToUpdate.Right, OtherBarrier.Left, ExtendOtherBarrier, Intersect))
 	{
-		//Crossed over other barrier. New path point found.
-		//if (newDotProduct == 1.f)
-		//{
-		//	if (FVector::DistSquared(BarrierToUpdate.Left, BarrierToUpdate.Right) < FVector::DistSquared(Barrier2.Left, Barrier2.Right))
-		//	{
-		//		OutNewPathPoint = BarrierToUpdate.Right;
-		//		DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(255,0,255), true, 0, 10.f);
-		//	}
-		//	else
-		//	{
-		//		OutNewPathPoint = OtherBarrier.Right;
-		//		DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(255, 0, 255), true, 0, 10.f);
-		//	}
-
-		//	Parallel = true;
-		//}
-		//else
-		//{
-		//	OutNewPathPoint = OtherBarrier.Right;
-		//	DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(0, 255, 255), true, 0, 10.f);
-		//}
 		OutNewPathPoint = OtherBarrier.Right;
 		//DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(0, 255, 255), true, 0, 10.f);
 		return true;
@@ -658,32 +658,21 @@ bool AFYPPlayerController::FindSegmentSegmentIntersection(const FVector Segment1
 
 void AFYPPlayerController::GoToNextPointOnCustomPath()
 {
-	if (JumpPoints.Num() == 0 || CurrentPathIndex >= JumpPoints.Num())
+	if (AgentPathPoints.Num() == 0 || CurrentPathIndex >= AgentPathPoints.Num())
 	{
 		UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, CachedDestination);
 		return;
 	}
 
-	UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, JumpPoints[CurrentPathIndex].Left);
-	CustomGoingToNextPoint(JumpPoints[CurrentPathIndex]);
+	//UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, AgentPathPoints[CurrentPathIndex].Location);
+	if (AgentPathPoints[CurrentPathIndex].IsJump)
+	{
+
+	}
+	else
+	{
+		UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, AgentPathPoints[CurrentPathIndex].Location);
+	}
+	CustomGoingToNextPoint(AgentPathPoints[CurrentPathIndex]);
 	CurrentPathIndex++;
-	//if (CurrentPathIndex >= CustomPath.Num())
-	//{
-	//	return;
-	//}
-
-	//if (CustomPath[CurrentPathIndex].IsJumpPoint)
-	//{
-	//	FVector Upper = CustomPath[CurrentPathIndex].Location.Z > CustomPath[CurrentPathIndex + 1].Location.Z ? CustomPath[CurrentPathIndex].Location : CustomPath[CurrentPathIndex + 1].Location;
-	//	FVector Lower = CustomPath[CurrentPathIndex].Location.Z < CustomPath[CurrentPathIndex + 1].Location.Z ? CustomPath[CurrentPathIndex].Location : CustomPath[CurrentPathIndex + 1].Location;
-	//	CustomJump(Lower, Upper);
-	//}
-	//else
-	//{
-	//	UAIBlueprintHelperLibrary::SimpleMoveToLocation(this, CustomPath[CurrentPathIndex].Location);
-	//	CustomGoingToNextPoint(CustomPath[CurrentPathIndex].Location);
-	//}
-
-	//CurrentPathIndex++;
 }
-
