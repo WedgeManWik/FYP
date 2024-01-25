@@ -137,6 +137,8 @@ protected:
 
 	void ComputeNextPathStep();
 
+	void CompleteFinalPath(const TArray<FMyPolyEdge>& Portals, const TArray<FMyPolyEdge>& PortalsButNoHeight);
+
 	void SwitchPathfindMode();
 
 private:
@@ -147,6 +149,7 @@ private:
 
 	TArray<FPathPoint> AgentPathPoints;
 
+	TArray<FMyPolyEdge> MyPortals3D;
 	TArray<FMyPolyEdge> MyPortals;
 	TArray<FVector> MyPathPoints;
 	FMyPolyEdge Barrier1;
