@@ -137,7 +137,7 @@ protected:
 
 	void ComputeNextPathStep();
 
-	void CompleteFinalPath(const TArray<FMyPolyEdge>& Portals, const TArray<FMyPolyEdge>& PortalsButNoHeight);
+	void CompleteFinalPath();
 
 	void SwitchPathfindMode();
 
@@ -163,6 +163,8 @@ private:
 	bool PathfindingAuto;
 
 	int CurrentPathIndex;
+
+	int LineIndex;
 };
 
 
