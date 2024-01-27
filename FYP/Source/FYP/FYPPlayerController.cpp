@@ -85,8 +85,8 @@ void AFYPPlayerController::FindPathPortals(ARecastNavMesh* Nav)
 				if (CurrentPolygonVertices.Num() == 2)
 				{
 					//VERTEX 1 IS ALWAYS BOTTOM LINK, VERTEX 0 IS ALWAYS TOP LINK
-					DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
-					DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
+					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
+					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
 
 					//NEXT POLYGON
 					NavNodeRef nextNodeRef = pathpoints[i + 1].NodeRef;
@@ -435,6 +435,8 @@ void AFYPPlayerController::ComputeNextPathStep()
 			{
 				DrawDebugSphere(GetWorld(), End, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 
+				LineIndex = 0;
+				CurrentPathIndex = 0;
 				CompleteFinalPath();
 			}
 			return;
@@ -628,7 +630,18 @@ void AFYPPlayerController::CompleteFinalPath()
 			newPathPoint.IsJump = true;
 		}
 
-		AgentPathPoints.Add(newPathPoint);
+		if (!newPathPoint.IsJump)
+		{
+			if (AgentPathPoints.Num() >= 1 && !AgentPathPoints[AgentPathPoints.Num() - 1].IsJump)
+			{
+				AgentPathPoints[AgentPathPoints.Num() - 1] = newPathPoint;
+			}
+		}
+		else
+		{
+			AgentPathPoints.Add(newPathPoint);
+		}
+
 		CurrentPathIndex++;
 	}
 	else
