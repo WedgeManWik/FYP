@@ -624,7 +624,7 @@ void AFYPPlayerController::CompleteFinalPath()
 		newPathPoint.Location = Intersection;
 		newPathPoint.Location.Z = MyPortals3D[CurrentPathIndex - 1].Left.Z;
 
-		DrawDebugSphere(GetWorld(), newPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 20.f);
+		DrawDebugSphere(GetWorld(), newPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 50.f);
 		if (MyPortals3D[CurrentPathIndex - 1].IsJumpEdge)
 		{
 			newPathPoint.IsJump = true;
@@ -634,14 +634,20 @@ void AFYPPlayerController::CompleteFinalPath()
 		{
 			if (AgentPathPoints.Num() >= 1 && !AgentPathPoints[AgentPathPoints.Num() - 1].IsJump)
 			{
+				//REPLACE LAST NODE WITH CLOSER ONE
 				AgentPathPoints[AgentPathPoints.Num() - 1] = newPathPoint;
+			}
+			else
+			{
+				//ADD NORMAL NODE
+				AgentPathPoints.Add(newPathPoint);
 			}
 		}
 		else
 		{
+			//ADD JUMP TO NODE
 			AgentPathPoints.Add(newPathPoint);
 		}
-
 		CurrentPathIndex++;
 	}
 	else
