@@ -9,52 +9,17 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class ARecastNavMesh;
-struct FPathPoint;
 #ifdef FYP_FYPPlayerController_generated_h
 #error "FYPPlayerController.generated.h already included, missing '#pragma once' in FYPPlayerController.h"
 #endif
 #define FYP_FYPPlayerController_generated_h
 
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FPathPoint_Statics; \
-	FYP_API static class UScriptStruct* StaticStruct();
-
-
-template<> FYP_API UScriptStruct* StaticStruct<struct FPathPoint>();
-
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_28_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FMyPolyEdge_Statics; \
-	FYP_API static class UScriptStruct* StaticStruct();
-
-
-template<> FYP_API UScriptStruct* StaticStruct<struct FMyPolyEdge>();
-
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_48_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FMyPoly_Statics; \
-	FYP_API static class UScriptStruct* StaticStruct();
-
-
-template<> FYP_API UScriptStruct* StaticStruct<struct FMyPoly>();
-
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_SPARSE_DATA
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execGetGoalDestination); \
-	DECLARE_FUNCTION(execGoToNextPointOnCustomPath); \
-	DECLARE_FUNCTION(execFindPathPortals);
-
-
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execGetGoalDestination); \
-	DECLARE_FUNCTION(execGoToNextPointOnCustomPath); \
-	DECLARE_FUNCTION(execFindPathPortals);
-
-
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_ACCESSORS
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_CALLBACK_WRAPPERS
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_SPARSE_DATA
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_CALLBACK_WRAPPERS
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFYPPlayerController(); \
 	friend struct Z_Construct_UClass_AFYPPlayerController_Statics; \
@@ -63,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(AFYPPlayerController)
 
 
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_INCLASS \
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesAFYPPlayerController(); \
 	friend struct Z_Construct_UClass_AFYPPlayerController_Statics; \
@@ -72,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(AFYPPlayerController)
 
 
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_STANDARD_CONSTRUCTORS \
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFYPPlayerController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFYPPlayerController) \
@@ -86,7 +51,7 @@ public: \
 	NO_API virtual ~AFYPPlayerController();
 
 
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AFYPPlayerController(AFYPPlayerController&&); \
@@ -98,29 +63,29 @@ public: \
 	NO_API virtual ~AFYPPlayerController();
 
 
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_56_PROLOG
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_GENERATED_BODY_LEGACY \
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_14_PROLOG
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_SPARSE_DATA \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_RPC_WRAPPERS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_ACCESSORS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_CALLBACK_WRAPPERS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_INCLASS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_STANDARD_CONSTRUCTORS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_SPARSE_DATA \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_CALLBACK_WRAPPERS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_GENERATED_BODY \
+#define FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_SPARSE_DATA \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_ACCESSORS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_CALLBACK_WRAPPERS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_59_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_SPARSE_DATA \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ACCESSORS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_CALLBACK_WRAPPERS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_FYP_FYP_Source_FYP_FYPPlayerController_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
