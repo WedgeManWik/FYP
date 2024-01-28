@@ -3325,3 +3325,583 @@ Failed to route BeginPlay (BC_JumpNavigationComponent_C /Game/TopDown/Maps/UEDPI
 [2024.01.28-01.23.30:180][143]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
 [2024.01.28-01.23.30:189][143]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
 [2024.01.28-01.23.32:231][304]LogUObjectHash: Compacting FUObjectHashTables data took   1.64ms
+[2024.01.28-01.25.27:810][694]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.28-01.25.27:817][694]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.28-01.25.27:820][694]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.28-01.25.27:820][694]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.28-01.25.27:820][694]LogWorldPartition: Display: GetPartitionedActors took 62 us (total: 959 us)
+[2024.01.28-01.25.27:821][694]LogWorldPartition: Display: GenerateStreaming took 591 us (total: 7 ms)
+[2024.01.28-01.25.27:821][694]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.28-01.25.27:821][694]PIE: New page: PIE session: TopDownMap (28 Jan 2024, 01:25:27)
+[2024.01.28-01.25.27:822][694]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.28-01.25.27:837][694]LogPlayLevel: PIE: StaticDuplicateObject took: (0.014800s)
+[2024.01.28-01.25.27:837][694]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.015139s)
+[2024.01.28-01.25.27:837][694]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.28-01.25.27:837][694]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.28-01.25.27:838][694]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.28-01.25.27:838][694]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.28-01.25.27:838][694]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.28-01.25.27:838][694]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.28-01.25.27:842][694]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.28-01.25.27:842][694]LogWorldPartition: Display: WorldPartition initialize took 3 ms (total: 706 ms)
+[2024.01.28-01.25.27:842][694]LogPlayLevel: PIE: World Init took: (0.005506s)
+[2024.01.28-01.25.27:874][694]LogUObjectHash: Compacting FUObjectHashTables data took   1.56ms
+[2024.01.28-01.25.27:876][694]LogAudio: Display: Creating Audio Device:                 Id: 11, Scope: Unique, Realtime: True
+[2024.01.28-01.25.27:876][694]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.28-01.25.27:876][694]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.28-01.25.27:876][694]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.28-01.25.27:876][694]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.28-01.25.27:876][694]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.28-01.25.27:876][694]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.28-01.25.27:876][694]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.28-01.25.27:876][694]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.28-01.25.27:877][694]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.28-01.25.27:877][694]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.28-01.25.27:877][694]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.28-01.25.27:881][694]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.28-01.25.27:923][694]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.28-01.25.27:923][694]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.28-01.25.27:923][694]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.28-01.25.27:923][694]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.28-01.25.27:924][694]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=11
+[2024.01.28-01.25.27:924][694]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=11
+[2024.01.28-01.25.27:928][694]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=11
+[2024.01.28-01.25.27:928][694]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=11
+[2024.01.28-01.25.27:928][694]LogInit: FAudioDevice initialized with ID 11.
+[2024.01.28-01.25.27:928][694]LogAudio: Display: Audio Device (ID: 11) registered with world 'TopDownMap'.
+[2024.01.28-01.25.27:929][694]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 11
+[2024.01.28-01.25.27:933][694]LogLoad: Game class is 'FYPGameMode'
+[2024.01.28-01.25.27:936][694]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.28-01.25.27
+[2024.01.28-01.25.27:936][694]LogWorld: Bringing up level for play took: 0.003553
+[2024.01.28-01.25.27:941][694]LogOnline: OSS: Created online subsystem instance for: :Context_14
+[2024.01.28-01.25.27:950][694]PIE: Server logged in
+[2024.01.28-01.25.27:952][694]PIE: Play in editor total start time 0.135 seconds.
+[2024.01.28-01.25.27:991][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:992][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:993][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:994][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:995][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:996][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:996][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:997][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:998][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:999][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.27:999][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:000][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:001][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:002][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:003][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:004][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:005][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:006][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:007][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:008][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:009][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:010][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:010][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:011][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:012][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:012][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:013][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:013][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:017][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:033][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:034][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:035][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:036][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:037][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:038][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:039][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:039][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:040][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:041][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:042][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:044][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:045][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:046][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:047][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:047][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:048][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:049][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:050][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:051][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:051][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:052][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:053][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:054][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:054][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:054][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:055][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:056][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.28:060][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.32:005][  2]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.32:005][  2]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_0
+[2024.01.28-01.25.32:750][ 63]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.32:826][ 70]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.32:826][ 70]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_1
+[2024.01.28-01.25.33:754][145]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.34:673][219]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.34:673][219]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_2
+[2024.01.28-01.25.34:760][225]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.35:765][306]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.36:145][337]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.36:145][337]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_3
+[2024.01.28-01.25.36:779][388]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.36:779][388]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_4
+[2024.01.28-01.25.39:514][604]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.39:514][604]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_5
+[2024.01.28-01.25.39:792][626]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.40:388][676]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.40:388][676]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_6
+[2024.01.28-01.25.40:800][708]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.42:039][808]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.42:039][808]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_7
+[2024.01.28-01.25.42:813][871]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.43:824][951]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.46:313][151]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.46:313][151]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_8
+[2024.01.28-01.25.46:847][194]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.47:341][236]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.47:341][236]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_9
+[2024.01.28-01.25.47:850][278]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.48:856][359]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.49:920][446]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.49:920][446]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_10
+[2024.01.28-01.25.50:629][504]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.50:629][504]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_11
+[2024.01.28-01.25.50:858][522]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.51:870][605]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.56:612][988]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.56:612][988]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_12
+[2024.01.28-01.25.56:911][ 12]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.57:645][ 74]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.25.57:646][ 74]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_13
+[2024.01.28-01.25.57:914][ 96]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.25.58:919][177]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.00:531][307]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.00:531][307]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_14
+[2024.01.28-01.26.00:940][340]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.01:263][367]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.01:263][367]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_15
+[2024.01.28-01.26.01:946][422]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.02:327][453]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.02:327][453]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_16
+[2024.01.28-01.26.02:949][501]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.03:963][582]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.09:556][ 26]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.09:556][ 26]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_17
+[2024.01.28-01.26.10:010][ 63]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.10:364][ 93]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.10:364][ 93]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_18
+[2024.01.28-01.26.11:012][146]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.12:890][297]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.12:890][297]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_19
+[2024.01.28-01.26.13:034][308]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.14:036][389]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.14:353][415]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.14:353][415]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_20
+[2024.01.28-01.26.14:990][465]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.14:990][465]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_21
+[2024.01.28-01.26.15:038][468]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.16:042][547]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.17:780][685]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.17:780][685]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_22
+[2024.01.28-01.26.18:061][707]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.19:066][788]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.21:276][967]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.21:276][967]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_23
+[2024.01.28-01.26.22:013][ 28]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.22:013][ 28]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_24
+[2024.01.28-01.26.22:083][ 33]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.23:083][115]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.24:166][203]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.26.24:166][203]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_25
+[2024.01.28-01.26.25:093][279]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.26:101][359]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.31:484][776]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.28-01.26.31:484][776]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.28-01.26.31:485][776]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.28-01.26.31:485][776]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.28-01.26.31:486][776]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.28-01.26.31:490][776]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.28-01.26.31:497][776]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.28-01.26.31:534][776]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.28-01.26.31:535][776]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 11
+[2024.01.28-01.26.31:535][776]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=11
+[2024.01.28-01.26.31:538][776]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=11
+[2024.01.28-01.26.31:549][776]LogUObjectHash: Compacting FUObjectHashTables data took   1.85ms
+[2024.01.28-01.26.31:583][776]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.31:592][776]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.31:596][777]LogPlayLevel: Display: Destroying online subsystem :Context_14
+[2024.01.28-01.26.31:620][777]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.26.31:629][777]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.03:032][308]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.03:118][315]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.21:619][852]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.28-01.27.43:742][694]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.28-01.27.43:749][694]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.28-01.27.43:755][694]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.28-01.27.43:755][694]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.28-01.27.43:755][694]LogWorldPartition: Display: GetPartitionedActors took 69 us (total: 1 ms)
+[2024.01.28-01.27.43:756][694]LogWorldPartition: Display: GenerateStreaming took 650 us (total: 7 ms)
+[2024.01.28-01.27.43:782][694]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.28-01.27.43:782][694]PIE: New page: PIE session: TopDownMap (28 Jan 2024, 01:27:43)
+[2024.01.28-01.27.43:783][694]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.28-01.27.43:798][694]LogPlayLevel: PIE: StaticDuplicateObject took: (0.014368s)
+[2024.01.28-01.27.43:798][694]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.014649s)
+[2024.01.28-01.27.43:798][694]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.28-01.27.43:798][694]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.28-01.27.43:799][694]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.28-01.27.43:800][694]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.28-01.27.43:800][694]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.28-01.27.43:800][694]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.28-01.27.43:803][694]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.28-01.27.43:803][694]LogWorldPartition: Display: WorldPartition initialize took 3 ms (total: 710 ms)
+[2024.01.28-01.27.43:804][694]LogPlayLevel: PIE: World Init took: (0.005673s)
+[2024.01.28-01.27.43:838][694]LogUObjectHash: Compacting FUObjectHashTables data took   1.64ms
+[2024.01.28-01.27.43:845][694]LogAudio: Display: Creating Audio Device:                 Id: 12, Scope: Unique, Realtime: True
+[2024.01.28-01.27.43:845][694]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.28-01.27.43:845][694]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.28-01.27.43:845][694]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.28-01.27.43:845][694]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.28-01.27.43:845][694]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.28-01.27.43:845][694]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.28-01.27.43:845][694]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.28-01.27.43:845][694]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.28-01.27.43:846][694]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.28-01.27.43:846][694]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.28-01.27.43:846][694]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.28-01.27.43:850][694]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.28-01.27.43:892][694]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.28-01.27.43:892][694]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.28-01.27.43:893][694]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.28-01.27.43:893][694]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.28-01.27.43:894][694]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=12
+[2024.01.28-01.27.43:894][694]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=12
+[2024.01.28-01.27.43:898][694]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=12
+[2024.01.28-01.27.43:898][694]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=12
+[2024.01.28-01.27.43:898][694]LogInit: FAudioDevice initialized with ID 12.
+[2024.01.28-01.27.43:898][694]LogAudio: Display: Audio Device (ID: 12) registered with world 'TopDownMap'.
+[2024.01.28-01.27.43:898][694]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 12
+[2024.01.28-01.27.43:903][694]LogLoad: Game class is 'FYPGameMode'
+[2024.01.28-01.27.43:906][694]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.28-01.27.43
+[2024.01.28-01.27.43:907][694]LogWorld: Bringing up level for play took: 0.003500
+[2024.01.28-01.27.43:911][694]LogOnline: OSS: Created online subsystem instance for: :Context_16
+[2024.01.28-01.27.43:921][694]PIE: Server logged in
+[2024.01.28-01.27.43:923][694]PIE: Play in editor total start time 0.174 seconds.
+[2024.01.28-01.27.43:961][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.43:962][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.43:963][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.43:963][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.43:964][694]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.44:072][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.44:073][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.44:074][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.44:075][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.44:075][695]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.47:052][967]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.27.47:052][967]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_0
+[2024.01.28-01.27.48:586][110]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.27.48:586][110]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_1
+[2024.01.28-01.27.51:245][360]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.27.51:245][360]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_2
+[2024.01.28-01.27.52:063][437]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.27.52:063][437]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_3
+[2024.01.28-01.27.54:491][661]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.27.54:491][661]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_4
+[2024.01.28-01.27.55:256][734]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.27.55:256][734]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_5
+[2024.01.28-01.27.57:954][988]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.27.57:956][988]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_6
+[2024.01.28-01.27.59:875][158]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.28-01.27.59:875][158]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.28-01.27.59:876][158]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.28-01.27.59:877][158]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.28-01.27.59:877][158]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.28-01.27.59:884][158]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.28-01.27.59:891][158]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.28-01.27.59:925][158]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.01.28-01.27.59:926][158]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 12
+[2024.01.28-01.27.59:926][158]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=12
+[2024.01.28-01.27.59:929][158]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=12
+[2024.01.28-01.27.59:936][158]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.28-01.27.59:941][158]LogUObjectHash: Compacting FUObjectHashTables data took   1.71ms
+[2024.01.28-01.27.59:961][158]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.27.59:975][159]LogPlayLevel: Display: Destroying online subsystem :Context_16
+[2024.01.28-01.27.59:999][159]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:103][985]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2024.01.28-01.28.34:110][985]LogContentBundle: [TopDownMap(Standalone)] Generating Streaming for 0 Content Bundles.
+[2024.01.28-01.28.34:116][985]LogWorldPartition: Display: GenerateStreaming started...
+[2024.01.28-01.28.34:116][985]LogWorldPartition: Display: GetPartitionedActors started...
+[2024.01.28-01.28.34:116][985]LogWorldPartition: Display: GetPartitionedActors took 62 us (total: 1 ms)
+[2024.01.28-01.28.34:117][985]LogWorldPartition: Display: GenerateStreaming took 620 us (total: 8 ms)
+[2024.01.28-01.28.34:117][985]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.01.28-01.28.34:117][985]PIE: New page: PIE session: TopDownMap (28 Jan 2024, 01:28:34)
+[2024.01.28-01.28.34:117][985]LogPlayLevel: Creating play world package: /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.28-01.28.34:133][985]LogPlayLevel: PIE: StaticDuplicateObject took: (0.014926s)
+[2024.01.28-01.28.34:133][985]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TopDown/Maps/TopDownMap.TopDownMap to /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap (0.015164s)
+[2024.01.28-01.28.34:133][985]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.01.28-01.28.34:133][985]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.01.28-01.28.34:134][985]LogAIModule: Creating AISystem for world TopDownMap
+[2024.01.28-01.28.34:134][985]LogWorldPartition: ULevel::OnLevelLoaded(TopDownMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, bIsValidLevelInstance=0, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.01.28-01.28.34:134][985]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.01.28-01.28.34:135][985]LogWorldPartition: UWorldPartition::Initialize(Asset=TopDownMap, IsEditor=0, bPIEWorldTravel=0 IsGame=0, IsCooking=0)
+[2024.01.28-01.28.34:138][985]LogContentBundle: [TopDownMap(Standalone)] Creating new contrainer.
+[2024.01.28-01.28.34:138][985]LogWorldPartition: Display: WorldPartition initialize took 3 ms (total: 714 ms)
+[2024.01.28-01.28.34:138][985]LogPlayLevel: PIE: World Init took: (0.005780s)
+[2024.01.28-01.28.34:175][985]LogUObjectHash: Compacting FUObjectHashTables data took   3.67ms
+[2024.01.28-01.28.34:178][985]LogAudio: Display: Creating Audio Device:                 Id: 13, Scope: Unique, Realtime: True
+[2024.01.28-01.28.34:179][985]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.01.28-01.28.34:179][985]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.01.28-01.28.34:179][985]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.01.28-01.28.34:179][985]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.01.28-01.28.34:179][985]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.01.28-01.28.34:179][985]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2024.01.28-01.28.34:179][985]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.01.28-01.28.34:179][985]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.01.28-01.28.34:180][985]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.01.28-01.28.34:180][985]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.01.28-01.28.34:180][985]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.01.28-01.28.34:184][985]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.01.28-01.28.34:226][985]LogAudioMixer: Display: Using Audio Hardware Device Headphones (Crusher Wireless Stereo)
+[2024.01.28-01.28.34:227][985]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.01.28-01.28.34:227][985]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.01.28-01.28.34:227][985]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.01.28-01.28.34:228][985]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=13
+[2024.01.28-01.28.34:228][985]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=13
+[2024.01.28-01.28.34:232][985]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=13
+[2024.01.28-01.28.34:232][985]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=13
+[2024.01.28-01.28.34:232][985]LogInit: FAudioDevice initialized with ID 13.
+[2024.01.28-01.28.34:233][985]LogAudio: Display: Audio Device (ID: 13) registered with world 'TopDownMap'.
+[2024.01.28-01.28.34:233][985]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 13
+[2024.01.28-01.28.34:237][985]LogLoad: Game class is 'FYPGameMode'
+[2024.01.28-01.28.34:241][985]LogWorld: Bringing World /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap up for play (max tick rate 0) at 2024.01.28-01.28.34
+[2024.01.28-01.28.34:241][985]LogWorld: Bringing up level for play took: 0.003431
+[2024.01.28-01.28.34:246][985]LogOnline: OSS: Created online subsystem instance for: :Context_17
+[2024.01.28-01.28.34:256][985]PIE: Server logged in
+[2024.01.28-01.28.34:258][985]PIE: Play in editor total start time 0.148 seconds.
+[2024.01.28-01.28.34:300][985]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:301][985]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:302][985]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:303][985]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:303][985]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:317][986]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:318][986]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:319][986]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:319][986]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.34:320][986]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.37:681][289]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.37:681][289]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_0
+[2024.01.28-01.28.39:489][457]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.39:489][457]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_1
+[2024.01.28-01.28.42:075][699]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.42:075][699]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_2
+[2024.01.28-01.28.42:911][779]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.42:911][779]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_3
+[2024.01.28-01.28.45:467][ 14]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.45:467][ 14]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_4
+[2024.01.28-01.28.46:195][ 83]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.46:195][ 83]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_5
+[2024.01.28-01.28.48:896][339]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.48:896][339]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_6
+[2024.01.28-01.28.50:409][474]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.50:409][474]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_7
+[2024.01.28-01.28.53:497][759]LogScript: Warning: Script Msg: Divide by zero: Divide_DoubleDouble
+[2024.01.28-01.28.53:497][759]LogScript: Warning: Script Msg called by: BP_SplineJumpTrajectory_C /Game/TopDown/Maps/UEDPIE_0_TopDownMap.TopDownMap:PersistentLevel.BP_SplineJumpTrajectory_C_8
+[2024.01.28-01.28.55:865][970]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.28-01.28.55:865][970]LogWorld: BeginTearingDown for /Game/TopDown/Maps/UEDPIE_0_TopDownMap
+[2024.01.28-01.28.55:866][970]LogWorld: UWorld::CleanupWorld for TopDownMap, bSessionEnded=true, bCleanupResources=true
+[2024.01.28-01.28.55:867][970]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.28-01.28.55:867][970]LogContentBundle: [TopDownMap(Standalone)] Deleting container.
+[2024.01.28-01.28.55:874][970]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.01.28-01.28.55:881][970]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.01.28-01.28.55:915][970]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.01.28-01.28.55:915][970]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 13
+[2024.01.28-01.28.55:915][970]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=13
+[2024.01.28-01.28.55:918][970]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=13
+[2024.01.28-01.28.55:925][970]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.01.28-01.28.55:929][970]LogUObjectHash: Compacting FUObjectHashTables data took   1.77ms
+[2024.01.28-01.28.55:950][970]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.28.55:965][971]LogPlayLevel: Display: Destroying online subsystem :Context_17
+[2024.01.28-01.28.55:987][971]LogPackageName: Warning: DoesPackageExist called on PackageName that will always return false. Reason: Input '' was empty.
+[2024.01.28-01.29.03:963][643]LogUObjectHash: Compacting FUObjectHashTables data took   2.35ms
+[2024.01.28-01.29.03:981][643]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.01.28-01.29.04:094][643]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2024.01.28-01.29.04:128][643]LogUObjectHash: Compacting FUObjectHashTables data took   0.78ms
+[2024.01.28-01.29.04:163][643]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2024.01.28-01.29.04:187][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/O7/BLR5VCXO2KN58XH6F4FUBA
+[2024.01.28-01.29.04:187][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/BLR5VCXO2KN58XH6F4FUBA275D7DCE4AF1CA143C58D9BB534388CF.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/O7/BLR5VCXO2KN58XH6F4FUBA.uasset'
+[2024.01.28-01.29.04:190][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/KB/AR4002CKNQQW5E55F5X8R0
+[2024.01.28-01.29.04:191][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/AR4002CKNQQW5E55F5X8R0D4682626440EF99A15008BB431B5065C.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/KB/AR4002CKNQQW5E55F5X8R0.uasset'
+[2024.01.28-01.29.04:194][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/ZH/JP4BXVDLVATPNF0Z8WWSXJ
+[2024.01.28-01.29.04:194][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/JP4BXVDLVATPNF0Z8WWSXJB24744594A9173CA647436926CB96A9E.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/ZH/JP4BXVDLVATPNF0Z8WWSXJ.uasset'
+[2024.01.28-01.29.04:198][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/BC/RT7R6P30UTO078AXP7PRNC
+[2024.01.28-01.29.04:198][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/RT7R6P30UTO078AXP7PRNCB51E102C4FB09F79024DCBB89F594C70.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/BC/RT7R6P30UTO078AXP7PRNC.uasset'
+[2024.01.28-01.29.04:202][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/VY/GYMP7V71INSZ2YRSKMMABD
+[2024.01.28-01.29.04:202][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/GYMP7V71INSZ2YRSKMMABD8E4897EB4593ED266557538DD4016F59.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/VY/GYMP7V71INSZ2YRSKMMABD.uasset'
+[2024.01.28-01.29.04:207][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/3L/C53F7M9W4YRMZOQ0CEZ0XK
+[2024.01.28-01.29.04:207][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/C53F7M9W4YRMZOQ0CEZ0XK87488D454E22107B2C9E05A1F87B7D77.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/3L/C53F7M9W4YRMZOQ0CEZ0XK.uasset'
+[2024.01.28-01.29.04:211][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/SV/26AKQKTJ9A06ZB8WYK75RO
+[2024.01.28-01.29.04:211][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/26AKQKTJ9A06ZB8WYK75ROB760F4284FBC926138D2D19BF02F50ED.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/SV/26AKQKTJ9A06ZB8WYK75RO.uasset'
+[2024.01.28-01.29.04:214][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/E/ZC/B2SQ95MJR66M8QGY0LESZ5
+[2024.01.28-01.29.04:214][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/B2SQ95MJR66M8QGY0LESZ5495FEB8143E38DBAD46BA5ABD29B34A5.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/E/ZC/B2SQ95MJR66M8QGY0LESZ5.uasset'
+[2024.01.28-01.29.04:217][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/6E/B8FFTPBMSFCA9ZRYOBV5W3
+[2024.01.28-01.29.04:217][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/B8FFTPBMSFCA9ZRYOBV5W33A64F76D44F2D5B909EAAC99B2CC46B4.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/6E/B8FFTPBMSFCA9ZRYOBV5W3.uasset'
+[2024.01.28-01.29.04:221][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/AI/4T5GPGESEG1OLIPP1S79DP
+[2024.01.28-01.29.04:221][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/4T5GPGESEG1OLIPP1S79DPD578E0B342FE52DA2D09E89640321DB4.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/AI/4T5GPGESEG1OLIPP1S79DP.uasset'
+[2024.01.28-01.29.04:225][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/3J/WZ7CI10CC4COU60TP8DI5H
+[2024.01.28-01.29.04:225][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/WZ7CI10CC4COU60TP8DI5HD64A7F32442E4595DD473FA107F07E3A.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/3J/WZ7CI10CC4COU60TP8DI5H.uasset'
+[2024.01.28-01.29.04:228][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/6/WW/I7OZVKZT3L3YHTXPTJP1PV
+[2024.01.28-01.29.04:228][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/I7OZVKZT3L3YHTXPTJP1PVBE21DE434D374C737A850B943B74EB17.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/6/WW/I7OZVKZT3L3YHTXPTJP1PV.uasset'
+[2024.01.28-01.29.04:238][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/GJ/OWHVEFRB1FEK428R6YZ7N4
+[2024.01.28-01.29.04:238][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/OWHVEFRB1FEK428R6YZ7N427DA1D6E4AC009514A581081C0631F04.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/GJ/OWHVEFRB1FEK428R6YZ7N4.uasset'
+[2024.01.28-01.29.04:241][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/HX/RVTFM0ZHZYSU16P3XLY8W4
+[2024.01.28-01.29.04:242][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/RVTFM0ZHZYSU16P3XLY8W4E74691384F86BE85F0BCADB9BB90F74C.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/HX/RVTFM0ZHZYSU16P3XLY8W4.uasset'
+[2024.01.28-01.29.04:245][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/E/Y8/ZY9JT1KZ94PJGNZO3OM2S8
+[2024.01.28-01.29.04:246][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/ZY9JT1KZ94PJGNZO3OM2S89290459D404AA6230AE6B8AE2B75FD26.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/E/Y8/ZY9JT1KZ94PJGNZO3OM2S8.uasset'
+[2024.01.28-01.29.04:249][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/JD/27F49K3SDGTEEQ0JGVZDRE
+[2024.01.28-01.29.04:249][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/27F49K3SDGTEEQ0JGVZDRE79137BFA498B5871181CC0A0B0E374C5.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/JD/27F49K3SDGTEEQ0JGVZDRE.uasset'
+[2024.01.28-01.29.04:253][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/IF/CL1I6L2LMH3XBWLASXS7D5
+[2024.01.28-01.29.04:253][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/CL1I6L2LMH3XBWLASXS7D56003B841472F76970122399442580327.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/IF/CL1I6L2LMH3XBWLASXS7D5.uasset'
+[2024.01.28-01.29.04:257][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/UQ/EV6576M8VVEDOD871KHXFI
+[2024.01.28-01.29.04:257][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/EV6576M8VVEDOD871KHXFI0D0A353C4B3F2710AFF576978A93146E.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/UQ/EV6576M8VVEDOD871KHXFI.uasset'
+[2024.01.28-01.29.04:260][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/UE/W3UDIWWZMN1Z04FHDMVRMV
+[2024.01.28-01.29.04:261][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/W3UDIWWZMN1Z04FHDMVRMVED1F44144ACBA6CCC3A75B9B18E1CAEC.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/UE/W3UDIWWZMN1Z04FHDMVRMV.uasset'
+[2024.01.28-01.29.04:264][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/C/T3/TQZD6QO59754KELTEJSCKA
+[2024.01.28-01.29.04:264][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/TQZD6QO59754KELTEJSCKA3A64267C49151F03C47BA7BBBCAB39A2.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/C/T3/TQZD6QO59754KELTEJSCKA.uasset'
+[2024.01.28-01.29.04:268][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/DB/H722NZ54Y8T1JWLL06ESTI
+[2024.01.28-01.29.04:269][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/H722NZ54Y8T1JWLL06ESTI55B207F14FE3725A141426B8E64F9CFE.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/DB/H722NZ54Y8T1JWLL06ESTI.uasset'
+[2024.01.28-01.29.04:272][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/3D/Q68BDB5P93RM5K8RPDIBI4
+[2024.01.28-01.29.04:272][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/Q68BDB5P93RM5K8RPDIBI4C188560F415449B21A4E409BBF212EC8.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/3D/Q68BDB5P93RM5K8RPDIBI4.uasset'
+[2024.01.28-01.29.04:276][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/E/NH/TTVLSPB3DHFAJ8UBUAG2I2
+[2024.01.28-01.29.04:276][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/TTVLSPB3DHFAJ8UBUAG2I2395A8EBE49852CA8D341C09D9CC52D80.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/E/NH/TTVLSPB3DHFAJ8UBUAG2I2.uasset'
+[2024.01.28-01.29.04:280][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/XS/E2FXVSFPSF31VHQL1HK47V
+[2024.01.28-01.29.04:280][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/E2FXVSFPSF31VHQL1HK47VFBDC0E81475BD599D66C21810F737F34.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/XS/E2FXVSFPSF31VHQL1HK47V.uasset'
+[2024.01.28-01.29.04:284][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/KR/DSLCGMY5S47BZDKLO8EFII
+[2024.01.28-01.29.04:284][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/DSLCGMY5S47BZDKLO8EFII6744482346555D0A6700DEB6B9E19CA9.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/KR/DSLCGMY5S47BZDKLO8EFII.uasset'
+[2024.01.28-01.29.04:287][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/OA/JS07TPY3YHZQYFGF4HHS3O
+[2024.01.28-01.29.04:287][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/JS07TPY3YHZQYFGF4HHS3O824D92CA4E8FD489E9B68FB6A1F59749.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/OA/JS07TPY3YHZQYFGF4HHS3O.uasset'
+[2024.01.28-01.29.04:291][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/4/8F/0NKFVA97B5GD7GSTVAWJ8N
+[2024.01.28-01.29.04:291][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/0NKFVA97B5GD7GSTVAWJ8NDC40CA3543A9AC9136CA0486D9600239.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/4/8F/0NKFVA97B5GD7GSTVAWJ8N.uasset'
+[2024.01.28-01.29.04:295][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/RX/RBUGLFYOB4FB782OQNXNVJ
+[2024.01.28-01.29.04:295][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/RBUGLFYOB4FB782OQNXNVJ7F1E4EBC4F31BF7C1400DCA58B374A73.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/RX/RBUGLFYOB4FB782OQNXNVJ.uasset'
+[2024.01.28-01.29.04:299][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/9N/TNILHRLVQLJ6MJX0AQKBPG
+[2024.01.28-01.29.04:299][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/TNILHRLVQLJ6MJX0AQKBPG8AC6BCEE4F8AB25ED935288816FAB07D.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/9N/TNILHRLVQLJ6MJX0AQKBPG.uasset'
+[2024.01.28-01.29.04:303][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/0/MG/69Y893BX6I1A9LJERJH8WV
+[2024.01.28-01.29.04:303][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/69Y893BX6I1A9LJERJH8WV36E79D184B526D219BE69EB05F704CB3.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/0/MG/69Y893BX6I1A9LJERJH8WV.uasset'
+[2024.01.28-01.29.04:307][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/K0/6P3HHBZR0AQ7HZ2881C7BS
+[2024.01.28-01.29.04:307][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/6P3HHBZR0AQ7HZ2881C7BS1CB194C045B62700588DB684321475AF.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/K0/6P3HHBZR0AQ7HZ2881C7BS.uasset'
+[2024.01.28-01.29.04:310][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/6/L1/HGQMVBPJMR1YV6DR7NI8TD
+[2024.01.28-01.29.04:311][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/HGQMVBPJMR1YV6DR7NI8TDE20ED0644BC4C5FC43E30191569812D0.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/6/L1/HGQMVBPJMR1YV6DR7NI8TD.uasset'
+[2024.01.28-01.29.04:315][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/T7/YFOVAXL76JTMKGUTDAYV00
+[2024.01.28-01.29.04:315][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/YFOVAXL76JTMKGUTDAYV00D91D45204657AB2A9D3CC1AA2893BAE0.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/T7/YFOVAXL76JTMKGUTDAYV00.uasset'
+[2024.01.28-01.29.04:318][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/PD/6Z4B8SHUGF0MIAF1ZW0NJ6
+[2024.01.28-01.29.04:318][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/6Z4B8SHUGF0MIAF1ZW0NJ64A176D1D44923A23C9289AA3ADD129FE.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/PD/6Z4B8SHUGF0MIAF1ZW0NJ6.uasset'
+[2024.01.28-01.29.04:322][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/YD/AVCWD3QHGMNDR5OKZXTGI1
+[2024.01.28-01.29.04:322][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/AVCWD3QHGMNDR5OKZXTGI14FF9C34B4505FBF2A0D7CE9B5261A450.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/YD/AVCWD3QHGMNDR5OKZXTGI1.uasset'
+[2024.01.28-01.29.04:326][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/A/Z0/8E5VH951DZ2MP0NJ237XIQ
+[2024.01.28-01.29.04:326][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/8E5VH951DZ2MP0NJ237XIQ91D3C5C04C0E00E0D94EC4A26D219F66.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/A/Z0/8E5VH951DZ2MP0NJ237XIQ.uasset'
+[2024.01.28-01.29.04:329][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/7/GF/AIHSU6GKAZFPOTO43YHBU7
+[2024.01.28-01.29.04:330][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/AIHSU6GKAZFPOTO43YHBU77C6A281F4C518EFFC478EDBA57DE42A4.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/7/GF/AIHSU6GKAZFPOTO43YHBU7.uasset'
+[2024.01.28-01.29.04:333][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/5A/8YSJU0CHXZYVCAJLQG37T2
+[2024.01.28-01.29.04:333][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/8YSJU0CHXZYVCAJLQG37T2646345A3487C3F0E6F9E8AA216DB0C80.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/5A/8YSJU0CHXZYVCAJLQG37T2.uasset'
+[2024.01.28-01.29.04:337][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/EJ/6PN7M6AWOXHN8RKLAZ3K9X
+[2024.01.28-01.29.04:337][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/6PN7M6AWOXHN8RKLAZ3K9XD5201AF54A97750351711EAFB228C9C2.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/8/EJ/6PN7M6AWOXHN8RKLAZ3K9X.uasset'
+[2024.01.28-01.29.04:340][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/1/WE/UBFHT0FSXW9YN1BNJU8Z2L
+[2024.01.28-01.29.04:340][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/UBFHT0FSXW9YN1BNJU8Z2L2892799E4C70B8330732AE8D13F656A5.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/1/WE/UBFHT0FSXW9YN1BNJU8Z2L.uasset'
+[2024.01.28-01.29.04:344][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/FJ/ZDLZSEYWHUUODBJOCBNN18
+[2024.01.28-01.29.04:345][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/ZDLZSEYWHUUODBJOCBNN180427B9BD47D489DCF14FCA9C1005F188.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/FJ/ZDLZSEYWHUUODBJOCBNN18.uasset'
+[2024.01.28-01.29.04:349][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/GB/OIWXCXSIGT3RDF7NCYYX4V
+[2024.01.28-01.29.04:349][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/OIWXCXSIGT3RDF7NCYYX4V36569AA64C0DFEA66D0DBCB6E1CA6E13.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/GB/OIWXCXSIGT3RDF7NCYYX4V.uasset'
+[2024.01.28-01.29.04:352][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/5/6T/WTMWJF0IMW106HGVQJJSQH
+[2024.01.28-01.29.04:352][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/WTMWJF0IMW106HGVQJJSQH3DE266A24DBB86036702EDA5181823E3.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/5/6T/WTMWJF0IMW106HGVQJJSQH.uasset'
+[2024.01.28-01.29.04:356][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/3/HC/ABO7HGZJ2J2FVOHUKACON3
+[2024.01.28-01.29.04:356][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/ABO7HGZJ2J2FVOHUKACON3C939A67E45A7C6AE16014CAFB92EDA75.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/3/HC/ABO7HGZJ2J2FVOHUKACON3.uasset'
+[2024.01.28-01.29.04:360][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/9/Z7/KRB4I31V4Q5LDH31YDQVTX
+[2024.01.28-01.29.04:361][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/KRB4I31V4Q5LDH31YDQVTX0CB75607452FB1D032E3CD99CB9256E3.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/9/Z7/KRB4I31V4Q5LDH31YDQVTX.uasset'
+[2024.01.28-01.29.04:364][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/IQ/4LQN6YPK6VDGJ38DF8ONQV
+[2024.01.28-01.29.04:365][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/4LQN6YPK6VDGJ38DF8ONQVEC36657340F126CD349326B7F29C4426.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/IQ/4LQN6YPK6VDGJ38DF8ONQV.uasset'
+[2024.01.28-01.29.04:368][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/B/KU/L9QM90YUF6Y0WW9H27M7G9
+[2024.01.28-01.29.04:368][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/L9QM90YUF6Y0WW9H27M7G9E34343DD40674AAB55D35E9129520D17.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/B/KU/L9QM90YUF6Y0WW9H27M7G9.uasset'
+[2024.01.28-01.29.04:372][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/2/US/TYSZNQTTO4DSI89TB9OJ40
+[2024.01.28-01.29.04:372][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/TYSZNQTTO4DSI89TB9OJ4016B633FB4D72E178A52C90BC31EB90F9.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/2/US/TYSZNQTTO4DSI89TB9OJ40.uasset'
+[2024.01.28-01.29.04:376][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/D/9X/R8ML2HU9XDVKTVLQSV8YBO
+[2024.01.28-01.29.04:377][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/R8ML2HU9XDVKTVLQSV8YBO22E69141409E459AB2E7E4A0DA1EFEE4.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/D/9X/R8ML2HU9XDVKTVLQSV8YBO.uasset'
+[2024.01.28-01.29.04:380][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/WH/KK050MKHNGXPO3XBL59V4E
+[2024.01.28-01.29.04:380][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/KK050MKHNGXPO3XBL59V4E0FB6BE904B55FE3B463BB7A5276C1CCF.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/8/WH/KK050MKHNGXPO3XBL59V4E.uasset'
+[2024.01.28-01.29.04:383][643]LogSavePackage: Moving output files for package: /Game/__ExternalActors__/TopDown/Maps/TopDownMap/8/SN/RKWEP5U5WJ7FI3EM6EAXG4
+[2024.01.28-01.29.04:384][643]LogSavePackage: Moving '../../../../GitHub/FYP/FYP/Saved/RKWEP5U5WJ7FI3EM6EAXG43278FFF244945C3277D0B2B4B8FA8005.tmp' to '../../../../GitHub/FYP/FYP/Content/__ExternalActors__/TopDown/Maps/TopDownMap/8/SN/RKWEP5U5WJ7FI3EM6EAXG4.uasset'
+[2024.01.28-01.29.04:396][643]LogFileHelpers: InternalPromptForCheckoutAndSave took 415 ms (total: 762 ms)
+[2024.01.28-01.29.04:405][643]AssetCheck: New page: Asset Save: multiple assets
+[2024.01.28-01.29.04:405][643]LogContentValidation: Display: Validating /Script/Engine.StaticMeshActor /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.StaticMeshActor_UAID_B42E991F4C8D33C501_1394914413
+[2024.01.28-01.29.04:405][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888212862
+[2024.01.28-01.29.04:405][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888210861
+[2024.01.28-01.29.04:405][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888208860
+[2024.01.28-01.29.04:405][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888206859
+[2024.01.28-01.29.04:406][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888203858
+[2024.01.28-01.29.04:406][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888201857
+[2024.01.28-01.29.04:406][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888199856
+[2024.01.28-01.29.04:406][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888197855
+[2024.01.28-01.29.04:406][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888195854
+[2024.01.28-01.29.04:406][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888193853
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888190852
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888188851
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888186850
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888185849
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888183848
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888181847
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888179846
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888178845
+[2024.01.28-01.29.04:407][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888176844
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888174843
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888171842
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888170841
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888168840
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888166839
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888164838
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888162837
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888160836
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888158835
+[2024.01.28-01.29.04:408][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888156834
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888155833
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888153832
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888151831
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888149830
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888147829
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888146828
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888144827
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888142826
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888140825
+[2024.01.28-01.29.04:409][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888138824
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888136823
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888134822
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888133821
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888130820
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888129819
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888127818
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888125817
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888123816
+[2024.01.28-01.29.04:410][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888121815
+[2024.01.28-01.29.04:411][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLinkProxy.BP_MyNavLinkProxy_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLinkProxy_C_UAID_B42E991F4C8DBAD301_1888119814
+[2024.01.28-01.29.04:411][643]LogContentValidation: Display: Validating /Game/TopDown/Blueprints/BP_MyNavLink.BP_MyNavLink_C /Game/TopDown/Maps/TopDownMap.TopDownMap:PersistentLevel.BP_MyNavLink_C_UAID_B42E991F4C8DBAD301_1888116813
+[2024.01.28-01.30.58:755][135]LogUObjectHash: Compacting FUObjectHashTables data took   1.64ms
+[2024.01.28-01.30.58:758][135]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.039
+[2024.01.28-01.40.59:411][936]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2024.01.28-01.40.59:413][936]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.038
+[2024.01.28-01.50.59:865][737]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2024.01.28-01.50.59:866][737]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.039
+[2024.01.28-02.01.00:646][539]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2024.01.28-02.01.00:647][539]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.041
+[2024.01.28-02.11.01:094][340]LogUObjectHash: Compacting FUObjectHashTables data took   1.00ms
+[2024.01.28-02.11.01:096][340]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.039
+[2024.01.28-02.18.37:294][709]LogDerivedDataCache: C:/Users/wikto/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:04.235 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 2639 files in 3990 folders with total size 216 MiB.
+[2024.01.28-02.21.01:553][141]LogUObjectHash: Compacting FUObjectHashTables data took   1.09ms
+[2024.01.28-02.21.01:555][141]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.041
+[2024.01.28-02.31.02:021][942]LogUObjectHash: Compacting FUObjectHashTables data took   0.96ms
+[2024.01.28-02.31.02:023][942]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.044
+[2024.01.28-02.41.02:792][744]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2024.01.28-02.41.02:794][744]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.041
+[2024.01.28-02.51.03:262][545]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2024.01.28-02.51.03:264][545]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.043
+[2024.01.28-03.01.03:692][346]LogUObjectHash: Compacting FUObjectHashTables data took   0.76ms
+[2024.01.28-03.01.03:694][346]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/TopDown/Maps/TopDownMap' took 0.036
