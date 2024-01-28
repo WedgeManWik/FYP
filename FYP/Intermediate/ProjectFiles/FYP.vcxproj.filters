@@ -60,6 +60,12 @@
     <ClInclude Include="..\..\Source\FYP\FYPPlayerController.h">
       <Filter>Source\FYP</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\FYP\MyJumpNavigationComponent.cpp">
+      <Filter>Source\FYP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\FYP\MyJumpNavigationComponent.h">
+      <Filter>Source\FYP</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\FYP\MyNavLinkComponent.cpp">
       <Filter>Source\FYP</Filter>
     </ClCompile>

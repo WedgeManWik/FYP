@@ -12,14 +12,14 @@
   [Upgrade]
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-    Requested 1.5 GB free memory per action, 6.86 GB available: limiting max parallel actions to 4
+    Requested 1.5 GB free memory per action, 6.7 GB available: limiting max parallel actions to 4
   Building 4 actions with 4 processes...
-  [1/4] Compile [x64] FYPPlayerController.cpp
-D:\GitHub\FYP\FYP\Source\FYP\FYPPlayerController.cpp(819): warning C4701: potentially uninitialized local variable 'IsAnyJumpPoints' used
+  [1/4] Compile [x64] MyJumpNavigationComponent.cpp
+D:\GitHub\FYP\FYP\Source\FYP\MyJumpNavigationComponent.cpp(195): warning C4701: potentially uninitialized local variable 'IsAnyJumpPoints' used
   [2/4] Link [x64] UnrealEditor-FYP.lib
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.exp
   [3/4] Link [x64] UnrealEditor-FYP.dll
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
   [4/4] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 20.75 seconds
-  Total execution time: 23.26 seconds
+  Total time in Parallel executor: 5.84 seconds
+  Total execution time: 6.75 seconds
