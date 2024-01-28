@@ -35,7 +35,7 @@ template<> FYP_API UScriptStruct* StaticStruct<struct FMyPolyEdge>();
 #define FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_45_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGoToNextPointOnCustomPath); \
-	DECLARE_FUNCTION(execSwitchPathfindMode); \
+	DECLARE_FUNCTION(execDoNextPathFindingStep); \
 	DECLARE_FUNCTION(execFindPathPortals); \
 	DECLARE_FUNCTION(execCreateCustomJumpPath); \
 	DECLARE_FUNCTION(execInitialise);
@@ -44,7 +44,7 @@ template<> FYP_API UScriptStruct* StaticStruct<struct FMyPolyEdge>();
 #define FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_45_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGoToNextPointOnCustomPath); \
-	DECLARE_FUNCTION(execSwitchPathfindMode); \
+	DECLARE_FUNCTION(execDoNextPathFindingStep); \
 	DECLARE_FUNCTION(execFindPathPortals); \
 	DECLARE_FUNCTION(execCreateCustomJumpPath); \
 	DECLARE_FUNCTION(execInitialise);

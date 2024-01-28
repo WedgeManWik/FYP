@@ -2,10 +2,6 @@
   Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" FYPEditor Win64 Development -Project="D:\GitHub\FYP\FYP\FYP.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\wikto\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (D:\GitHub\FYP).
-  Parsing headers for FYPEditor
-    Running Internal UnrealHeaderTool D:\GitHub\FYP\FYP\FYP.uproject D:\GitHub\FYP\FYP\Intermediate\Build\Win64\FYPEditor\Development\FYPEditor.uhtmanifest -WarningsAsErrors -installed
-  Total of 0 written
-  Reflection code generated for FYPEditor in 1.5421678 seconds
   Building FYPEditor...
   Using Visual Studio 2022 14.36.32537 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -16,15 +12,16 @@
   [Upgrade]
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-    Requested 1.5 GB free memory per action, 6.54 GB available: limiting max parallel actions to 4
+    Requested 1.5 GB free memory per action, 7.02 GB available: limiting max parallel actions to 4
   Building 6 actions with 4 processes...
   [1/6] Compile [x64] FYP.init.gen.cpp
-  [2/6] Compile [x64] MyNavLinkGenerator.gen.cpp
-  [3/6] Compile [x64] MyNavLinkGenerator.cpp
+  [2/6] Compile [x64] MyJumpNavigationComponent.gen.cpp
+  [3/6] Compile [x64] MyJumpNavigationComponent.cpp
+D:\GitHub\FYP\FYP\Source\FYP\MyJumpNavigationComponent.cpp(197): warning C4701: potentially uninitialized local variable 'IsAnyJumpPoints' used
   [4/6] Link [x64] UnrealEditor-FYP.lib
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.exp
   [5/6] Link [x64] UnrealEditor-FYP.dll
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
   [6/6] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 5.10 seconds
-  Total execution time: 7.63 seconds
+  Total time in Parallel executor: 10.79 seconds
+  Total execution time: 13.17 seconds

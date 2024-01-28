@@ -206,11 +206,11 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		P_THIS->GoToNextPointOnCustomPath();
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(UMyJumpNavigationComponent::execSwitchPathfindMode)
+	DEFINE_FUNCTION(UMyJumpNavigationComponent::execDoNextPathFindingStep)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SwitchPathfindMode();
+		*(bool*)Z_Param__Result=P_THIS->DoNextPathFindingStep();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UMyJumpNavigationComponent::execFindPathPortals)
@@ -224,9 +224,11 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 	{
 		P_GET_STRUCT_REF(FVector,Z_Param_Out_Start);
 		P_GET_STRUCT_REF(FVector,Z_Param_Out_Destination);
+		P_GET_UBOOL_REF(Z_Param_Out_ShouldDrawDebug);
+		P_GET_UBOOL_REF(Z_Param_Out_IsAutoPathfinding);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->CreateCustomJumpPath(Z_Param_Out_Start,Z_Param_Out_Destination);
+		P_THIS->CreateCustomJumpPath(Z_Param_Out_Start,Z_Param_Out_Destination,Z_Param_Out_ShouldDrawDebug,Z_Param_Out_IsAutoPathfinding);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UMyJumpNavigationComponent::execInitialise)
@@ -254,10 +256,10 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		UClass* Class = UMyJumpNavigationComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "CreateCustomJumpPath", &UMyJumpNavigationComponent::execCreateCustomJumpPath },
+			{ "DoNextPathFindingStep", &UMyJumpNavigationComponent::execDoNextPathFindingStep },
 			{ "FindPathPortals", &UMyJumpNavigationComponent::execFindPathPortals },
 			{ "GoToNextPointOnCustomPath", &UMyJumpNavigationComponent::execGoToNextPointOnCustomPath },
 			{ "Initialise", &UMyJumpNavigationComponent::execInitialise },
-			{ "SwitchPathfindMode", &UMyJumpNavigationComponent::execSwitchPathfindMode },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -267,6 +269,8 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		{
 			FVector Start;
 			FVector Destination;
+			bool ShouldDrawDebug;
+			bool IsAutoPathfinding;
 		};
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Start_MetaData[];
@@ -276,6 +280,16 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Destination_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_Destination;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ShouldDrawDebug_MetaData[];
+#endif
+		static void NewProp_ShouldDrawDebug_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_ShouldDrawDebug;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsAutoPathfinding_MetaData[];
+#endif
+		static void NewProp_IsAutoPathfinding_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsAutoPathfinding;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -294,9 +308,31 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_Destination = { "Destination", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyJumpNavigationComponent_eventCreateCustomJumpPath_Parms, Destination), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_Destination_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_Destination_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_ShouldDrawDebug_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	void Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_ShouldDrawDebug_SetBit(void* Obj)
+	{
+		((MyJumpNavigationComponent_eventCreateCustomJumpPath_Parms*)Obj)->ShouldDrawDebug = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_ShouldDrawDebug = { "ShouldDrawDebug", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(MyJumpNavigationComponent_eventCreateCustomJumpPath_Parms), &Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_ShouldDrawDebug_SetBit, METADATA_PARAMS(Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_ShouldDrawDebug_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_ShouldDrawDebug_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_IsAutoPathfinding_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	void Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_IsAutoPathfinding_SetBit(void* Obj)
+	{
+		((MyJumpNavigationComponent_eventCreateCustomJumpPath_Parms*)Obj)->IsAutoPathfinding = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_IsAutoPathfinding = { "IsAutoPathfinding", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(MyJumpNavigationComponent_eventCreateCustomJumpPath_Parms), &Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_IsAutoPathfinding_SetBit, METADATA_PARAMS(Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_IsAutoPathfinding_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_IsAutoPathfinding_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_Start,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_Destination,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_ShouldDrawDebug,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::NewProp_IsAutoPathfinding,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath_Statics::Function_MetaDataParams[] = {
@@ -338,6 +374,43 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UMyJumpNavigationComponent_CustomGoingToNextPoint_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics
+	{
+		struct MyJumpNavigationComponent_eventDoNextPathFindingStep_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((MyJumpNavigationComponent_eventDoNextPathFindingStep_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(MyJumpNavigationComponent_eventDoNextPathFindingStep_Parms), &Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyJumpNavigationComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UMyJumpNavigationComponent, nullptr, "DoNextPathFindingStep", nullptr, nullptr, sizeof(Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::MyJumpNavigationComponent_eventDoNextPathFindingStep_Parms), Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -421,28 +494,6 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "MyJumpNavigationComponent.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UMyJumpNavigationComponent, nullptr, "SwitchPathfindMode", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UMyJumpNavigationComponent);
 	UClass* Z_Construct_UClass_UMyJumpNavigationComponent_NoRegister()
 	{
@@ -472,12 +523,12 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		(UObject* (*)())Z_Construct_UPackage__Script_FYP,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UMyJumpNavigationComponent_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath, "CreateCustomJumpPath" }, // 2401140805
+		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_CreateCustomJumpPath, "CreateCustomJumpPath" }, // 2437110520
 		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_CustomGoingToNextPoint, "CustomGoingToNextPoint" }, // 4019301181
+		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep, "DoNextPathFindingStep" }, // 3279074558
 		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_FindPathPortals, "FindPathPortals" }, // 3509360243
 		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_GoToNextPointOnCustomPath, "GoToNextPointOnCustomPath" }, // 1419841438
 		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise, "Initialise" }, // 118681201
-		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_SwitchPathfindMode, "SwitchPathfindMode" }, // 2547448917
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMyJumpNavigationComponent_Statics::Class_MetaDataParams[] = {
@@ -549,9 +600,9 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		{ FMyPolyEdge::StaticStruct, Z_Construct_UScriptStruct_FMyPolyEdge_Statics::NewStructOps, TEXT("MyPolyEdge"), &Z_Registration_Info_UScriptStruct_MyPolyEdge, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMyPolyEdge), 3219218819U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMyJumpNavigationComponent, UMyJumpNavigationComponent::StaticClass, TEXT("UMyJumpNavigationComponent"), &Z_Registration_Info_UClass_UMyJumpNavigationComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyJumpNavigationComponent), 686992477U) },
+		{ Z_Construct_UClass_UMyJumpNavigationComponent, UMyJumpNavigationComponent::StaticClass, TEXT("UMyJumpNavigationComponent"), &Z_Registration_Info_UClass_UMyJumpNavigationComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyJumpNavigationComponent), 110379820U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_3585516769(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_2276187040(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ScriptStructInfo),
 		nullptr, 0);

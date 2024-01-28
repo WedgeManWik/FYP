@@ -52,13 +52,13 @@ public:
 		void Initialise(AController* Controller, APawn* Pawn);
 
 	UFUNCTION(BlueprintCallable)
-		void CreateCustomJumpPath(UPARAM(ref) const FVector& Start, UPARAM(ref) const FVector& Destination);
+		void CreateCustomJumpPath(UPARAM(ref) const FVector& Start, UPARAM(ref) const FVector& Destination, UPARAM(ref) const bool& ShouldDrawDebug, UPARAM(ref) const bool& IsAutoPathfinding);
 
 	UFUNCTION(BlueprintCallable)
 		void FindPathPortals();
 
 	UFUNCTION(BlueprintCallable)
-		void SwitchPathfindMode();
+		bool DoNextPathFindingStep();
 
 	UFUNCTION(BlueprintCallable)
 		void GoToNextPointOnCustomPath();
@@ -100,6 +100,7 @@ protected:
 	bool PathfindingAuto;
 	int CurrentPathIndex;
 	int LineIndex;
+	bool DrawDebug;
 
 	ARecastNavMesh* Nav;
 
@@ -107,6 +108,4 @@ protected:
 	TObjectPtr<AController> MyController;
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
 	TObjectPtr<APawn> MyPawn;
-
-		
 };
