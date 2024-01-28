@@ -51,6 +51,7 @@ void UMyJumpNavigationComponent::FindPathPortals()
 
 		if (pathpoints.Num() <= 2)
 		{
+			UAIBlueprintHelperLibrary::SimpleMoveToLocation(MyController, FinalDestination);
 			return;
 		}
 
@@ -156,6 +157,14 @@ void UMyJumpNavigationComponent::FindPathPortals()
 				}
 			}
 		}
+		NavNodeRef nodeRef = pathpoints[pathpoints.Num() - 1].NodeRef;
+		TArray<FVector> CurrentPolygonVertices;
+		Nav->GetPolyVerts(nodeRef, CurrentPolygonVertices);
+
+		FMyPolyEdge EdgeToAdd;
+		EdgeToAdd = GetEdgeClosestToPointOnPolygon(pathpoints[pathpoints.Num() - 2], CurrentPolygonVertices);
+
+		Portals.Add(EdgeToAdd);
 	}
 	if (DrawDebug)
 	{
@@ -249,31 +258,38 @@ FMyPolyEdge UMyJumpNavigationComponent::GetEdgeClosestToPointOnPolygon(const FVe
 FMyPolyEdge UMyJumpNavigationComponent::GetEdgeClosestToAnotherEdgeOnPolygon(const FMyPolyEdge& Edge, const TArray<FVector>& PolygonVerticies)
 {
 	FVector EdgeDirection = Edge.Right - Edge.Left;
+	EdgeDirection.Z = 0;
+	EdgeDirection.Normalize();
 	int LeftVert = 0;
 	int RightVert = PolygonVerticies.Num() - 1;
-	float Best = fabs(FVector::DotProduct(EdgeDirection, (PolygonVerticies[LeftVert] - PolygonVerticies[RightVert])));
+	FVector PolyEdgeDirection = (PolygonVerticies[LeftVert] - PolygonVerticies[RightVert]);
+	PolyEdgeDirection.Z = 0;
+	PolyEdgeDirection.Normalize();
+	float Best = fabs(FVector::DotProduct(EdgeDirection, PolyEdgeDirection));
 
 	FVector Closest1;
 	FVector Closest2;
 	FMath::SegmentDistToSegment(Edge.Left, Edge.Right, PolygonVerticies[LeftVert], PolygonVerticies[RightVert], Closest1, Closest2);
 	float Closest = FVector::DistSquared(Closest1, Closest2);
 
-	for (int i = 0; i < PolygonVerticies.Num() - 1; i++)
+	for (int i = 1; i < PolygonVerticies.Num(); i++)
 	{
-		FMath::SegmentDistToSegment(Edge.Left, Edge.Right, PolygonVerticies[i], PolygonVerticies[i + 1], Closest1, Closest2);
+		FMath::SegmentDistToSegment(Edge.Left, Edge.Right, PolygonVerticies[i], PolygonVerticies[i - 1], Closest1, Closest2);
 		float Distance = FVector::DistSquared(Closest1, Closest2);
 
 		if (Distance <= Closest)
 		{
-			FVector PolyVertDirection = PolygonVerticies[i] - PolygonVerticies[i + 1];
-			float DotProduct = fabs(FVector::DotProduct(EdgeDirection, PolyVertDirection));
+			PolyEdgeDirection = PolygonVerticies[i] - PolygonVerticies[i - 1];
+			PolyEdgeDirection.Z = 0;
+			PolyEdgeDirection.Normalize();
+			float DotProduct = fabs(FVector::DotProduct(EdgeDirection, PolyEdgeDirection));
 			if (DotProduct > Best)
 			{
 				Best = DotProduct;
 				Closest = Distance;
 
 				LeftVert = i;
-				RightVert = i + 1;
+				RightVert = i - 1;
 			}
 		}
 	}
@@ -294,6 +310,7 @@ void UMyJumpNavigationComponent::CreateCustomPath(const TArray<FMyPolyEdge>& Por
 
 	if (Portals.Num() < 1)
 	{
+		GoToNextPointOnCustomPath();
 		return;
 	}
 	TArray<FMyPolyEdge> PortalsButNoHeight;
@@ -358,7 +375,14 @@ void UMyJumpNavigationComponent::CreateCustomPath(const TArray<FMyPolyEdge>& Por
 		FPathPoint finalPathPoint;
 		finalPathPoint.Location = FinalDestination;
 		finalPathPoint.IsJump = false;
-		AgentPathPoints.Add(finalPathPoint);
+		if (!AgentPathPoints[AgentPathPoints.Num() - 1].IsJump)
+		{
+			AgentPathPoints[AgentPathPoints.Num() - 1] = finalPathPoint;
+		}
+		else
+		{
+			AgentPathPoints.Add(finalPathPoint);
+		}
 
 		if (DrawDebug)
 		{
@@ -385,14 +409,22 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 		CurrentPathIndex++;
 		if (CurrentPathIndex >= MyPortals.Num())
 		{
-			if (FVector::DistSquared(Barrier1.Left, Barrier1.Right) < FVector::DistSquared(Barrier2.Left, Barrier2.Right))
+			if (MyPathPoints.Num() == 1)
 			{
-				MyPathPoints.Add(Barrier1.Right);
+
 			}
 			else
 			{
-				MyPathPoints.Add(Barrier2.Right);
+				if (FVector::DistSquared(Barrier1.Left, Barrier1.Right) < FVector::DistSquared(Barrier2.Left, Barrier2.Right))
+				{
+					MyPathPoints.Add(Barrier1.Right);
+				}
+				else
+				{
+					MyPathPoints.Add(Barrier2.Right);
+				}
 			}
+
 			FVector End = FinalDestination;
 			End.Z = 0;
 			MyPathPoints.Add(End);
@@ -400,7 +432,10 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 
 			if (!PathfindingAuto)
 			{
-				DrawDebugSphere(GetWorld(), End, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
+				if (DrawDebug)
+				{
+					DrawDebugSphere(GetWorld(), End, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
+				}
 
 				LineIndex = 0;
 				CurrentPathIndex = 0;
@@ -523,9 +558,12 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 
 void UMyJumpNavigationComponent::CreatePathIn3D()
 {
-	for (int j = 1; j < MyPathPoints.Num(); j++)
+	if (DrawDebug)
 	{
-		DrawDebugLine(GetWorld(), MyPathPoints[j], MyPathPoints[j - 1], FColor(255, 0, 0), true, 0, 10.f);
+		for (int j = 1; j < MyPathPoints.Num(); j++)
+		{
+			DrawDebugLine(GetWorld(), MyPathPoints[j], MyPathPoints[j - 1], FColor(255, 0, 0), true, 0, 10.f);
+		}
 	}
 
 	if (CurrentPathIndex == 0)
@@ -535,13 +573,21 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		firstPathPoint.Location = StartOfPath;
 		AgentPathPoints.Add(firstPathPoint);
 		CurrentPathIndex++;
-		DrawDebugSphere(GetWorld(), firstPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 20.f);
+
+		if (DrawDebug)
+		{
+			DrawDebugSphere(GetWorld(), firstPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 20.f);
+		}
+		
 		return;
 	}
 
 	if (LineIndex < MyPathPoints.Num() - 1)
 	{
-		DrawDebugLine(GetWorld(), MyPathPoints[LineIndex], MyPathPoints[LineIndex + 1], FColor(0, 0, 255), true, 0, 10.f);
+		if (DrawDebug)
+		{
+			DrawDebugLine(GetWorld(), MyPathPoints[LineIndex], MyPathPoints[LineIndex + 1], FColor(0, 0, 255), true, 0, 10.f);
+		}
 	}
 	else
 	{
@@ -551,7 +597,10 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 
 	if (CurrentPathIndex - 1 < MyPortals.Num() - 1)
 	{
-		DrawDebugLine(GetWorld(), MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right, FColor(0, 255, 255), true, 0, 10.f);
+		if (DrawDebug)
+		{
+			DrawDebugLine(GetWorld(), MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right, FColor(0, 255, 255), true, 0, 10.f);
+		}
 	}
 	else
 	{
@@ -583,7 +632,11 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		newPathPoint.Location = Intersection;
 		newPathPoint.Location.Z = MyPortals3D[CurrentPathIndex - 1].Left.Z;
 
-		DrawDebugSphere(GetWorld(), newPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 50.f);
+		if (DrawDebug)
+		{
+			DrawDebugSphere(GetWorld(), newPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 50.f);
+		}
+		
 		if (MyPortals3D[CurrentPathIndex - 1].IsJumpEdge)
 		{
 			newPathPoint.IsJump = true;
@@ -624,16 +677,16 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 bool UMyJumpNavigationComponent::UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMyPolyEdge& OtherBarrier, const FMyPolyEdge& NextPortal, float& AngleBetweenBarriers, FVector& OutNewPathPoint, FColor ColourBarrier, bool& Parallel)
 {
 	FVector PreviousLocation = BarrierToUpdate.Right;
-	FVector PreviousVectorTo = BarrierToUpdate.GetVectorTo();
+	FVector OtherBarrierVectorTo = OtherBarrier.GetVectorTo();
 	FVector NewVectorTo1 = NextPortal.Left - BarrierToUpdate.Left;
 	NewVectorTo1.Normalize();
 	FVector NewVectorTo2 = NextPortal.Right - BarrierToUpdate.Left;
 	NewVectorTo2.Normalize();
 
-	float DotProduct1 = fabs(FVector::DotProduct(PreviousVectorTo, NewVectorTo1));
-	float DotProduct2 = fabs(FVector::DotProduct(PreviousVectorTo, NewVectorTo2));
+	float DotProduct1 = FVector::DotProduct(OtherBarrierVectorTo, NewVectorTo1);
+	float DotProduct2 = FVector::DotProduct(OtherBarrierVectorTo, NewVectorTo2);
 
-	if (DotProduct1 >= DotProduct2)
+	if (DotProduct1 < DotProduct2)
 	{
 		BarrierToUpdate.Right = NextPortal.Left;
 	}
