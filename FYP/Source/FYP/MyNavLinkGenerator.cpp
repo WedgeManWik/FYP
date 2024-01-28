@@ -4,14 +4,13 @@
 #include "MyNavLinkGenerator.h"
 #include "NavMesh/RecastNavMesh.h"
 #include "Kismet/KismetSystemLibrary.h"
+#include "NavigationSystem.h"
 
 // Sets default values
 AMyNavLinkGenerator::AMyNavLinkGenerator()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
-
-	DistBetweenNavLinks = 100;
 }
 
 void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
@@ -39,6 +38,8 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		}
 
 	}
+
+	//ANavigationData* Data = UNavigationSystemV1::GetNavDataForProps(Controller->GetNavAgentPropertiesRef())
 
 	TArray<FNavigationPortalEdge> NavMeshEdges;
 
@@ -173,8 +174,8 @@ bool AMyNavLinkGenerator::DoesAdjacentEdgeExist(FVector& Start, FVector& End, TA
 void AMyNavLinkGenerator::SpawnPotentialNavLinksBetweenVerticies(FVector& Start, FVector& End)
 {
 	int32 TotalDistance = FVector::Dist(Start,End);
-	int32 EdgeDistances = (TotalDistance % DistBetweenNavLinks) / 2;
-	int32 numPotentialLinksToSpawn = (TotalDistance - (EdgeDistances * 2)) / DistBetweenNavLinks;
+	int32 EdgeDistances = (TotalDistance % 100) / 2;
+	int32 numPotentialLinksToSpawn = (TotalDistance - (EdgeDistances * 2)) / 100;
 
 	FVector Direction = End - Start;
 	Direction.Normalize();
@@ -188,7 +189,7 @@ void AMyNavLinkGenerator::SpawnPotentialNavLinksBetweenVerticies(FVector& Start,
 
 	for (int i = 0; i < numPotentialLinksToSpawn; i++)
 	{
-		FVector SpawnLocation = Start + (Direction * (EdgeDistances + DistBetweenNavLinks * i));
+		FVector SpawnLocation = Start + (Direction * (EdgeDistances + 100 * i));
 		SpawnPotentialNavLink(SpawnLocation, DirectionOut);
 	}
 
@@ -219,8 +220,7 @@ FNavigationPortalEdge& AMyNavLinkGenerator::FindEdgeWithMatchingVertex(FNavigati
 FVector AMyNavLinkGenerator::GetDirecionOut(FVector& Start, FVector& End)
 {
 	int32 TotalDistance = FVector::Dist(Start, End);
-	int32 EdgeDistances = (TotalDistance % DistBetweenNavLinks) / 2;
-	int32 numPotentialLinksToSpawn = (TotalDistance - (EdgeDistances * 2)) / DistBetweenNavLinks;
+	int32 EdgeDistances = (TotalDistance % 100) / 2;
 
 	FVector Direction = End - Start;
 	Direction.Normalize();

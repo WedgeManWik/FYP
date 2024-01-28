@@ -169,19 +169,6 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_AgentJumpHeight_MetaData[];
-#endif
-		static const UECodeGen_Private::FIntPropertyParams NewProp_AgentJumpHeight;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_AgentJumpDistance_MetaData[];
-#endif
-		static const UECodeGen_Private::FIntPropertyParams NewProp_AgentJumpDistance;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_DistBetweenNavLinks_MetaData[];
-#endif
-		static const UECodeGen_Private::FIntPropertyParams NewProp_DistBetweenNavLinks;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -200,32 +187,6 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		{ "ModuleRelativePath", "MyNavLinkGenerator.h" },
 	};
 #endif
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpHeight_MetaData[] = {
-		{ "Category", "MyNavLinkGenerator" },
-		{ "ModuleRelativePath", "MyNavLinkGenerator.h" },
-	};
-#endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpHeight = { "AgentJumpHeight", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMyNavLinkGenerator, AgentJumpHeight), METADATA_PARAMS(Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpHeight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpHeight_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpDistance_MetaData[] = {
-		{ "Category", "MyNavLinkGenerator" },
-		{ "ModuleRelativePath", "MyNavLinkGenerator.h" },
-	};
-#endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpDistance = { "AgentJumpDistance", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMyNavLinkGenerator, AgentJumpDistance), METADATA_PARAMS(Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpDistance_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_DistBetweenNavLinks_MetaData[] = {
-		{ "Category", "MyNavLinkGenerator" },
-		{ "ModuleRelativePath", "MyNavLinkGenerator.h" },
-	};
-#endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_DistBetweenNavLinks = { "DistBetweenNavLinks", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMyNavLinkGenerator, DistBetweenNavLinks), METADATA_PARAMS(Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_DistBetweenNavLinks_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_DistBetweenNavLinks_MetaData)) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyNavLinkGenerator_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpHeight,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_AgentJumpDistance,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyNavLinkGenerator_Statics::NewProp_DistBetweenNavLinks,
-	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMyNavLinkGenerator_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMyNavLinkGenerator>::IsAbstract,
 	};
@@ -235,11 +196,11 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		FuncInfo,
-		Z_Construct_UClass_AMyNavLinkGenerator_Statics::PropPointers,
+		nullptr,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
-		UE_ARRAY_COUNT(Z_Construct_UClass_AMyNavLinkGenerator_Statics::PropPointers),
+		0,
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AMyNavLinkGenerator_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AMyNavLinkGenerator_Statics::Class_MetaDataParams))
@@ -263,9 +224,9 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 2940759904U) },
+		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 4011028795U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_1914642960(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_274242997(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

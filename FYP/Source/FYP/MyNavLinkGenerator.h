@@ -39,12 +39,5 @@ public:
 
 	FVector GetDirecionOut(FVector& Start, FVector& End);
 
-	UPROPERTY(EditAnywhere)
-		int32 AgentJumpHeight;
 
-	UPROPERTY(EditAnywhere)
-		int32 AgentJumpDistance;
-
-	UPROPERTY(EditAnywhere)
-		int32 DistBetweenNavLinks;
 };
