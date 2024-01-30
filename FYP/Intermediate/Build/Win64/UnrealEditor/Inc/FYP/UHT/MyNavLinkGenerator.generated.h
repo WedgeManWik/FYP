@@ -18,11 +18,13 @@ class ARecastNavMesh;
 #define FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_14_SPARSE_DATA
 #define FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_14_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetCentresOfPolygonsInBox); \
 	DECLARE_FUNCTION(execGenerateNavMeshLinks);
 
 
 #define FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetCentresOfPolygonsInBox); \
 	DECLARE_FUNCTION(execGenerateNavMeshLinks);
 
 

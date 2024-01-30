@@ -110,6 +110,25 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 	//}
 }
 
+TArray<FVector> AMyNavLinkGenerator::GetCentresOfPolygonsInBox(ARecastNavMesh* Nav, FVector BoxOrgin, const FVector& BoxExtent)
+{
+	FBox Box = FBox();
+	Box.BuildAABB(BoxOrgin, BoxExtent);
+
+	TArray<FNavPoly> Polys;
+	Nav->GetPolysInBox(Box, Polys, Nav->GetDefaultQueryFilter(), Nav->GetOwner());
+
+	TArray<FVector> PolygonCentres;
+	for (int i = 0; i < Polys.Num(); i++)
+	{
+		FVector CenterOfPolygon;
+		Nav->GetPolyCenter(Polys[i].Ref, CenterOfPolygon);
+		PolygonCentres.Add(CenterOfPolygon);
+	}
+
+	return PolygonCentres;
+}
+
 bool AMyNavLinkGenerator::IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2)
 {
 	if (Edge1.Left == Edge2.Left || Edge1.Left == Edge2.Right)

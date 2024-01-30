@@ -16,6 +16,16 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 	NAVIGATIONSYSTEM_API UClass* Z_Construct_UClass_ARecastNavMesh_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_FYP();
 // End Cross Module References
+	DEFINE_FUNCTION(AMyNavLinkGenerator::execGetCentresOfPolygonsInBox)
+	{
+		P_GET_OBJECT(ARecastNavMesh,Z_Param_Nav);
+		P_GET_STRUCT(FVector,Z_Param_BoxOrgin);
+		P_GET_STRUCT_REF(FVector,Z_Param_Out_BoxExtent);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(TArray<FVector>*)Z_Param__Result=P_THIS->GetCentresOfPolygonsInBox(Z_Param_Nav,Z_Param_BoxOrgin,Z_Param_Out_BoxExtent);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMyNavLinkGenerator::execGenerateNavMeshLinks)
 	{
 		P_GET_OBJECT(ARecastNavMesh,Z_Param_Nav);
@@ -57,6 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		UClass* Class = AMyNavLinkGenerator::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GenerateNavMeshLinks", &AMyNavLinkGenerator::execGenerateNavMeshLinks },
+			{ "GetCentresOfPolygonsInBox", &AMyNavLinkGenerator::execGetCentresOfPolygonsInBox },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -89,6 +100,61 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMyNavLinkGenerator_GenerateNavMeshLinks_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics
+	{
+		struct MyNavLinkGenerator_eventGetCentresOfPolygonsInBox_Parms
+		{
+			ARecastNavMesh* Nav;
+			FVector BoxOrgin;
+			FVector BoxExtent;
+			TArray<FVector> ReturnValue;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Nav;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_BoxOrgin;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoxExtent_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_BoxExtent;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue_Inner;
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_Nav = { "Nav", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyNavLinkGenerator_eventGetCentresOfPolygonsInBox_Parms, Nav), Z_Construct_UClass_ARecastNavMesh_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_BoxOrgin = { "BoxOrgin", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyNavLinkGenerator_eventGetCentresOfPolygonsInBox_Parms, BoxOrgin), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_BoxExtent_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_BoxExtent = { "BoxExtent", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyNavLinkGenerator_eventGetCentresOfPolygonsInBox_Parms, BoxExtent), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_BoxExtent_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_BoxExtent_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_ReturnValue_Inner = { "ReturnValue", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyNavLinkGenerator_eventGetCentresOfPolygonsInBox_Parms, ReturnValue), EArrayPropertyFlags::None, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_Nav,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_BoxOrgin,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_BoxExtent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_ReturnValue_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyNavLinkGenerator.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyNavLinkGenerator, nullptr, "GetCentresOfPolygonsInBox", nullptr, nullptr, sizeof(Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::MyNavLinkGenerator_eventGetCentresOfPolygonsInBox_Parms), Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04C20401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -178,6 +244,7 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyNavLinkGenerator_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_GenerateNavMeshLinks, "GenerateNavMeshLinks" }, // 2969330143
+		{ &Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox, "GetCentresOfPolygonsInBox" }, // 863609845
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_SpawnNavJumpLinkArea, "SpawnNavJumpLinkArea" }, // 902202405
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_SpawnPotentialNavLink, "SpawnPotentialNavLink" }, // 3968958744
 	};
@@ -224,9 +291,9 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 4011028795U) },
+		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 1616157981U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_274242997(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_1097004523(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

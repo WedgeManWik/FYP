@@ -19,6 +19,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void GenerateNavMeshLinks(ARecastNavMesh* Nav);
 
+	UFUNCTION(BlueprintCallable)
+		TArray<FVector> GetCentresOfPolygonsInBox(ARecastNavMesh* Nav, UPARAM() FVector BoxOrgin, UPARAM(ref) const FVector& BoxExtent);
+
 	UFUNCTION(BlueprintImplementableEvent)
 		void SpawnPotentialNavLink(FVector Location, FVector Direction);
 
