@@ -90,8 +90,8 @@ protected:
 	FVector FinalDestination;
 	TArray<FPathPoint> AgentPathPoints;
 	TArray<FMyPolyEdge> MyPortals3D;
-	TArray<FMyPolyEdge> MyPortals;
-	TArray<FVector> MyPathPoints;
+	TArray<FMyPolyEdge> MyPortals2D;
+	TArray<FVector> MyPathPoints2D;
 	FMyPolyEdge Barrier1;
 	FMyPolyEdge Barrier2;
 	float Angle;
