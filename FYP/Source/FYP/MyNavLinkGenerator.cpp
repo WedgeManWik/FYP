@@ -15,11 +15,9 @@ AMyNavLinkGenerator::AMyNavLinkGenerator()
 
 void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 {
-	TArray<NavNodeRef> PolyRefs;
-
 	int32 NumTiles = Nav->GetNavMeshTilesCount();
 
-	TArray<FNavPoly> EachPolys;
+	TArray<FNavPoly> Polys;
 
 	FBox TileBounds;
 
@@ -27,31 +25,20 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 	{
 		TileBounds = Nav->GetNavMeshTileBounds(i);
 		if (TileBounds.IsValid == 0) { continue; }
-		Nav->GetPolysInTile(i, EachPolys);
-
-		if (EachPolys.Num() > 0)
-		{
-			for (int j = 0; j < EachPolys.Num(); j++)
-			{
-				PolyRefs.Add(EachPolys[j].Ref);
-			}
-		}
-
+		Nav->GetPolysInTile(i, Polys);
 	}
-
-	//ANavigationData* Data = UNavigationSystemV1::GetNavDataForProps(Controller->GetNavAgentPropertiesRef())
 
 	TArray<FNavigationPortalEdge> NavMeshEdges;
 
-	for (int i = 0; i < EachPolys.Num(); i++)
+	for (int i = 0; i < Polys.Num(); i++)
 	{
 		//Get all edges of current polygon
 		TArray<FNavigationPortalEdge> CurrentPolygonEdges;
-		Nav->GetPolyEdges(EachPolys[i].Ref, CurrentPolygonEdges);
+		Nav->GetPolyEdges(Polys[i].Ref, CurrentPolygonEdges);
 
 		//Get all vertices of current polygon
 		TArray<FVector> CurrentPolygonVertices;
-		Nav->GetPolyVerts(EachPolys[i].Ref, CurrentPolygonVertices);
+		Nav->GetPolyVerts(Polys[i].Ref, CurrentPolygonVertices);
 
 		//Spawns potential nav links on edges of navmesh
 		for (int j = 0; j < CurrentPolygonVertices.Num(); j++)
@@ -77,7 +64,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		}
 	}
 
-	//Spawns Potential nav links on corners of navmesh
+	//Spawns Potential nav links on corners of polygons
 
 	//for (int i = 0; i < NavMeshEdges.Num(); i++)
 	//{
@@ -222,12 +209,14 @@ FNavigationPortalEdge& AMyNavLinkGenerator::FindEdgeWithMatchingVertex(FNavigati
 	{
 		if (EdgeArray[i].Left == Vertex || EdgeArray[i].Right == Vertex)
 		{
+			//Found edge with a common vertex
 			if (EdgeArray[i].Left == ThisEdge.Left && EdgeArray[i].Right == ThisEdge.Right)
 			{
 				//Same edge
 			}
 			else
 			{
+				//Adjecent edge which shares same vertex
 				return EdgeArray[i];
 			}
 		}
