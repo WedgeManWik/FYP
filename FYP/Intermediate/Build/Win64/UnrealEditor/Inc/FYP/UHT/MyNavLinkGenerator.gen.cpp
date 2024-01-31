@@ -45,6 +45,11 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		FVector Location;
 		FVector Direction;
 	};
+	static FName NAME_AMyNavLinkGenerator_InitialiseLinks = FName(TEXT("InitialiseLinks"));
+	void AMyNavLinkGenerator::InitialiseLinks()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AMyNavLinkGenerator_InitialiseLinks),NULL);
+	}
 	static FName NAME_AMyNavLinkGenerator_SpawnNavJumpLinkArea = FName(TEXT("SpawnNavJumpLinkArea"));
 	void AMyNavLinkGenerator::SpawnNavJumpLinkArea(FVector Start, FVector End, FVector Direction)
 	{
@@ -158,6 +163,28 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyNavLinkGenerator.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyNavLinkGenerator, nullptr, "InitialiseLinks", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AMyNavLinkGenerator_SpawnNavJumpLinkArea_Statics
 	{
 		static const UECodeGen_Private::FStructPropertyParams NewProp_Start;
@@ -245,6 +272,7 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyNavLinkGenerator_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_GenerateNavMeshLinks, "GenerateNavMeshLinks" }, // 2969330143
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_GetCentresOfPolygonsInBox, "GetCentresOfPolygonsInBox" }, // 863609845
+		{ &Z_Construct_UFunction_AMyNavLinkGenerator_InitialiseLinks, "InitialiseLinks" }, // 1013944053
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_SpawnNavJumpLinkArea, "SpawnNavJumpLinkArea" }, // 902202405
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_SpawnPotentialNavLink, "SpawnPotentialNavLink" }, // 3968958744
 	};
@@ -291,9 +319,9 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 1616157981U) },
+		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 2518815717U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_1097004523(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_1387244393(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

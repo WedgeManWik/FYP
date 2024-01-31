@@ -64,6 +64,8 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		}
 	}
 
+	InitialiseLinks();
+
 	//Spawns Potential nav links on corners of polygons
 
 	//for (int i = 0; i < NavMeshEdges.Num(); i++)
@@ -103,7 +105,8 @@ TArray<FVector> AMyNavLinkGenerator::GetCentresOfPolygonsInBox(ARecastNavMesh* N
 	Box.BuildAABB(BoxOrgin, BoxExtent);
 
 	TArray<FNavPoly> Polys;
-	Nav->GetPolysInBox(Box, Polys, Nav->GetDefaultQueryFilter(), Nav->GetOwner());
+	Nav->GetPolysInBox(Box, Polys, Nav->GetDefaultQueryFilter(), this);
+	//Nav->GetPolysInBox(Box, Polys, nullptr, nullptr);
 
 	TArray<FVector> PolygonCentres;
 	for (int i = 0; i < Polys.Num(); i++)
