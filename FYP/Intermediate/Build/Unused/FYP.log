@@ -2,37 +2,5 @@
   Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" FYPEditor Win64 Development -Project="D:\GitHub\FYP\FYP\FYP.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\wikto\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (D:\GitHub\FYP).
-  Invalidating makefile for FYPEditor (UnrealEditor-FYP.lib.response modified)
-  Parsing headers for FYPEditor
-    Running Internal UnrealHeaderTool D:\GitHub\FYP\FYP\FYP.uproject D:\GitHub\FYP\FYP\Intermediate\Build\Win64\FYPEditor\Development\FYPEditor.uhtmanifest -WarningsAsErrors -installed
-  Total of 0 written
-  Reflection code generated for FYPEditor in 5.3326444 seconds
-  Building FYPEditor...
-  Using Visual Studio 2022 14.36.32537 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Upgrade]
-  [Upgrade] Using backward-compatible include order. The latest version of UE has changed the order of includes, which may require code changes. The current setting is:
-  [Upgrade]     IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1
-  [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_2;' in FYPEditor.Target.cs.
-  [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
-  [Upgrade]
-  Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
-    Executing up to 8 processes, one per physical core
-    Requested 1.5 GB free memory per action, 6.06 GB available: limiting max parallel actions to 4
-  Building 12 actions with 4 processes...
-  [1/12] Compile [x64] MyNavLinkGenerator.gen.cpp
-  [2/12] Compile [x64] MyNavLinkComponent.cpp
-  [3/12] Compile [x64] MyNavLinkComponent.gen.cpp
-  [4/12] Compile [x64] NavInterface.gen.cpp
-  [5/12] Compile [x64] FYP.init.gen.cpp
-  [6/12] Compile [x64] MyJumpNavigationComponent.gen.cpp
-  [7/12] Compile [x64] NavInterface.cpp
-  [8/12] Compile [x64] MyNavLinkGenerator.cpp
-  [9/12] Compile [x64] MyJumpNavigationComponent.cpp
-D:\GitHub\FYP\FYP\Source\FYP\MyJumpNavigationComponent.cpp(212): warning C4701: potentially uninitialized local variable 'IsAnyJumpPoints' used
-  [10/12] Link [x64] UnrealEditor-FYP.lib
-     Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.exp
-  [11/12] Link [x64] UnrealEditor-FYP.dll
-     Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
-  [12/12] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 18.47 seconds
-  Total execution time: 27.89 seconds
+  Target is up to date
+  Total execution time: 0.81 seconds
