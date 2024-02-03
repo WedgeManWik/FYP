@@ -143,17 +143,31 @@ void UMyJumpNavigationComponent::FindPathPortals()
 				}
 				else
 				{
-					FMyPolyEdge EdgeToAdd;
 					if (i == pathpoints.Num() - 1)
 					{
+						FMyPolyEdge EdgeToAdd;
 						EdgeToAdd = GetEdgeClosestToAnotherEdgeOnPolygon(Portals[Portals.Num() - 1], PrevPolygonVertices);
+						EdgeToAdd.IsJumpEdge = false;
+						Portals.Add(EdgeToAdd);
+					}
+					else if (i == 1)
+					{
+						FMyPolyEdge ThisPolyEdge;
+						ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
+						ThisPolyEdge.IsJumpEdge = false;
+						FMyPolyEdge PrevPolyEdge;
+						PrevPolyEdge = GetEdgeClosestToAnotherEdgeOnPolygon(ThisPolyEdge, PrevPolygonVertices);
+						PrevPolyEdge.IsJumpEdge = false;
+						Portals.Add(PrevPolyEdge);
+						Portals.Add(ThisPolyEdge);
 					}
 					else
 					{
-						EdgeToAdd = GetEdgeClosestToPointOnPolygon(pathpoints[i], PrevPolygonVertices);
+						FMyPolyEdge ThisPolyEdge;
+						ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
+						ThisPolyEdge.IsJumpEdge = false;
+						Portals.Add(ThisPolyEdge);
 					}
-					EdgeToAdd.IsJumpEdge = false;
-					Portals.Add(EdgeToAdd);
 				}
 			}
 		}
@@ -237,7 +251,7 @@ FMyPolyEdge UMyJumpNavigationComponent::GetEdgeClosestToPointOnPolygon(const FVe
 	for (int j = 1; j < PolygonVerticies.Num(); j++)
 	{
 		float Distance = FMath::PointDistToSegment(Point, PolygonVerticies[j], PolygonVerticies[j - 1]);
-		if (Distance < Closest)
+		if (Distance <= Closest)
 		{
 			Closest = Distance;
 
