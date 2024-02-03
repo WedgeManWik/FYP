@@ -55,17 +55,17 @@ void UMyJumpNavigationComponent::FindPathPortals()
 			return;
 		}
 
+		TArray<FVector> FirstPolygonVertices;
+		Nav->GetPolyVerts(pathpoints[0].NodeRef, FirstPolygonVertices);
+
 		//DRAW FIRST POLYGON
 		if (DrawDebug)
 		{
-			NavNodeRef nodeRef = pathpoints[0].NodeRef;
-			TArray<FVector> CurrentPolygonVertices;
-			Nav->GetPolyVerts(nodeRef, CurrentPolygonVertices);
-			for (int j = 1; j < CurrentPolygonVertices.Num(); j++)
+			for (int j = 1; j < FirstPolygonVertices.Num(); j++)
 			{
-				DrawDebugLine(GetWorld(), CurrentPolygonVertices[j], CurrentPolygonVertices[j - 1], FColor(0, 255, 0), true, 0, 5.f);
+				DrawDebugLine(GetWorld(), FirstPolygonVertices[j], FirstPolygonVertices[j - 1], FColor(0, 255, 0), true, 0, 5.f);
 			}
-			DrawDebugLine(GetWorld(), CurrentPolygonVertices[0], CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1], FColor(0, 255, 0), true, 0, 5.f);
+			DrawDebugLine(GetWorld(), FirstPolygonVertices[0], FirstPolygonVertices[FirstPolygonVertices.Num() - 1], FColor(0, 255, 0), true, 0, 5.f);
 
 			DrawDebugSphere(GetWorld(), pathpoints[0], 5.f, 5, FColor(255, 0, 255), true, 0, 5.f);
 		}
@@ -140,33 +140,62 @@ void UMyJumpNavigationComponent::FindPathPortals()
 						Portals.Add(BottomEdge);
 						Portals.Add(TopEdge);
 					}
+					continue;
 				}
 				else
 				{
-					if (i == pathpoints.Num() - 1)
+					if (i == 1)
+					{
+						FMyPolyEdge ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
+						ThisPolyEdge.IsJumpEdge = false;
+						//FMyPolyEdge PrevPolyEdge = GetEdgeClosestToAnotherEdgeOnPolygon(ThisPolyEdge, PrevPolygonVertices);
+						FMyPolyEdge PrevPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], FirstPolygonVertices);
+						PrevPolyEdge.IsJumpEdge = false;
+
+						Portals.Add(PrevPolyEdge);
+						Portals.Add(ThisPolyEdge);
+
+						continue;
+					}
+					else if (i == pathpoints.Num() - 1)
 					{
 						FMyPolyEdge EdgeToAdd;
 						EdgeToAdd = GetEdgeClosestToAnotherEdgeOnPolygon(Portals[Portals.Num() - 1], PrevPolygonVertices);
 						EdgeToAdd.IsJumpEdge = false;
-						Portals.Add(EdgeToAdd);
-					}
-					else if (i == 1)
-					{
-						FMyPolyEdge ThisPolyEdge;
-						ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
-						ThisPolyEdge.IsJumpEdge = false;
-						FMyPolyEdge PrevPolyEdge;
-						PrevPolyEdge = GetEdgeClosestToAnotherEdgeOnPolygon(ThisPolyEdge, PrevPolygonVertices);
-						PrevPolyEdge.IsJumpEdge = false;
-						Portals.Add(PrevPolyEdge);
-						Portals.Add(ThisPolyEdge);
+
+						//Check if adding duplicate edge
+						if (EdgeToAdd.Left == Portals[Portals.Num() - 1].Left || EdgeToAdd.Left == Portals[Portals.Num() - 1].Right)
+						{
+							if (EdgeToAdd.Right == Portals[Portals.Num() - 1].Left || EdgeToAdd.Right == Portals[Portals.Num() - 1].Right)
+							{
+								continue;
+							}
+						}
+						else
+						{
+							Portals.Add(EdgeToAdd);
+							continue;
+						}
 					}
 					else
 					{
 						FMyPolyEdge ThisPolyEdge;
 						ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
 						ThisPolyEdge.IsJumpEdge = false;
-						Portals.Add(ThisPolyEdge);
+
+						//Check if adding duplicate edge
+						if (ThisPolyEdge.Left == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Left == Portals[Portals.Num() - 1].Right)
+						{
+							if (ThisPolyEdge.Right == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Right == Portals[Portals.Num() - 1].Right)
+							{
+								continue;
+							}
+						}
+						else
+						{
+							Portals.Add(ThisPolyEdge);
+							continue;
+						}
 					}
 				}
 			}
@@ -429,14 +458,14 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 			}
 			else
 			{
-				if (FVector::DistSquared(Barrier1.Left, Barrier1.Right) < FVector::DistSquared(Barrier2.Left, Barrier2.Right))
-				{
-					MyPathPoints.Add(Barrier1.Right);
-				}
-				else
-				{
-					MyPathPoints.Add(Barrier2.Right);
-				}
+				//if (FVector::DistSquared(Barrier1.Left, Barrier1.Right) < FVector::DistSquared(Barrier2.Left, Barrier2.Right))
+				//{
+				//	MyPathPoints.Add(Barrier1.Right);
+				//}
+				//else
+				//{
+				//	MyPathPoints.Add(Barrier2.Right);
+				//}
 			}
 
 			FVector End = FinalDestination;
@@ -596,18 +625,18 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		return;
 	}
 
-	if (LineIndex < MyPathPoints.Num() - 1)
-	{
-		if (DrawDebug)
-		{
-			DrawDebugLine(GetWorld(), MyPathPoints[LineIndex], MyPathPoints[LineIndex + 1], FColor(0, 0, 255), true, 0, 10.f);
-		}
-	}
-	else
-	{
-		PathComplete = true;
-		return;
-	}
+	//if (LineIndex < MyPathPoints.Num() - 1)
+	//{
+	//	if (DrawDebug)
+	//	{
+	//		DrawDebugLine(GetWorld(), MyPathPoints[LineIndex], MyPathPoints[LineIndex + 1], FColor(0, 0, 255), true, 0, 10.f);
+	//	}
+	//}
+	//else
+	//{
+	//	PathComplete = true;
+	//	return;
+	//}
 
 	if (CurrentPathIndex - 1 < MyPortals.Num() - 1)
 	{
