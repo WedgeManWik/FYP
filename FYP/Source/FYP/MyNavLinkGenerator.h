@@ -23,7 +23,7 @@ public:
 		void SpawnPotentialNavLink(FVector Location, FVector Direction);
 
 	UFUNCTION(BlueprintImplementableEvent)
-		void SpawnNavJumpLinkArea(FVector Start, FVector End, FVector Direction);
+		void TraceJumpAtEdge(FVector Start, FVector End, FVector Direction);
 
 	bool IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2);
 

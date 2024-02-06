@@ -387,7 +387,7 @@ void UMyJumpNavigationComponent::CreateCustomPath(const TArray<FMyPolyEdge>& Por
 	float DotProduct = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
 	Angle = DotProduct;
 
-	if (DrawDebug)
+	if (DrawDebug && !PathfindingAuto)
 	{
 		DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 10.f);
 		DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 10.f);
@@ -430,6 +430,7 @@ void UMyJumpNavigationComponent::CreateCustomPath(const TArray<FMyPolyEdge>& Por
 		if (DrawDebug)
 		{
 			DrawDebugSphere(GetWorld(), finalPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 5.f);
+			DrawDebugLine(GetWorld(), StartOfPath, AgentPathPoints[0].Location, FColor(255, 255, 0), true, 0, 10.f);
 
 			//DRAW FINAL 3D PATH
 			for (int fin = 1; fin < AgentPathPoints.Num(); fin++)
@@ -509,7 +510,7 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 
 			Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
 
-			if (DrawDebug)
+			if (DrawDebug && !PathfindingAuto)
 			{
 				DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 			}
@@ -539,7 +540,7 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 
 				Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
 
-				if (DrawDebug)
+				if (DrawDebug && !PathfindingAuto)
 				{
 					DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 					DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
@@ -575,7 +576,7 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 
 				Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
 
-				if (DrawDebug)
+				if (DrawDebug && !PathfindingAuto)
 				{
 					DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
 					DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
@@ -601,7 +602,7 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 
 void UMyJumpNavigationComponent::CreatePathIn3D()
 {
-	if (DrawDebug)
+	if (DrawDebug && !PathfindingAuto)
 	{
 		for (int j = 1; j < MyPathPoints.Num(); j++)
 		{
@@ -617,7 +618,7 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		AgentPathPoints.Add(firstPathPoint);
 		CurrentPathIndex++;
 
-		if (DrawDebug)
+		if (DrawDebug && !PathfindingAuto)
 		{
 			DrawDebugSphere(GetWorld(), firstPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 20.f);
 		}
@@ -640,7 +641,7 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 
 	if (CurrentPathIndex - 1 < MyPortals.Num() - 1)
 	{
-		if (DrawDebug)
+		if (DrawDebug && !PathfindingAuto)
 		{
 			DrawDebugLine(GetWorld(), MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right, FColor(0, 255, 255), true, 0, 10.f);
 		}
@@ -675,7 +676,7 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		newPathPoint.Location = Intersection;
 		newPathPoint.Location.Z = MyPortals3D[CurrentPathIndex - 1].Left.Z;
 
-		if (DrawDebug)
+		if (DrawDebug && !PathfindingAuto)
 		{
 			DrawDebugSphere(GetWorld(), newPathPoint.Location, 5.f, 5, FColor(255, 0, 255), true, 0, 50.f);
 		}
@@ -746,7 +747,7 @@ bool UMyJumpNavigationComponent::UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMy
 	if (FindSegmentSegmentIntersection(PreviousLocation, BarrierToUpdate.Right, OtherBarrier.Left, ExtendOtherBarrier, Intersect))
 	{
 		OutNewPathPoint = OtherBarrier.Right;
-		if (DrawDebug)
+		if (DrawDebug && !PathfindingAuto)
 		{
 			DrawDebugLine(GetWorld(), OtherBarrier.Left, OtherBarrier.Right, FColor(0, 255, 255), true, 0, 10.f);
 		}
@@ -765,7 +766,7 @@ bool UMyJumpNavigationComponent::UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMy
 		BarrierToUpdate.Right = PreviousLocation;
 	}
 
-	if (DrawDebug)
+	if (DrawDebug && !PathfindingAuto)
 	{
 		DrawDebugLine(GetWorld(), BarrierToUpdate.Left, BarrierToUpdate.Right, ColourBarrier, true, 0, 10.f);
 	}

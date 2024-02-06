@@ -62,7 +62,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 				{
 					//SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[0]);
 					//NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[0], EachPolys[i].Ref));
-					SpawnNavJumpLinkArea(CurrentPolygonVertices[j], CurrentPolygonVertices[0], GetDirecionOut(CurrentPolygonVertices[j], CurrentPolygonVertices[0]));
+					TraceJumpAtEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[0], GetDirecionOut(CurrentPolygonVertices[j], CurrentPolygonVertices[0]));
 				}
 			}
 			else
@@ -71,7 +71,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 				{
 					//SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]);
 					//NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], EachPolys[i].Ref));
-					SpawnNavJumpLinkArea(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], GetDirecionOut(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]));
+					TraceJumpAtEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], GetDirecionOut(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]));
 				}
 			}
 		}
