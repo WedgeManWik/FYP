@@ -25,6 +25,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void TraceJumpAtEdge(FVector Start, FVector End, FVector Direction);
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void TraceJumpAtCorner(FVector Location, FVector Direction1, FVector Direction2);
+
 	bool IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2);
 
 	bool DoShareSameEdges(TArray<FNavigationPortalEdge>& EdgeArray1, TArray<FNavigationPortalEdge>& EdgeArray2);
@@ -35,7 +38,7 @@ public:
 
 	void SpawnPotentialNavLinksBetweenVerticies(FVector& Start, FVector& End);
 
-	FNavigationPortalEdge& FindEdgeWithMatchingVertex(FNavigationPortalEdge& ThisEdge, FVector& Vertex, TArray<FNavigationPortalEdge>& EdgeArray);
+	bool FindEdgeWithMatchingVertex(FNavigationPortalEdge& ThisEdge, FVector& Vertex, TArray<FNavigationPortalEdge>& EdgeArray, FNavigationPortalEdge& OutMatchingEdge);
 
 	FVector GetDirecionOut(FVector& Start, FVector& End);
 

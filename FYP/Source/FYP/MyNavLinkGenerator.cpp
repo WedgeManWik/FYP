@@ -15,8 +15,6 @@ AMyNavLinkGenerator::AMyNavLinkGenerator()
 
 void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 {
-	TArray<NavNodeRef> PolyRefs;
-
 	int32 NumTiles = Nav->GetNavMeshTilesCount();
 
 	TArray<FNavPoly> EachPolys;
@@ -28,15 +26,6 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		TileBounds = Nav->GetNavMeshTileBounds(i);
 		if (TileBounds.IsValid == 0) { continue; }
 		Nav->GetPolysInTile(i, EachPolys);
-
-		if (EachPolys.Num() > 0)
-		{
-			for (int j = 0; j < EachPolys.Num(); j++)
-			{
-				PolyRefs.Add(EachPolys[j].Ref);
-			}
-		}
-
 	}
 
 	//ANavigationData* Data = UNavigationSystemV1::GetNavDataForProps(Controller->GetNavAgentPropertiesRef())
@@ -61,7 +50,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 				if (!DoesAdjacentEdgeExist(CurrentPolygonVertices[j], CurrentPolygonVertices[0], CurrentPolygonEdges))
 				{
 					//SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[0]);
-					//NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[0], EachPolys[i].Ref));
+					NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[0], EachPolys[i].Ref));
 					TraceJumpAtEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[0], GetDirecionOut(CurrentPolygonVertices[j], CurrentPolygonVertices[0]));
 				}
 			}
@@ -70,7 +59,7 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 				if (!DoesAdjacentEdgeExist(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], CurrentPolygonEdges))
 				{
 					//SpawnPotentialNavLinksBetweenVerticies(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]);
-					//NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], EachPolys[i].Ref));
+					NavMeshEdges.Add(FNavigationPortalEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], EachPolys[i].Ref));
 					TraceJumpAtEdge(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1], GetDirecionOut(CurrentPolygonVertices[j], CurrentPolygonVertices[j + 1]));
 				}
 			}
@@ -79,35 +68,52 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 
 	//Spawns Potential nav links on corners of navmesh
 
-	//for (int i = 0; i < NavMeshEdges.Num(); i++)
-	//{
-	//	FNavigationPortalEdge MatchingEdge = FindEdgeWithMatchingVertex(NavMeshEdges[i], NavMeshEdges[i].Left, NavMeshEdges);
+	for (int i = 0; i < NavMeshEdges.Num(); i++)
+	{
+		FNavigationPortalEdge MatchingEdge;
+		if (FindEdgeWithMatchingVertex(NavMeshEdges[i], NavMeshEdges[i].Left, NavMeshEdges, MatchingEdge))
+		{
+			FVector MidEdge1 = (NavMeshEdges[i].Left + NavMeshEdges[i].Right) / 2.f;
+			FVector MidEdge2 = (MatchingEdge.Left + MatchingEdge.Right) / 2.f;
+			FVector MidToOtherMid = MidEdge2 - MidEdge1;
+			MidToOtherMid.Normalize();
 
-	//	FVector Direction1 = NavMeshEdges[i].Left - NavMeshEdges[i].Right;
-	//	FVector Direction2 = MatchingEdge.Right == NavMeshEdges[i].Left ? MatchingEdge.Right - MatchingEdge.Left : MatchingEdge.Left - MatchingEdge.Right;
-	//	Direction1.Normalize();
-	//	Direction2.Normalize();
-	//	
-	//	float DotProd = FVector::DotProduct(Direction1, Direction2);
+			FVector DirectionOut = GetDirecionOut(NavMeshEdges[i].Left, NavMeshEdges[i].Right);
 
-	//	int numPotentialNavLinksToSpawn = DotProd >= 0.0f ? FMath::Floor((1 - DotProd) / 0.3f) : FMath::Floor((1 + (DotProd * -1)) / 0.3f);
+			if (FVector::DotProduct(DirectionOut, MidToOtherMid) < 0.f)
+			{
+				FVector Direction1 = NavMeshEdges[i].Left - NavMeshEdges[i].Right;
+				Direction1.Normalize();
+				FVector Direction2 = MatchingEdge.Right == NavMeshEdges[i].Left ? MatchingEdge.Right - MatchingEdge.Left : MatchingEdge.Left - MatchingEdge.Right;
+				Direction2.Normalize();
 
-	//	UWorld* const world = GetWorld();
-	//	if (world == nullptr || numPotentialNavLinksToSpawn <= 0) { return; }
-	//	
-	//	for (int j = 0; j < numPotentialNavLinksToSpawn; j++)
-	//	{
-	//		//FVector End = NavMeshEdges[i].Left + Direction1.RotateAngleAxis(-27 * j, FVector(0, 0, 1));
+				if (abs(FVector::DotProduct(Direction2, Direction1)) != 1)
+				{
+					TraceJumpAtCorner(NavMeshEdges[i].Left, Direction1, Direction2);
+				}
+			}
+		}
+		
+		//float DotProd = FVector::DotProduct(Direction1, Direction2);
 
-	//		//FHitResult hit(ForceInit);
-	//		//TArray<AActor*> ActorsToIgnore;
-	//		//UKismetSystemLibrary::LineTraceSingle(world, NavMeshEdges[i].Left, End,
-	//		//	UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel2), false, ActorsToIgnore,
-	//		//	EDrawDebugTrace::Persistent, hit, true, FLinearColor::Red, FLinearColor::Red, 200);
+		//int numPotentialNavLinksToSpawn = DotProd >= 0.0f ? FMath::Floor((1 - DotProd) / 0.3f) : FMath::Floor((1 + (DotProd * -1)) / 0.3f);
 
-	//		SpawnPotentialNavLink(NavMeshEdges[i].Left, Direction1.RotateAngleAxis(-27 * j, FVector(0, 0, 1)));
-	//	}
-	//}
+		//UWorld* const world = GetWorld();
+		//if (world == nullptr || numPotentialNavLinksToSpawn <= 0) { return; }
+		//
+		//for (int j = 0; j < numPotentialNavLinksToSpawn; j++)
+		//{
+		//	//FVector End = NavMeshEdges[i].Left + Direction1.RotateAngleAxis(-27 * j, FVector(0, 0, 1));
+
+		//	//FHitResult hit(ForceInit);
+		//	//TArray<AActor*> ActorsToIgnore;
+		//	//UKismetSystemLibrary::LineTraceSingle(world, NavMeshEdges[i].Left, End,
+		//	//	UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel2), false, ActorsToIgnore,
+		//	//	EDrawDebugTrace::Persistent, hit, true, FLinearColor::Red, FLinearColor::Red, 200);
+
+		//	SpawnPotentialNavLink(NavMeshEdges[i].Left, Direction1.RotateAngleAxis(-27 * j, FVector(0, 0, 1)));
+		//}
+	}
 }
 
 bool AMyNavLinkGenerator::IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2)
@@ -197,7 +203,7 @@ void AMyNavLinkGenerator::SpawnPotentialNavLinksBetweenVerticies(FVector& Start,
 	SpawnPotentialNavLink(LastPotentialNavLink, DirectionOut);
 }
 
-FNavigationPortalEdge& AMyNavLinkGenerator::FindEdgeWithMatchingVertex(FNavigationPortalEdge& ThisEdge, FVector& Vertex, TArray<FNavigationPortalEdge>& EdgeArray)
+bool AMyNavLinkGenerator::FindEdgeWithMatchingVertex(FNavigationPortalEdge& ThisEdge, FVector& Vertex, TArray<FNavigationPortalEdge>& EdgeArray, FNavigationPortalEdge& OutMatchingEdge)
 {
 	for (int i = 0; i < EdgeArray.Num(); i++)
 	{
@@ -209,12 +215,14 @@ FNavigationPortalEdge& AMyNavLinkGenerator::FindEdgeWithMatchingVertex(FNavigati
 			}
 			else
 			{
-				return EdgeArray[i];
+				OutMatchingEdge = EdgeArray[i];
+				return true;
 			}
 		}
 	}
 
-	return ThisEdge;
+	//No matching edge
+	return false;
 }
 
 FVector AMyNavLinkGenerator::GetDirecionOut(FVector& Start, FVector& End)

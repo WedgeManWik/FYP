@@ -29,6 +29,12 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		FVector Location;
 		FVector Direction;
 	};
+	struct MyNavLinkGenerator_eventTraceJumpAtCorner_Parms
+	{
+		FVector Location;
+		FVector Direction1;
+		FVector Direction2;
+	};
 	struct MyNavLinkGenerator_eventTraceJumpAtEdge_Parms
 	{
 		FVector Start;
@@ -42,6 +48,15 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		Parms.Location=Location;
 		Parms.Direction=Direction;
 		ProcessEvent(FindFunctionChecked(NAME_AMyNavLinkGenerator_SpawnPotentialNavLink),&Parms);
+	}
+	static FName NAME_AMyNavLinkGenerator_TraceJumpAtCorner = FName(TEXT("TraceJumpAtCorner"));
+	void AMyNavLinkGenerator::TraceJumpAtCorner(FVector Location, FVector Direction1, FVector Direction2)
+	{
+		MyNavLinkGenerator_eventTraceJumpAtCorner_Parms Parms;
+		Parms.Location=Location;
+		Parms.Direction1=Direction1;
+		Parms.Direction2=Direction2;
+		ProcessEvent(FindFunctionChecked(NAME_AMyNavLinkGenerator_TraceJumpAtCorner),&Parms);
 	}
 	static FName NAME_AMyNavLinkGenerator_TraceJumpAtEdge = FName(TEXT("TraceJumpAtEdge"));
 	void AMyNavLinkGenerator::TraceJumpAtEdge(FVector Start, FVector End, FVector Direction)
@@ -123,6 +138,40 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics
+	{
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Location;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Direction1;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Direction2;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::NewProp_Location = { "Location", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyNavLinkGenerator_eventTraceJumpAtCorner_Parms, Location), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::NewProp_Direction1 = { "Direction1", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyNavLinkGenerator_eventTraceJumpAtCorner_Parms, Direction1), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::NewProp_Direction2 = { "Direction2", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyNavLinkGenerator_eventTraceJumpAtCorner_Parms, Direction2), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::NewProp_Location,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::NewProp_Direction1,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::NewProp_Direction2,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyNavLinkGenerator.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyNavLinkGenerator, nullptr, "TraceJumpAtCorner", nullptr, nullptr, sizeof(MyNavLinkGenerator_eventTraceJumpAtCorner_Parms), Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08820800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtEdge_Statics
 	{
 		static const UECodeGen_Private::FStructPropertyParams NewProp_Start;
@@ -179,6 +228,7 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyNavLinkGenerator_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_GenerateNavMeshLinks, "GenerateNavMeshLinks" }, // 2969330143
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_SpawnPotentialNavLink, "SpawnPotentialNavLink" }, // 3968958744
+		{ &Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtCorner, "TraceJumpAtCorner" }, // 3512385467
 		{ &Z_Construct_UFunction_AMyNavLinkGenerator_TraceJumpAtEdge, "TraceJumpAtEdge" }, // 3370944777
 	};
 #if WITH_METADATA
@@ -224,9 +274,9 @@ void EmptyLinkFunctionForGeneratedCodeMyNavLinkGenerator() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 673956477U) },
+		{ Z_Construct_UClass_AMyNavLinkGenerator, AMyNavLinkGenerator::StaticClass, TEXT("AMyNavLinkGenerator"), &Z_Registration_Info_UClass_AMyNavLinkGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMyNavLinkGenerator), 2580918588U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_3029288734(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_213419599(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyNavLinkGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
