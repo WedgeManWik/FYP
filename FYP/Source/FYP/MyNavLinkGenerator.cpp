@@ -233,9 +233,8 @@ FVector AMyNavLinkGenerator::GetDirecionOut(FVector& Start, FVector& End)
 	FVector Direction = End - Start;
 	Direction.Normalize();
 
-	FVector DirectionOut = FVector::CrossProduct(Direction, FVector(0, 0, 1));
+	FVector DirectionOut = FVector::CrossProduct(FVector(0, 0, 1), Direction);
 	DirectionOut.Normalize();
-	DirectionOut *= -1;
 
 	return DirectionOut;
 }

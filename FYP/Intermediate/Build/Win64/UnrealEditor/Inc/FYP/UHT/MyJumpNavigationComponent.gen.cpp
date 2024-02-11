@@ -235,9 +235,11 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 	{
 		P_GET_OBJECT(AController,Z_Param_Controller);
 		P_GET_OBJECT(APawn,Z_Param_Pawn);
+		P_GET_PROPERTY(FFloatProperty,Z_Param_MaxJumpDist);
+		P_GET_PROPERTY(FFloatProperty,Z_Param_MinJumpDist);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->Initialise(Z_Param_Controller,Z_Param_Pawn);
+		P_THIS->Initialise(Z_Param_Controller,Z_Param_Pawn,Z_Param_MaxJumpDist,Z_Param_MinJumpDist);
 		P_NATIVE_END;
 	}
 	struct MyJumpNavigationComponent_eventCustomGoingToNextPoint_Parms
@@ -464,9 +466,13 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		{
 			AController* Controller;
 			APawn* Pawn;
+			float MaxJumpDist;
+			float MinJumpDist;
 		};
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Controller;
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Pawn;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MaxJumpDist;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_MinJumpDist;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -475,9 +481,13 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 	};
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_Controller = { "Controller", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyJumpNavigationComponent_eventInitialise_Parms, Controller), Z_Construct_UClass_AController_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_Pawn = { "Pawn", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyJumpNavigationComponent_eventInitialise_Parms, Pawn), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_MaxJumpDist = { "MaxJumpDist", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyJumpNavigationComponent_eventInitialise_Parms, MaxJumpDist), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_MinJumpDist = { "MinJumpDist", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MyJumpNavigationComponent_eventInitialise_Parms, MinJumpDist), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_Controller,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_Pawn,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_MaxJumpDist,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::NewProp_MinJumpDist,
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise_Statics::Function_MetaDataParams[] = {
@@ -514,6 +524,14 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MyPawn_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_MyPawn;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AgentMaxJumpDistance_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_AgentMaxJumpDistance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AgentMinJumpDistance_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_AgentMinJumpDistance;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -528,7 +546,7 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_DoNextPathFindingStep, "DoNextPathFindingStep" }, // 3279074558
 		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_FindPathPortals, "FindPathPortals" }, // 3509360243
 		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_GoToNextPointOnCustomPath, "GoToNextPointOnCustomPath" }, // 1419841438
-		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise, "Initialise" }, // 118681201
+		{ &Z_Construct_UFunction_UMyJumpNavigationComponent_Initialise, "Initialise" }, // 848449629
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMyJumpNavigationComponent_Statics::Class_MetaDataParams[] = {
@@ -554,9 +572,25 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 	};
 #endif
 	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_MyPawn = { "MyPawn", nullptr, (EPropertyFlags)0x0024080000020015, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UMyJumpNavigationComponent, MyPawn), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_MyPawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_MyPawn_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMaxJumpDistance_MetaData[] = {
+		{ "Category", "MyJumpNavigationComponent" },
+		{ "ModuleRelativePath", "MyJumpNavigationComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMaxJumpDistance = { "AgentMaxJumpDistance", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UMyJumpNavigationComponent, AgentMaxJumpDistance), METADATA_PARAMS(Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMaxJumpDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMaxJumpDistance_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMinJumpDistance_MetaData[] = {
+		{ "Category", "MyJumpNavigationComponent" },
+		{ "ModuleRelativePath", "MyJumpNavigationComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMinJumpDistance = { "AgentMinJumpDistance", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UMyJumpNavigationComponent, AgentMinJumpDistance), METADATA_PARAMS(Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMinJumpDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMinJumpDistance_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMyJumpNavigationComponent_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_MyController,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_MyPawn,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMaxJumpDistance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMyJumpNavigationComponent_Statics::NewProp_AgentMinJumpDistance,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMyJumpNavigationComponent_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UMyJumpNavigationComponent>::IsAbstract,
@@ -600,9 +634,9 @@ template<> FYP_API UScriptStruct* StaticStruct<FMyPolyEdge>()
 		{ FMyPolyEdge::StaticStruct, Z_Construct_UScriptStruct_FMyPolyEdge_Statics::NewStructOps, TEXT("MyPolyEdge"), &Z_Registration_Info_UScriptStruct_MyPolyEdge, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FMyPolyEdge), 3219218819U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMyJumpNavigationComponent, UMyJumpNavigationComponent::StaticClass, TEXT("UMyJumpNavigationComponent"), &Z_Registration_Info_UClass_UMyJumpNavigationComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyJumpNavigationComponent), 110379820U) },
+		{ Z_Construct_UClass_UMyJumpNavigationComponent, UMyJumpNavigationComponent::StaticClass, TEXT("UMyJumpNavigationComponent"), &Z_Registration_Info_UClass_UMyJumpNavigationComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMyJumpNavigationComponent), 1646743533U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_2276187040(TEXT("/Script/FYP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_2497808560(TEXT("/Script/FYP"),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_FYP_FYP_Source_FYP_MyJumpNavigationComponent_h_Statics::ScriptStructInfo),
 		nullptr, 0);

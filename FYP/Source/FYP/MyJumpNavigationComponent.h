@@ -49,7 +49,7 @@ public:
 	UMyJumpNavigationComponent();
 
 	UFUNCTION(BlueprintCallable)
-		void Initialise(AController* Controller, APawn* Pawn);
+		void Initialise(AController* Controller, APawn* Pawn, float MaxJumpDist, float MinJumpDist);
 
 	UFUNCTION(BlueprintCallable)
 		void CreateCustomJumpPath(UPARAM(ref) const FVector& Start, UPARAM(ref) const FVector& Destination, UPARAM(ref) const bool& ShouldDrawDebug, UPARAM(ref) const bool& IsAutoPathfinding);
@@ -80,7 +80,7 @@ protected:
 
 	void CreatePathIn3D();
 
-	bool UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMyPolyEdge& OtherBarrier, const FMyPolyEdge& NextPortal, float& AngleBetweenBarriers, FVector& OutNewPathPoint, FColor ColourBarrier, bool& Parallel);
+	bool UpdateBarrier(FMyPolyEdge& BarrierToUpdate, FMyPolyEdge& OtherBarrier, const FMyPolyEdge& NextPortal, float& AngleBetweenBarriers, FVector& OutNewPathPoint, FColor ColourBarrier);
 
 	bool FindPointSegmentIntersection(const FVector Point, const FVector SegmentStart, const FVector SegmentEnd);
 
@@ -108,4 +108,8 @@ protected:
 	TObjectPtr<AController> MyController;
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
 	TObjectPtr<APawn> MyPawn;
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+		float AgentMaxJumpDistance;
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+		float AgentMinJumpDistance;
 };
