@@ -693,6 +693,7 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 	{
 		if (AgentPathPoints.Num() > 0)
 		{
+			//Code to prevent adding multiple of the same pathpoint
 			FVector PreviousLocation = AgentPathPoints[AgentPathPoints.Num() - 1].Location;
 			PreviousLocation.Z = 0;
 			if (Intersection == PreviousLocation)
@@ -716,6 +717,7 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 			newPathPoint.IsJump = true;
 
 			//IF JUMP LOCATION IS TOO FAR, BRING IT CLOSER
+
 			FVector LastPathPoint = AgentPathPoints[AgentPathPoints.Num() - 1].Location;
 			LastPathPoint.Z = 0;
 			if (FVector::Distance(newPathPoint.Location, LastPathPoint) > AgentMaxJumpDistance)
@@ -725,7 +727,12 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 				FVector ShiftDirection = newPathPoint.Location - ClosestPoint;
 				ShiftDirection.Normalize();
 				FVector ShiftedPosition = ClosestPoint + (ShiftDirection * DesiredDistance);
-				newPathPoint.Location = ShiftedPosition;
+
+				//Testing if shifted position is valid
+				if (FindPointSegmentIntersection(ShiftedPosition, MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right))
+				{
+					newPathPoint.Location = ShiftedPosition;
+				}
 			}
 
 		}
@@ -738,9 +745,14 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		else
 		{
 			float percentageAlong = FVector::DistSquared(MyPortals[CurrentPathIndex - 1].Left, newPathPoint.Location) / FVector::DistSquared(MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right);
-			FVector Direction = MyPortals3D[CurrentPathIndex - 1].Right - MyPortals3D[CurrentPathIndex - 1].Left;
-			Direction.Normalize();
-			newPathPoint.Location = MyPortals3D[CurrentPathIndex - 1].Left + (Direction * percentageAlong);
+
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("percent %f"), percentageAlong));
+
+			FVector DirectionAlong = MyPortals3D[CurrentPathIndex - 1].Right - MyPortals3D[CurrentPathIndex - 1].Left;
+			DirectionAlong *= percentageAlong;
+			FVector Position3D = MyPortals3D[CurrentPathIndex - 1].Left + DirectionAlong;
+			DrawDebugSphere(GetWorld(), Position3D, 5.f, 5, FColor(0, 0, 255), true, 0, 200.f);
+			newPathPoint.Location.Z = Position3D.Z;
 		}
 
 		if (DrawDebug && !PathfindingAuto)
