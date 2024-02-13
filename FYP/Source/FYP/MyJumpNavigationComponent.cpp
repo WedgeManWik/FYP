@@ -161,23 +161,42 @@ void UMyJumpNavigationComponent::FindPathPortals()
 					}
 					else if (i == pathpoints.Num() - 1)
 					{
+						FVector PrevMid;
+						Nav->GetPolyCenter(prevNodeRef, PrevMid);
+						FVector ThisMid;
+						Nav->GetPolyCenter(nodeRef, ThisMid);
+
 						FMyPolyEdge EdgeToAdd;
-						EdgeToAdd = GetEdgeClosestToAnotherEdgeOnPolygon(Portals[Portals.Num() - 1], PrevPolygonVertices);
 						EdgeToAdd.IsJumpEdge = false;
 
-						//Check if adding duplicate edge
-						if (EdgeToAdd.Left == Portals[Portals.Num() - 1].Left || EdgeToAdd.Left == Portals[Portals.Num() - 1].Right)
+						FVector Intersect;
+						if (FindSegmentSegmentIntersection(PrevMid, ThisMid, CurrentPolygonVertices[0], CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1], Intersect))
 						{
-							if (EdgeToAdd.Right == Portals[Portals.Num() - 1].Left || EdgeToAdd.Right == Portals[Portals.Num() - 1].Right)
+							EdgeToAdd.Left = CurrentPolygonVertices[0];
+							EdgeToAdd.Right = CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1];
+						}
+						for (int j = 1; j < CurrentPolygonVertices.Num(); j++)
+						{
+							if (FindSegmentSegmentIntersection(PrevMid, ThisMid, CurrentPolygonVertices[j], CurrentPolygonVertices[j - 1], Intersect))
 							{
-								continue;
+								EdgeToAdd.Left = CurrentPolygonVertices[j];
+								EdgeToAdd.Right = CurrentPolygonVertices[j - 1];
 							}
-						}
-						else
-						{
-							Portals.Add(EdgeToAdd);
-							continue;
-						}
+						}		
+
+						//Check if adding duplicate edge
+						//if (EdgeToAdd.Left == Portals[Portals.Num() - 1].Left || EdgeToAdd.Left == Portals[Portals.Num() - 1].Right)
+						//{
+						//	if (EdgeToAdd.Right == Portals[Portals.Num() - 1].Left || EdgeToAdd.Right == Portals[Portals.Num() - 1].Right)
+						//	{
+						//		continue;
+						//	}
+						//}
+						//else
+						//{
+						//	Portals.Add(EdgeToAdd);
+						//	continue;
+						//}
 					}
 					else
 					{
@@ -211,6 +230,12 @@ void UMyJumpNavigationComponent::FindPathPortals()
 
 		Portals.Add(EdgeToAdd);
 	}
+
+	if (Portals.Num() == 0)
+	{
+		return;
+	}
+
 	if (DrawDebug)
 	{
 		DrawDebugLine(GetWorld(), Portals[0].Left, Portals[0].Right, FColor(255, 0, 0), true, 0, 10.f);
@@ -279,6 +304,7 @@ FMyPolyEdge UMyJumpNavigationComponent::GetEdgeClosestToPointOnPolygon(const FVe
 
 	int LeftVert = 0;
 	int RightVert = PolygonVerticies.Num() - 1;
+
 	for (int j = 1; j < PolygonVerticies.Num(); j++)
 	{
 		float Distance = FMath::PointDistToSegment(Point, PolygonVerticies[j], PolygonVerticies[j - 1]);
@@ -449,6 +475,51 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 	FVector NewPathPoint;
 	if (DidStep2)
 	{
+		//CHECK IF CAN REACH END FROM LAST PATH POINT
+		bool Started = false;
+		for (int i = 0; i < MyPortals.Num() - 1; i++)
+		{
+			if (!Started)
+			{
+				if (FMath::PointDistToSegment(MyPathPoints[MyPathPoints.Num() - 1], MyPortals[i].Left, MyPortals[i].Right) < 1.f || MyPathPoints.Num() == 1)
+				{
+					Started = true;
+				}
+			}
+
+			if (Started)
+			{
+				FVector End = FinalDestination;
+				End.Z = 0;
+				FVector Intersect;
+				if (!FindSegmentSegmentIntersection(MyPathPoints[MyPathPoints.Num() - 1], End, MyPortals[i].Left, MyPortals[i].Right, Intersect))
+				{
+					Started = false;
+					break;
+				}
+			}
+		}
+		if (Started)
+		{
+			FVector End = FinalDestination;
+			End.Z = 0;
+			MyPathPoints.Add(End);
+			PathComplete = true;
+
+			if (!PathfindingAuto)
+			{
+				if (DrawDebug)
+				{
+					DrawDebugSphere(GetWorld(), End, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
+				}
+
+				LineIndex = 0;
+				CurrentPathIndex = 0;
+				CreatePathIn3D();
+			}
+			return;
+		}
+
 		CurrentPathIndex++;
 		if (CurrentPathIndex >= MyPortals.Num())
 		{
@@ -480,54 +551,10 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 			return;
 		}
 
-		//CHECK IF CAN REACH END FROM LAST PATH POINT
-		bool Started = false;
-		for (int i = 0; i < MyPortals.Num() - 1; i++)
-		{
-			FVector End = FinalDestination;
-			End.Z = 0;
-			FVector Intersect;
-			if (FindSegmentSegmentIntersection(MyPathPoints[MyPathPoints.Num() - 1], End, MyPortals[i].Left, MyPortals[i].Right, Intersect))
-			{
-				if (!Started)
-				{
-					Started = true;
-				}
-			}
-			else
-			{
-				if (Started)
-				{
-					Started = false;
-				}
-				break;
-			}
-		}
-		if (Started)
-		{
-			FVector End = FinalDestination;
-			End.Z = 0;
-			MyPathPoints.Add(End);
-			PathComplete = true;
-
-			if (!PathfindingAuto)
-			{
-				if (DrawDebug)
-				{
-					DrawDebugSphere(GetWorld(), End, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
-				}
-
-				LineIndex = 0;
-				CurrentPathIndex = 0;
-				CreatePathIn3D();
-			}
-			return;
-		}
-
 		//CHECK IF BACK TRACKED
 		float distToPrevPortal = FMath::PointDistToSegment(Barrier1.Left, MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right);
 		float distToNextPortal = FMath::PointDistToSegment(Barrier1.Left, MyPortals[CurrentPathIndex].Left, MyPortals[CurrentPathIndex].Right);
-		if (distToNextPortal < distToPrevPortal)
+		if (distToNextPortal <= distToPrevPortal)
 		{
 			NewPathPoint = FMath::ClosestPointOnSegment(MyPathPoints[MyPathPoints.Num() - 1], Barrier1.Right, Barrier2.Right);
 			MyPathPoints.Add(NewPathPoint);
@@ -716,22 +743,76 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		{
 			newPathPoint.IsJump = true;
 
-			//IF JUMP LOCATION IS TOO FAR, BRING IT CLOSER
+			//IF JUMP LANDING LOCATION IS TOO FAR, BRING IT CLOSER
 
 			FVector LastPathPoint = AgentPathPoints[AgentPathPoints.Num() - 1].Location;
 			LastPathPoint.Z = 0;
 			if (FVector::Distance(newPathPoint.Location, LastPathPoint) > AgentMaxJumpDistance)
 			{
-				FVector ClosestPoint = FMath::ClosestPointOnSegment(LastPathPoint, MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right);
+				//Try shifting jump landing location closer to jump from location
+				FVector ClosestPoint = FMath::ClosestPointOnInfiniteLine(MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right, LastPathPoint);
 				float DesiredDistance = FMath::Sqrt((AgentMaxJumpDistance * AgentMaxJumpDistance) - (FVector::DistSquared(ClosestPoint, LastPathPoint)));
 				FVector ShiftDirection = newPathPoint.Location - ClosestPoint;
 				ShiftDirection.Normalize();
 				FVector ShiftedPosition = ClosestPoint + (ShiftDirection * DesiredDistance);
 
 				//Testing if shifted position is valid
-				if (FindPointSegmentIntersection(ShiftedPosition, MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right))
+				if (FMath::PointDistToSegment(ShiftedPosition, MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right) < 5.f)
 				{
 					newPathPoint.Location = ShiftedPosition;
+				}
+				else
+				{
+					//Try shifting jump from location instead
+					ClosestPoint = FMath::ClosestPointOnInfiniteLine(MyPortals[CurrentPathIndex - 2].Left, MyPortals[CurrentPathIndex - 2].Right, newPathPoint.Location);
+					DesiredDistance = FMath::Sqrt((AgentMaxJumpDistance * AgentMaxJumpDistance) - (FVector::DistSquared(ClosestPoint, newPathPoint.Location)));
+					ShiftDirection = LastPathPoint - ClosestPoint;
+					ShiftDirection.Normalize();
+					ShiftedPosition = ClosestPoint + (ShiftDirection * DesiredDistance);
+
+					//Testing if shifted position is valid
+					if (FMath::PointDistToSegment(ShiftedPosition, MyPortals[CurrentPathIndex - 2].Left, MyPortals[CurrentPathIndex - 2].Right) < 5.f)
+					{
+						if (MyPortals3D[CurrentPathIndex - 2].Left.Z == MyPortals3D[CurrentPathIndex - 2].Right.Z)
+						{
+							ShiftedPosition.Z = MyPortals3D[CurrentPathIndex - 2].Left.Z;
+							AgentPathPoints[AgentPathPoints.Num() - 1].Location = ShiftedPosition;
+						}
+						else
+						{
+							float percentageAlong = FVector::DistSquared(MyPortals[CurrentPathIndex - 2].Left, ShiftedPosition) / FVector::DistSquared(MyPortals[CurrentPathIndex - 2].Left, MyPortals[CurrentPathIndex - 2].Right);
+
+							FVector DirectionAlong = MyPortals3D[CurrentPathIndex - 2].Right - MyPortals3D[CurrentPathIndex - 2].Left;
+							DirectionAlong *= percentageAlong;
+							FVector Position3D = MyPortals3D[CurrentPathIndex - 2].Left + DirectionAlong;
+
+							AgentPathPoints[AgentPathPoints.Num() - 1].Location = Position3D;
+						}
+					}
+					else
+					{
+						FVector Closest1;
+						FVector Closest2;
+						FMath::SegmentDistToSegment(MyPortals[CurrentPathIndex - 2].Left, MyPortals[CurrentPathIndex - 2].Right, MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right, Closest1, Closest2);
+
+						if (MyPortals3D[CurrentPathIndex - 2].Left.Z == MyPortals3D[CurrentPathIndex - 2].Right.Z)
+						{
+							Closest1.Z = MyPortals3D[CurrentPathIndex - 2].Left.Z;
+							AgentPathPoints[AgentPathPoints.Num() - 1].Location = Closest1;
+						}
+						else
+						{
+							float percentageAlong = FVector::DistSquared(MyPortals[CurrentPathIndex - 2].Left, Closest1) / FVector::DistSquared(MyPortals[CurrentPathIndex - 2].Left, MyPortals[CurrentPathIndex - 2].Right);
+
+							FVector DirectionAlong = MyPortals3D[CurrentPathIndex - 2].Right - MyPortals3D[CurrentPathIndex - 2].Left;
+							DirectionAlong *= percentageAlong;
+							FVector Position3D = MyPortals3D[CurrentPathIndex - 2].Left + DirectionAlong;
+
+							AgentPathPoints[AgentPathPoints.Num() - 1].Location = Position3D;
+						}
+
+						newPathPoint.Location = Closest2;
+					}
 				}
 			}
 
@@ -745,8 +826,6 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 		else
 		{
 			float percentageAlong = FVector::DistSquared(MyPortals[CurrentPathIndex - 1].Left, newPathPoint.Location) / FVector::DistSquared(MyPortals[CurrentPathIndex - 1].Left, MyPortals[CurrentPathIndex - 1].Right);
-
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("percent %f"), percentageAlong));
 
 			FVector DirectionAlong = MyPortals3D[CurrentPathIndex - 1].Right - MyPortals3D[CurrentPathIndex - 1].Left;
 			DirectionAlong *= percentageAlong;
