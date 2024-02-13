@@ -32,6 +32,10 @@ void UMyJumpNavigationComponent::BeginPlay()
 
 void UMyJumpNavigationComponent::CreateCustomJumpPath(const FVector& Start, const FVector& Destination, const bool& ShouldDrawDebug, const bool& IsAutoPathfinding)
 {
+	startSeconds = FPlatformTime::Seconds() * 1000.f;
+
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Start: %f ms"), startSeconds));
+
 	StartOfPath = Start;
 	FinalDestination = Destination;
 	DrawDebug = ShouldDrawDebug;
@@ -466,6 +470,13 @@ void UMyJumpNavigationComponent::CreateCustomPath(const TArray<FMyPolyEdge>& Por
 		}
 
 		CurrentPathIndex = 0;
+
+		double endSeconds = FPlatformTime::Seconds() * 1000.f;
+		double difference = endSeconds - startSeconds;
+
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("End: %f ms"), endSeconds));
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Found path in %f ms"), difference));
+
 		GoToNextPointOnCustomPath();
 	}
 }

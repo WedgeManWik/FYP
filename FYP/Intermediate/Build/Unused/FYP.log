@@ -15,11 +15,11 @@
     Requested 1.5 GB free memory per action, 7.18 GB available: limiting max parallel actions to 4
   Building 4 actions with 4 processes...
   [1/4] Compile [x64] MyJumpNavigationComponent.cpp
-D:\GitHub\FYP\FYP\Source\FYP\MyJumpNavigationComponent.cpp(273): warning C4701: potentially uninitialized local variable 'IsAnyJumpPoints' used
+D:\GitHub\FYP\FYP\Source\FYP\MyJumpNavigationComponent.cpp(282): warning C4701: potentially uninitialized local variable 'IsAnyJumpPoints' used
   [2/4] Link [x64] UnrealEditor-FYP.lib
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.exp
   [3/4] Link [x64] UnrealEditor-FYP.dll
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
   [4/4] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 6.10 seconds
-  Total execution time: 6.99 seconds
+  Total time in Parallel executor: 15.70 seconds
+  Total execution time: 16.65 seconds

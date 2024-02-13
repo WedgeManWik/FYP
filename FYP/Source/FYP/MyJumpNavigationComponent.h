@@ -112,4 +112,6 @@ protected:
 		float AgentMaxJumpDistance;
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
 		float AgentMinJumpDistance;
+
+	double startSeconds;
 };
