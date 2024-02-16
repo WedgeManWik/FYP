@@ -34,7 +34,7 @@ void UMyJumpNavigationComponent::CreateCustomJumpPath(const FVector& Start, cons
 {
 	startSeconds = FPlatformTime::Seconds() * 1000.f;
 
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Start: %f ms"), startSeconds));
+	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Start: %f ms"), startSeconds));
 
 	StartOfPath = Start;
 	FinalDestination = Destination;
@@ -60,6 +60,8 @@ void UMyJumpNavigationComponent::FindPathPortals()
 			UAIBlueprintHelperLibrary::SimpleMoveToLocation(MyController, FinalDestination);
 			return;
 		}
+
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Amount of nodes in path: %d"), pathpoints.Num()));
 
 		TArray<FVector> FirstPolygonVertices;
 		Nav->GetPolyVerts(pathpoints[0].NodeRef, FirstPolygonVertices);
@@ -474,7 +476,7 @@ void UMyJumpNavigationComponent::CreateCustomPath(const TArray<FMyPolyEdge>& Por
 		double endSeconds = FPlatformTime::Seconds() * 1000.f;
 		double difference = endSeconds - startSeconds;
 
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("End: %f ms"), endSeconds));
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("End: %f ms"), endSeconds));
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Found path in %f ms"), difference));
 
 		GoToNextPointOnCustomPath();

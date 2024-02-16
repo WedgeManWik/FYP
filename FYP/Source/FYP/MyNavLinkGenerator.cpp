@@ -89,30 +89,10 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 
 				if (abs(FVector::DotProduct(Direction2, Direction1)) != 1)
 				{
-					TraceJumpAtCorner(NavMeshEdges[i].Left, Direction1, Direction2);
+					TraceJumpAtCorner(NavMeshEdges[i].Left, GetDirecionOut(NavMeshEdges[i].Left, NavMeshEdges[i].Right), GetDirecionOut(MatchingEdge.Left, MatchingEdge.Right));
 				}
 			}
 		}
-		
-		//float DotProd = FVector::DotProduct(Direction1, Direction2);
-
-		//int numPotentialNavLinksToSpawn = DotProd >= 0.0f ? FMath::Floor((1 - DotProd) / 0.3f) : FMath::Floor((1 + (DotProd * -1)) / 0.3f);
-
-		//UWorld* const world = GetWorld();
-		//if (world == nullptr || numPotentialNavLinksToSpawn <= 0) { return; }
-		//
-		//for (int j = 0; j < numPotentialNavLinksToSpawn; j++)
-		//{
-		//	//FVector End = NavMeshEdges[i].Left + Direction1.RotateAngleAxis(-27 * j, FVector(0, 0, 1));
-
-		//	//FHitResult hit(ForceInit);
-		//	//TArray<AActor*> ActorsToIgnore;
-		//	//UKismetSystemLibrary::LineTraceSingle(world, NavMeshEdges[i].Left, End,
-		//	//	UEngineTypes::ConvertToTraceType(ECC_GameTraceChannel2), false, ActorsToIgnore,
-		//	//	EDrawDebugTrace::Persistent, hit, true, FLinearColor::Red, FLinearColor::Red, 200);
-
-		//	SpawnPotentialNavLink(NavMeshEdges[i].Left, Direction1.RotateAngleAxis(-27 * j, FVector(0, 0, 1)));
-		//}
 	}
 }
 
