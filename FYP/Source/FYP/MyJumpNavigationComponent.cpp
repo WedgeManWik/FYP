@@ -63,22 +63,7 @@ void UMyJumpNavigationComponent::FindPathPortals()
 
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Amount of nodes in path: %d"), pathpoints.Num()));
 
-		TArray<FVector> FirstPolygonVertices;
-		Nav->GetPolyVerts(pathpoints[0].NodeRef, FirstPolygonVertices);
-
-		//DRAW FIRST POLYGON
-		if (DrawDebug)
-		{
-			for (int j = 1; j < FirstPolygonVertices.Num(); j++)
-			{
-				DrawDebugLine(GetWorld(), FirstPolygonVertices[j], FirstPolygonVertices[j - 1], FColor(0, 255, 0), true, 0, 5.f);
-			}
-			DrawDebugLine(GetWorld(), FirstPolygonVertices[0], FirstPolygonVertices[FirstPolygonVertices.Num() - 1], FColor(0, 255, 0), true, 0, 5.f);
-
-			DrawDebugSphere(GetWorld(), pathpoints[0], 5.f, 5, FColor(255, 0, 255), true, 0, 5.f);
-		}
-
-		for (int i = 1; i < pathpoints.Num(); i++)
+		for (int i = 0; i < pathpoints.Num(); i++)
 		{
 			NavNodeRef nodeRef = pathpoints[i].NodeRef;
 			TArray<FVector> CurrentPolygonVertices;
@@ -95,146 +80,46 @@ void UMyJumpNavigationComponent::FindPathPortals()
 				DrawDebugSphere(GetWorld(), pathpoints[i], 5.f, 5, FColor(255, 0, 255), true, 0, 5.f);
 			}
 
-			//PREVIOUS POLYGON
-			NavNodeRef prevNodeRef = pathpoints[i - 1].NodeRef;
-			TArray<FVector> PrevPolygonVertices;
-			Nav->GetPolyVerts(prevNodeRef, PrevPolygonVertices);
+			if (CurrentPolygonVertices.Num() == 2)
+			{
+				//VERTEX 1 IS ALWAYS BOTTOM LINK, VERTEX 0 IS ALWAYS TOP LINK
+				//NEIGHBOUR 1 IS ALWAYS TOP, NEIGHBOUR 0 IS ALWAYS BOTTOM
+				//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
+				//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
 
-			if (PrevPolygonVertices.Num() == 2)
-			{
-				//IGNORE
-			}
-			else
-			{
-				if (CurrentPolygonVertices.Num() == 2)
+				TArray<NavNodeRef> Neighbours;
+				Nav->GetPolyNeighbors(nodeRef, Neighbours);
+
+				TArray<FVector> BottomPolygonVertices;
+				Nav->GetPolyVerts(Neighbours[0], BottomPolygonVertices);
+				TArray<FVector> TopPolygonVertices;
+				Nav->GetPolyVerts(Neighbours[1], TopPolygonVertices);
+
+				FMyPolyEdge TopEdge;
+				FMyPolyEdge BottomEdge;
+				if (FVector::DistSquared(pathpoints[i], CurrentPolygonVertices[0]) < FVector::DistSquared(pathpoints[i], CurrentPolygonVertices[1]))
 				{
-					//VERTEX 1 IS ALWAYS BOTTOM LINK, VERTEX 0 IS ALWAYS TOP LINK
-					//NEIGHBOUR 1 IS ALWAYS TOP, NEIGHBOUR 0 IS ALWAYS BOTTOM
-					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
-					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
-
-					TArray<NavNodeRef> Neighbours;
-					Nav->GetPolyNeighbors(nodeRef, Neighbours);
-
-					TArray<FVector> BottomPolygonVertices;
-					Nav->GetPolyVerts(Neighbours[0], BottomPolygonVertices);
-					TArray<FVector> TopPolygonVertices;
-					Nav->GetPolyVerts(Neighbours[1], TopPolygonVertices);
-
-					//NEXT POLYGON
-					//NavNodeRef nextNodeRef = pathpoints[i + 1].NodeRef;
-					//TArray<FVector> NextPolygonVertices;
-					//Nav->GetPolyVerts(nextNodeRef, NextPolygonVertices);
-
-					FMyPolyEdge TopEdge;
-					FMyPolyEdge BottomEdge;
-					if (FVector::DistSquared(pathpoints[i], CurrentPolygonVertices[0]) < FVector::DistSquared(pathpoints[i], CurrentPolygonVertices[1]))
-					{
-						//TOP LINK IS FIRST IN PATH
-						TopEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], TopPolygonVertices);
-						BottomEdge = GetEdgeClosestToAnotherEdgeOnPolygon(TopEdge, BottomPolygonVertices);
-						TopEdge.IsJumpEdge = false;
-						BottomEdge.IsJumpEdge = true;
-						Portals.Add(TopEdge);
-						Portals.Add(BottomEdge);
-					}
-					else
-					{
-						//BOTTOM LINK IS FIRST IN PATH
-						TopEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i + 1], TopPolygonVertices);
-						BottomEdge = GetEdgeClosestToAnotherEdgeOnPolygon(TopEdge, BottomPolygonVertices);
-						TopEdge.IsJumpEdge = true;
-						BottomEdge.IsJumpEdge = false;
-						Portals.Add(BottomEdge);
-						Portals.Add(TopEdge);
-					}
-					continue;
+					//TOP LINK IS FIRST IN PATH
+					TopEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], TopPolygonVertices);
+					BottomEdge = GetEdgeClosestToAnotherEdgeOnPolygon(TopEdge, BottomPolygonVertices);
+					TopEdge.IsJumpEdge = false;
+					BottomEdge.IsJumpEdge = true;
+					Portals.Add(TopEdge);
+					Portals.Add(BottomEdge);
 				}
 				else
 				{
-					if (i == 1)
-					{
-						FMyPolyEdge ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
-						ThisPolyEdge.IsJumpEdge = false;
-						//FMyPolyEdge PrevPolyEdge = GetEdgeClosestToAnotherEdgeOnPolygon(ThisPolyEdge, PrevPolygonVertices);
-						FMyPolyEdge PrevPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], FirstPolygonVertices);
-						PrevPolyEdge.IsJumpEdge = false;
-
-						Portals.Add(PrevPolyEdge);
-						Portals.Add(ThisPolyEdge);
-
-						continue;
-					}
-					else if (i == pathpoints.Num() - 1)
-					{
-						FVector PrevMid;
-						Nav->GetPolyCenter(prevNodeRef, PrevMid);
-						FVector ThisMid;
-						Nav->GetPolyCenter(nodeRef, ThisMid);
-
-						FMyPolyEdge EdgeToAdd;
-						EdgeToAdd.IsJumpEdge = false;
-
-						FVector Intersect;
-						if (FindSegmentSegmentIntersection(PrevMid, ThisMid, CurrentPolygonVertices[0], CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1], Intersect))
-						{
-							EdgeToAdd.Left = CurrentPolygonVertices[0];
-							EdgeToAdd.Right = CurrentPolygonVertices[CurrentPolygonVertices.Num() - 1];
-						}
-						for (int j = 1; j < CurrentPolygonVertices.Num(); j++)
-						{
-							if (FindSegmentSegmentIntersection(PrevMid, ThisMid, CurrentPolygonVertices[j], CurrentPolygonVertices[j - 1], Intersect))
-							{
-								EdgeToAdd.Left = CurrentPolygonVertices[j];
-								EdgeToAdd.Right = CurrentPolygonVertices[j - 1];
-							}
-						}		
-
-						//Check if adding duplicate edge
-						//if (EdgeToAdd.Left == Portals[Portals.Num() - 1].Left || EdgeToAdd.Left == Portals[Portals.Num() - 1].Right)
-						//{
-						//	if (EdgeToAdd.Right == Portals[Portals.Num() - 1].Left || EdgeToAdd.Right == Portals[Portals.Num() - 1].Right)
-						//	{
-						//		continue;
-						//	}
-						//}
-						//else
-						//{
-						//	Portals.Add(EdgeToAdd);
-						//	continue;
-						//}
-					}
-					else
-					{
-						FMyPolyEdge ThisPolyEdge;
-						ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
-						ThisPolyEdge.IsJumpEdge = false;
-
-						//Check if adding duplicate edge
-						if (ThisPolyEdge.Left == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Left == Portals[Portals.Num() - 1].Right)
-						{
-							if (ThisPolyEdge.Right == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Right == Portals[Portals.Num() - 1].Right)
-							{
-								continue;
-							}
-						}
-						else
-						{
-							Portals.Add(ThisPolyEdge);
-							continue;
-						}
-					}
+					//BOTTOM LINK IS FIRST IN PATH
+					TopEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i + 1], TopPolygonVertices);
+					BottomEdge = GetEdgeClosestToAnotherEdgeOnPolygon(TopEdge, BottomPolygonVertices);
+					TopEdge.IsJumpEdge = true;
+					BottomEdge.IsJumpEdge = false;
+					Portals.Add(BottomEdge);
+					Portals.Add(TopEdge);
 				}
+				continue;
 			}
 		}
-		NavNodeRef nodeRef = pathpoints[pathpoints.Num() - 1].NodeRef;
-		TArray<FVector> CurrentPolygonVertices;
-		Nav->GetPolyVerts(nodeRef, CurrentPolygonVertices);
-
-		FMyPolyEdge EdgeToAdd;
-		EdgeToAdd = GetEdgeClosestToPointOnPolygon(pathpoints[pathpoints.Num() - 2], CurrentPolygonVertices);
-
-		Portals.Add(EdgeToAdd);
 	}
 
 	if (Portals.Num() == 0)
@@ -244,10 +129,8 @@ void UMyJumpNavigationComponent::FindPathPortals()
 
 	if (DrawDebug)
 	{
-		DrawDebugLine(GetWorld(), Portals[0].Left, Portals[0].Right, FColor(255, 0, 0), true, 0, 10.f);
 		for (int i = 1; i < Portals.Num(); i++)
 		{
-			DrawDebugLine(GetWorld(), Portals[i].Left, Portals[i].Right, FColor(255, 0, 0), true, 0, 10.f);
 			if (Portals[i].IsJumpEdge)
 			{
 				DrawDebugLine(GetWorld(), Portals[i].Left, Portals[i].Right, FColor(255, 255, 255), true, 0, 10.f);
@@ -714,7 +597,7 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 	//	return;
 	//}
 
-	if (CurrentPathIndex - 1 < MyPortals.Num() - 1)
+	if (CurrentPathIndex - 1 < MyPortals.Num())
 	{
 		if (DrawDebug && !PathfindingAuto)
 		{
