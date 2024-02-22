@@ -28,6 +28,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void TraceJumpAtCorner(FVector Location, FVector Direction1, FVector Direction2);
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void FinishedGenerating();
+
 	bool IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2);
 
 	bool DoShareSameEdges(TArray<FNavigationPortalEdge>& EdgeArray1, TArray<FNavigationPortalEdge>& EdgeArray2);
@@ -42,5 +45,10 @@ public:
 
 	FVector GetDirecionOut(FVector& Start, FVector& End);
 
+protected:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		bool GenerateCornerLinks;
 
+private:
+	double startSeconds;
 };

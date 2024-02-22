@@ -66,34 +66,40 @@ void AMyNavLinkGenerator::GenerateNavMeshLinks(ARecastNavMesh* Nav)
 		}
 	}
 
-	//Spawns Potential nav links on corners of navmesh
-
-	for (int i = 0; i < NavMeshEdges.Num(); i++)
+	if (GenerateCornerLinks)
 	{
-		FNavigationPortalEdge MatchingEdge;
-		if (FindEdgeWithMatchingVertex(NavMeshEdges[i], NavMeshEdges[i].Left, NavMeshEdges, MatchingEdge))
+		//Spawns Potential nav links on corners of navmesh
+
+		for (int i = 0; i < NavMeshEdges.Num(); i++)
 		{
-			FVector MidEdge1 = (NavMeshEdges[i].Left + NavMeshEdges[i].Right) / 2.f;
-			FVector MidEdge2 = (MatchingEdge.Left + MatchingEdge.Right) / 2.f;
-			FVector MidToOtherMid = MidEdge2 - MidEdge1;
-			MidToOtherMid.Normalize();
-
-			FVector DirectionOut = GetDirecionOut(NavMeshEdges[i].Left, NavMeshEdges[i].Right);
-
-			if (FVector::DotProduct(DirectionOut, MidToOtherMid) < 0.f)
+			FNavigationPortalEdge MatchingEdge;
+			if (FindEdgeWithMatchingVertex(NavMeshEdges[i], NavMeshEdges[i].Left, NavMeshEdges, MatchingEdge))
 			{
-				FVector Direction1 = NavMeshEdges[i].Left - NavMeshEdges[i].Right;
-				Direction1.Normalize();
-				FVector Direction2 = MatchingEdge.Right == NavMeshEdges[i].Left ? MatchingEdge.Right - MatchingEdge.Left : MatchingEdge.Left - MatchingEdge.Right;
-				Direction2.Normalize();
+				FVector MidEdge1 = (NavMeshEdges[i].Left + NavMeshEdges[i].Right) / 2.f;
+				FVector MidEdge2 = (MatchingEdge.Left + MatchingEdge.Right) / 2.f;
+				FVector MidToOtherMid = MidEdge2 - MidEdge1;
+				MidToOtherMid.Normalize();
 
-				if (abs(FVector::DotProduct(Direction2, Direction1)) != 1)
+				FVector DirectionOut = GetDirecionOut(NavMeshEdges[i].Left, NavMeshEdges[i].Right);
+
+				if (FVector::DotProduct(DirectionOut, MidToOtherMid) < 0.f)
 				{
-					TraceJumpAtCorner(NavMeshEdges[i].Left, GetDirecionOut(NavMeshEdges[i].Left, NavMeshEdges[i].Right), GetDirecionOut(MatchingEdge.Left, MatchingEdge.Right));
+					FVector Direction1 = NavMeshEdges[i].Left - NavMeshEdges[i].Right;
+					Direction1.Normalize();
+					FVector Direction2 = MatchingEdge.Right == NavMeshEdges[i].Left ? MatchingEdge.Right - MatchingEdge.Left : MatchingEdge.Left - MatchingEdge.Right;
+					Direction2.Normalize();
+
+					if (abs(FVector::DotProduct(Direction2, Direction1)) != 1)
+					{
+						TraceJumpAtCorner(NavMeshEdges[i].Left, DirectionOut, GetDirecionOut(MatchingEdge.Left, MatchingEdge.Right));
+					}
 				}
 			}
 		}
 	}
+
+	//Allows BP functionality after the generating is complete
+	FinishedGenerating();
 }
 
 bool AMyNavLinkGenerator::IsSameEdge(FNavigationPortalEdge& Edge1, FNavigationPortalEdge& Edge2)

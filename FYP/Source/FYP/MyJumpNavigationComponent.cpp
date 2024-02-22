@@ -32,7 +32,7 @@ void UMyJumpNavigationComponent::BeginPlay()
 
 void UMyJumpNavigationComponent::CreateCustomJumpPath(const FVector& Start, const FVector& Destination, const bool& ShouldDrawDebug, const bool& IsAutoPathfinding)
 {
-	startSeconds = FPlatformTime::Seconds() * 1000.f;
+	startSeconds = FPlatformTime::Seconds();
 
 	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Start: %f ms"), startSeconds));
 
@@ -473,11 +473,10 @@ void UMyJumpNavigationComponent::CreateCustomPath(const TArray<FMyPolyEdge>& Por
 
 		CurrentPathIndex = 0;
 
-		double endSeconds = FPlatformTime::Seconds() * 1000.f;
-		double difference = endSeconds - startSeconds;
+		double endSeconds = FPlatformTime::Seconds();
+		double differenceInMs = (endSeconds - startSeconds) * 1000.f;
 
-		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("End: %f ms"), endSeconds));
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Found path in %f ms"), difference));
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Found path in %f ms"), differenceInMs));
 
 		GoToNextPointOnCustomPath();
 	}
@@ -843,7 +842,6 @@ void UMyJumpNavigationComponent::CreatePathIn3D()
 			FVector DirectionAlong = MyPortals3D[CurrentPathIndex - 1].Right - MyPortals3D[CurrentPathIndex - 1].Left;
 			DirectionAlong *= percentageAlong;
 			FVector Position3D = MyPortals3D[CurrentPathIndex - 1].Left + DirectionAlong;
-			DrawDebugSphere(GetWorld(), Position3D, 5.f, 5, FColor(0, 0, 255), true, 0, 200.f);
 			newPathPoint.Location.Z = Position3D.Z;
 		}
 

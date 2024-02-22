@@ -22,6 +22,12 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 		void FollowCustomJumpPath(FVector Start, FVector Destination);
 
+	UFUNCTION(BlueprintImplementableEvent)
+		void CameraZoom(float ZoomAmount);
+	
+	UFUNCTION(BlueprintCallable)
+		void FinishedMakingPaths();
+
 	/** Time Threshold to know if it was a short press */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	float ShortPressThreshold;
@@ -42,6 +48,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputAction* SetDestinationTouchAction;
 
+	/** Move Zoom Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* MouseZoom;
+
 protected:
 	/** True if the controlled character should navigate to the mouse cursor. */
 	uint32 bMoveToMouseCursor : 1;
@@ -58,11 +68,15 @@ protected:
 	void OnTouchTriggered();
 	void OnTouchReleased();
 
+	void OnZoomCamera(const FInputActionValue& Value);
+
 private:
 	FVector CachedDestination;
 
 	bool bIsTouch;
 	float FollowTime; // For how long it has been pressed
+
+	double startSeconds;
 };
 
 

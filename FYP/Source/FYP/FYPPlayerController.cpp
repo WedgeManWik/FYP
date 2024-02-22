@@ -22,6 +22,14 @@ AFYPPlayerController::AFYPPlayerController()
 	FollowTime = 0.f;
 }
 
+void AFYPPlayerController::FinishedMakingPaths()
+{
+	double endSeconds = FPlatformTime::Seconds();
+	double differenceInMs = (endSeconds - startSeconds) * 1000.f;
+
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("TOTAL EXECUTION TIME: %f ms"), differenceInMs));
+}
+
 void AFYPPlayerController::BeginPlay()
 {
 	// Call the base class  
@@ -47,6 +55,7 @@ void AFYPPlayerController::SetupInputComponent()
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Triggered, this, &AFYPPlayerController::OnSetDestinationTriggered);
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Completed, this, &AFYPPlayerController::OnSetDestinationReleased);
 		EnhancedInputComponent->BindAction(SetDestinationClickAction, ETriggerEvent::Canceled, this, &AFYPPlayerController::OnSetDestinationReleased);
+		EnhancedInputComponent->BindAction(MouseZoom, ETriggerEvent::Triggered, this, &AFYPPlayerController::OnZoomCamera);
 
 		// Setup touch input events
 		EnhancedInputComponent->BindAction(SetDestinationTouchAction, ETriggerEvent::Started, this, &AFYPPlayerController::OnInputStarted);
@@ -104,6 +113,7 @@ void AFYPPlayerController::OnSetDestinationReleased()
 
 		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, FXCursor, CachedDestination, FRotator::ZeroRotator, FVector(1.f, 1.f, 1.f), true, true, ENCPoolMethod::None, true);
 
+		startSeconds = FPlatformTime::Seconds();
 		FollowCustomJumpPath(GetPawn()->GetActorLocation(), CachedDestination);
 	}
 
@@ -121,4 +131,11 @@ void AFYPPlayerController::OnTouchReleased()
 {
 	bIsTouch = false;
 	OnSetDestinationReleased();
+}
+
+void AFYPPlayerController::OnZoomCamera(const FInputActionValue& Value)
+{
+	float ZoomAmount = Value.Get<float>() * 2;
+
+	CameraZoom(ZoomAmount);
 }
