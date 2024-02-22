@@ -86,6 +86,8 @@ protected:
 
 	bool FindSegmentSegmentIntersection(const FVector Segment1Start, const FVector Segment1End, const FVector Segment2Start, const FVector Segment2End, FVector& IntersectionPoint);
 
+	bool IsSameEdge(FMyPolyEdge& Edge1, FMyPolyEdge& Edge2);
+
 	FVector StartOfPath;
 	FVector FinalDestination;
 	TArray<FPathPoint> AgentPathPoints;
