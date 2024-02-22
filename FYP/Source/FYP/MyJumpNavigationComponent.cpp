@@ -489,13 +489,14 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 	{
 		//CHECK IF CAN REACH END FROM LAST PATH POINT
 		bool Started = false;
-		for (int i = 0; i < MyPortals.Num() - 1; i++)
+		for (int i = 0; i < MyPortals.Num(); i++)
 		{
 			if (!Started)
 			{
 				if (FMath::PointDistToSegment(MyPathPoints[MyPathPoints.Num() - 1], MyPortals[i].Left, MyPortals[i].Right) < 1.f || MyPathPoints.Num() == 1)
 				{
 					Started = true;
+					continue;
 				}
 			}
 
@@ -513,6 +514,7 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 		}
 		if (Started)
 		{
+			DrawDebugSphere(GetWorld(), MyPathPoints[MyPathPoints.Num() - 1], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
 			FVector End = FinalDestination;
 			End.Z = 0;
 			MyPathPoints.Add(End);
@@ -569,7 +571,9 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 		if (distToNextPortal <= distToPrevPortal)
 		{
 			NewPathPoint = FMath::ClosestPointOnSegment(MyPathPoints[MyPathPoints.Num() - 1], Barrier1.Right, Barrier2.Right);
+
 			MyPathPoints.Add(NewPathPoint);
+
 			Barrier1.Left = NewPathPoint;
 			Barrier2.Left = NewPathPoint;
 
@@ -598,29 +602,26 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 		if (UpdateBarrier(Barrier1, Barrier2, MyPortals[CurrentPathIndex], Angle, NewPathPoint, FColor(0, 0, 255)))
 		{
 			MyPathPoints.Add(NewPathPoint);
-			if (CurrentPathIndex != MyPortals.Num() - 1)
+			Barrier1.Left = NewPathPoint;
+			Barrier2.Left = NewPathPoint;
+
+			for (int portalIndex = 0; portalIndex < MyPortals.Num() - 1; portalIndex++)
 			{
-				Barrier1.Left = NewPathPoint;
-				Barrier2.Left = NewPathPoint;
-
-				for (int portalIndex = 0; portalIndex < MyPortals.Num() - 1; portalIndex++)
+				if (NewPathPoint == MyPortals[portalIndex].Left || NewPathPoint == MyPortals[portalIndex].Right)
 				{
-					if (NewPathPoint == MyPortals[portalIndex].Left || NewPathPoint == MyPortals[portalIndex].Right)
-					{
-						CurrentPathIndex = portalIndex + 1;
-					}
+					CurrentPathIndex = portalIndex + 1;
 				}
-				Barrier1.Right = MyPortals[CurrentPathIndex].Left;
-				Barrier2.Right = MyPortals[CurrentPathIndex].Right;
+			}
+			Barrier1.Right = MyPortals[CurrentPathIndex].Left;
+			Barrier2.Right = MyPortals[CurrentPathIndex].Right;
 
-				Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
+			Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
 
-				if (DrawDebug && !PathfindingAuto)
-				{
-					DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
-					DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
-					DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
-				}
+			if (DrawDebug && !PathfindingAuto)
+			{
+				DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
+				DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
+				DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
 			}
 			DidStep2 = true;
 			return;
@@ -633,41 +634,27 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 		if (UpdateBarrier(Barrier2, Barrier1, MyPortals[CurrentPathIndex], Angle, NewPathPoint, FColor(255, 125, 0)))
 		{
 			MyPathPoints.Add(NewPathPoint);
-			if (CurrentPathIndex != MyPortals.Num() - 1)
+			Barrier1.Left = NewPathPoint;
+			Barrier2.Left = NewPathPoint;
+
+			for (int portalIndex = 0; portalIndex < MyPortals.Num() - 1; portalIndex++)
 			{
-				Barrier1.Left = NewPathPoint;
-				Barrier2.Left = NewPathPoint;
-
-				for (int portalIndex = 0; portalIndex < MyPortals.Num() - 1; portalIndex++)
+				if (NewPathPoint == MyPortals[portalIndex].Left || NewPathPoint == MyPortals[portalIndex].Right)
 				{
-					if (NewPathPoint == MyPortals[portalIndex].Left || NewPathPoint == MyPortals[portalIndex].Right)
-					{
-						CurrentPathIndex = portalIndex + 1;
-					}
-				}
-
-				Barrier1.Right = MyPortals[CurrentPathIndex].Left;
-				Barrier2.Right = MyPortals[CurrentPathIndex].Right;
-
-				Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
-
-				if (DrawDebug && !PathfindingAuto)
-				{
-					DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
-					DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
-					DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
+					CurrentPathIndex = portalIndex + 1;
 				}
 			}
-			else
+
+			Barrier1.Right = MyPortals[CurrentPathIndex].Left;
+			Barrier2.Right = MyPortals[CurrentPathIndex].Right;
+
+			Angle = FVector::DotProduct(Barrier1.GetVectorTo(), Barrier2.GetVectorTo());
+
+			if (DrawDebug && !PathfindingAuto)
 			{
-				if (FVector::DistSquared(Barrier1.Left, Barrier1.Right) < FVector::DistSquared(Barrier2.Left, Barrier2.Right))
-				{
-					MyPathPoints.Add(Barrier1.Right);
-				}
-				else
-				{
-					MyPathPoints.Add(Barrier2.Right);
-				}
+				DrawDebugSphere(GetWorld(), NewPathPoint, 5.f, 5, FColor(255, 0, 0), true, 0, 5.f);
+				DrawDebugLine(GetWorld(), Barrier1.Left, Barrier1.Right, FColor(0, 0, 255), true, 0, 20.f);
+				DrawDebugLine(GetWorld(), Barrier2.Left, Barrier2.Right, FColor(255, 125, 0), true, 0, 20.f);
 			}
 			return;
 		}
