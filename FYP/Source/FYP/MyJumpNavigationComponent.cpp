@@ -100,7 +100,7 @@ void UMyJumpNavigationComponent::FindPathPortals()
 			TArray<FVector> PrevPolygonVertices;
 			Nav->GetPolyVerts(prevNodeRef, PrevPolygonVertices);
 
-			if (PrevPolygonVertices.Num() == 2)
+			if (PrevPolygonVertices.Num() == 2 && CurrentPolygonVertices.Num() > 2)
 			{
 				//IGNORE
 			}
@@ -110,8 +110,8 @@ void UMyJumpNavigationComponent::FindPathPortals()
 				{
 					//VERTEX 1 IS ALWAYS BOTTOM LINK, VERTEX 0 IS ALWAYS TOP LINK
 					//NEIGHBOUR 1 IS ALWAYS TOP, NEIGHBOUR 0 IS ALWAYS BOTTOM
-					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
-					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
+					DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
+					DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
 
 					TArray<NavNodeRef> Neighbours;
 					Nav->GetPolyNeighbors(nodeRef, Neighbours);
