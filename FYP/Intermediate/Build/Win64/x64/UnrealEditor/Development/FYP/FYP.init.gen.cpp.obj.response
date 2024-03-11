@@ -299,10 +299,10 @@ D:\GitHub\FYP\FYP\Intermediate\Build\Win64\UnrealEditor\Inc\FYP\UHT\FYP.init.gen
 /external:I ThirdParty\LibTiff\Source\Win64
 /external:I ThirdParty\LibTiff\Source
 /external:I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\INCLUDE"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\shared"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\um"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\winrt"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
 /FI"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\FYPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
 /FI"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\Definitions.FYP.h"
 /Yu"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\FYPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
