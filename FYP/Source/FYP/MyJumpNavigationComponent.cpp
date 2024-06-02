@@ -36,6 +36,8 @@ void UMyJumpNavigationComponent::CreateCustomJumpPath(const FVector& Start, cons
 
 	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Start: %f ms"), startSeconds));
 
+	AgentPathPoints.Empty();
+
 	StartOfPath = Start;
 	FinalDestination = Destination;
 	DrawDebug = ShouldDrawDebug;
@@ -110,8 +112,8 @@ void UMyJumpNavigationComponent::FindPathPortals()
 				{
 					//VERTEX 1 IS ALWAYS BOTTOM LINK, VERTEX 0 IS ALWAYS TOP LINK
 					//NEIGHBOUR 1 IS ALWAYS TOP, NEIGHBOUR 0 IS ALWAYS BOTTOM
-					DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
-					DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
+					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[0], 5.f, 5, FColor(255, 255, 255), true, 0, 10.f);
+					//DrawDebugSphere(GetWorld(), CurrentPolygonVertices[1], 5.f, 5, FColor(0, 0, 0), true, 0, 10.f);
 
 					TArray<NavNodeRef> Neighbours;
 					Nav->GetPolyNeighbors(nodeRef, Neighbours);
@@ -210,18 +212,21 @@ void UMyJumpNavigationComponent::FindPathPortals()
 						ThisPolyEdge = GetEdgeClosestToPointOnPolygon(pathpoints[i], CurrentPolygonVertices);
 						ThisPolyEdge.IsJumpEdge = false;
 
-						//Check if adding duplicate edge
-						if (ThisPolyEdge.Left == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Left == Portals[Portals.Num() - 1].Right)
+						if (Portals.Num() > 0)
 						{
-							if (ThisPolyEdge.Right == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Right == Portals[Portals.Num() - 1].Right)
+							//Check if adding duplicate edge
+							if (ThisPolyEdge.Left == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Left == Portals[Portals.Num() - 1].Right)
 							{
+								if (ThisPolyEdge.Right == Portals[Portals.Num() - 1].Left || ThisPolyEdge.Right == Portals[Portals.Num() - 1].Right)
+								{
+									continue;
+								}
+							}
+							else
+							{
+								Portals.Add(ThisPolyEdge);
 								continue;
 							}
-						}
-						else
-						{
-							Portals.Add(ThisPolyEdge);
-							continue;
 						}
 					}
 				}
@@ -514,7 +519,7 @@ void UMyJumpNavigationComponent::CreatePathIn2D()
 		}
 		if (Started)
 		{
-			DrawDebugSphere(GetWorld(), MyPathPoints[MyPathPoints.Num() - 1], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
+			//DrawDebugSphere(GetWorld(), MyPathPoints[MyPathPoints.Num() - 1], 5.f, 5, FColor(255, 0, 0), true, 0, 20.f);
 			FVector End = FinalDestination;
 			End.Z = 0;
 			MyPathPoints.Add(End);
