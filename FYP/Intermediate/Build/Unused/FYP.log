@@ -2,6 +2,7 @@
   Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" FYPEditor Win64 Development -Project="D:\GitHub\FYP\FYP\FYP.uproject" -WaitMutex -FromMsBuild
   Log file: C:\Users\wikto\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (D:\GitHub\FYP).
+  Invalidating makefile for FYPEditor (MyJumpNavigationComponent.cpp.obj.response modified)
   Building FYPEditor...
   Using Visual Studio 2022 14.39.33523 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
@@ -21,5 +22,5 @@ D:\GitHub\FYP\FYP\Source\FYP\MyJumpNavigationComponent.cpp(293): warning C4701: 
   [3/4] Link [x64] UnrealEditor-FYP.dll
      Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
   [4/4] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 14.91 seconds
-  Total execution time: 16.37 seconds
+  Total time in Parallel executor: 16.56 seconds
+  Total execution time: 19.15 seconds
