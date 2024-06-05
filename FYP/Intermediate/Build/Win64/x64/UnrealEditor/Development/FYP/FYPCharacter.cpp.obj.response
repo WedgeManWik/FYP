@@ -303,10 +303,7 @@ D:\GitHub\FYP\FYP\Source\FYP\FYPCharacter.cpp
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\FYPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
-/FI"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\Definitions.FYP.h"
-/Yu"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\FYPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
-/Fp"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\FYPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.pch"
+/FI"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\Definitions.h"
 /Fo"D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\FYPCharacter.cpp.obj"
 /sourceDependencies D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\FYPCharacter.cpp.dep.json
 /Zc:inline
