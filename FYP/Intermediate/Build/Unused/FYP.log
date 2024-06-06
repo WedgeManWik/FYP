@@ -1,13 +1,14 @@
 ﻿  Using bundled DotNet SDK version: 6.0.302
-  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" FYPEditor Win64 Development -Project="D:\GitHub\FYP\FYP\FYP.uproject" -WaitMutex -FromMsBuild
-  Log file: C:\Users\wikto\AppData\Local\UnrealBuildTool\Log.txt
-  Using 'git status' to determine working set for adaptive non-unity build (D:\GitHub\FYP).
+  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" FYPEditor Win64 Development -Project="C:\Users\j012100l\Documents\GitHub\FYP\FYP\FYP.uproject" -WaitMutex -FromMsBuild
+  Log file: C:\Users\j012100l\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\j012100l\Documents\GitHub\FYP).
+  Creating makefile for FYPEditor (no existing makefile)
   Parsing headers for FYPEditor
-    Running Internal UnrealHeaderTool D:\GitHub\FYP\FYP\FYP.uproject D:\GitHub\FYP\FYP\Intermediate\Build\Win64\FYPEditor\Development\FYPEditor.uhtmanifest -WarningsAsErrors -installed
-  Total of 0 written
-  Reflection code generated for FYPEditor in 1.8327691 seconds
+    Running Internal UnrealHeaderTool C:\Users\j012100l\Documents\GitHub\FYP\FYP\FYP.uproject C:\Users\j012100l\Documents\GitHub\FYP\FYP\Intermediate\Build\Win64\FYPEditor\Development\FYPEditor.uhtmanifest -WarningsAsErrors -installed
+  Total of 17 written
+  Reflection code generated for FYPEditor in 1.5081807 seconds
   Building FYPEditor...
-  Using Visual Studio 2022 14.39.33523 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Using Visual Studio 2022 14.36.32537 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Tools\MSVC\14.36.32532) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   [Upgrade]
   [Upgrade] Using backward-compatible include order. The latest version of UE has changed the order of includes, which may require code changes. The current setting is:
   [Upgrade]     IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1
@@ -16,17 +17,32 @@
   [Upgrade]
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-    Requested 1.5 GB free memory per action, 7.34 GB available: limiting max parallel actions to 4
-  Building 8 actions with 4 processes...
-  [1/8] Compile [x64] FYP.init.gen.cpp
-  [2/8] Compile [x64] FYPCharacter.gen.cpp
-  [3/8] Compile [x64] FYPCharacter.cpp
-  [4/8] Compile [x64] FYPGameMode.cpp
-  [5/8] Compile [x64] FYPPlayerController.cpp
-  [6/8] Link [x64] UnrealEditor-FYP.lib
-     Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.exp
-  [7/8] Link [x64] UnrealEditor-FYP.dll
-     Creating library D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object D:\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
-  [8/8] WriteMetadata FYPEditor.target
-  Total time in Parallel executor: 10.48 seconds
-  Total execution time: 13.60 seconds
+  Building 23 actions with 8 processes...
+  [1/23] Resource Default.rc2
+  [2/23] Compile [x64] SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.cpp
+  [3/23] Compile [x64] MyNavLinkGenerator.gen.cpp
+  [4/23] Compile [x64] FYPPlayerController.gen.cpp
+  [5/23] Compile [x64] MyNavLinkComponent.cpp
+  [6/23] Compile [x64] MyJumpNavigationComponent.gen.cpp
+  [7/23] Compile [x64] FYPCharacter.gen.cpp
+  [8/23] Compile [x64] FYP.init.gen.cpp
+  [9/23] Compile [x64] FYP.cpp
+  [10/23] Compile [x64] FYPGameMode.gen.cpp
+  [11/23] Compile [x64] MyNavLinkComponent.gen.cpp
+  [12/23] Compile [x64] FYPGameMode.cpp
+  [13/23] Compile [x64] NavInterface.cpp
+  [14/23] Compile [x64] MyNavLinkProxy.gen.cpp
+  [15/23] Compile [x64] FYPCharacter.cpp
+  [16/23] Compile [x64] MyNavLinkProxy.cpp
+  [17/23] Compile [x64] NavInterface.gen.cpp
+  [18/23] Compile [x64] MyNavLinkGenerator.cpp
+  [19/23] Compile [x64] MyJumpNavigationComponent.cpp
+C:\Users\j012100l\Documents\GitHub\FYP\FYP\Source\FYP\MyJumpNavigationComponent.cpp(293): warning C4701: potentially uninitialized local variable 'IsAnyJumpPoints' used
+  [20/23] Compile [x64] FYPPlayerController.cpp
+  [21/23] Link [x64] UnrealEditor-FYP.lib
+     Creating library C:\Users\j012100l\Documents\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.lib and object C:\Users\j012100l\Documents\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.exp
+  [22/23] Link [x64] UnrealEditor-FYP.dll
+     Creating library C:\Users\j012100l\Documents\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.lib and object C:\Users\j012100l\Documents\GitHub\FYP\FYP\Intermediate\Build\Win64\x64\UnrealEditor\Development\FYP\UnrealEditor-FYP.suppressed.exp
+  [23/23] WriteMetadata FYPEditor.target
+  Total time in Parallel executor: 37.65 seconds
+  Total execution time: 54.93 seconds

@@ -5,6 +5,11 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Users/j012100l/Documents/GitHub/FYP/FYP/Content/TopDown/Blueprints/GM_MyGameMode.uasset",
+				"C:/Users/j012100l/Documents/GitHub/FYP/FYP/Content/TopDown/Maps/Map1.umap",
+				"C:/Users/j012100l/Documents/GitHub/FYP/FYP/Content/TopDown/Maps/Map3.umap",
+				"C:/Users/j012100l/Documents/GitHub/FYP/FYP/Content/TopDown/Blueprints/AI_JumpChaser.uasset",
+				"C:/Users/j012100l/Documents/GitHub/FYP/FYP/Content/TopDown/Maps/ChaseMap.umap",
 				"D:/GitHub/FYP/FYP/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
 				"D:/GitHub/FYP/FYP/Content/TopDown/Input/IMC_Default.uasset",
 				"D:/GitHub/FYP/FYP/Content/TopDown/Blueprints/BP_TopDownPlayerController.uasset",

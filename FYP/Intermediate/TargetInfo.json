@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "FYP",
-			"Path": "D:\\GitHub\\FYP\\FYP\\Source\\FYP.Target.cs",
+			"Path": "C:\\Users\\j012100l\\Documents\\GitHub\\FYP\\FYP\\Source\\FYP.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "FYPEditor",
-			"Path": "D:\\GitHub\\FYP\\FYP\\Source\\FYPEditor.Target.cs",
+			"Path": "C:\\Users\\j012100l\\Documents\\GitHub\\FYP\\FYP\\Source\\FYPEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
